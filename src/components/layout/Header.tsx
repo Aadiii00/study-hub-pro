@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
-import { BookOpen, Sun, Moon, Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { GraduationCap, Sun, Moon, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
 export function Header() {
   const [isDark, setIsDark] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const isDarkMode = document.documentElement.classList.contains("dark");
@@ -17,54 +18,69 @@ export function Header() {
     document.documentElement.classList.toggle("dark");
   };
 
+  const isActive = (path: string) => location.pathname === path;
+
+  const navLinks = [
+    { to: "/", label: "Home" },
+    { to: "/notes/first-year", label: "First Year" },
+    { to: "/notes/cse-ise", label: "CSE/ISE" },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 glass border-b border-border/50">
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/30">
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-18 items-center justify-between py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-primary shadow-glow">
-              <BookOpen className="h-5 w-5 text-primary-foreground" />
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl blur-lg opacity-50 group-hover:opacity-80 transition-opacity duration-300" />
+              <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-600 shadow-lg">
+                <GraduationCap className="h-5 w-5 text-white" />
+              </div>
             </div>
-            <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-              NoteVault
-            </span>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold bg-gradient-to-r from-foreground via-foreground to-foreground/80 bg-clip-text group-hover:from-cyan-500 group-hover:to-blue-600 transition-all duration-300">
+                Campus Notes
+              </span>
+              <span className="text-[10px] text-muted-foreground font-medium tracking-wider uppercase">
+                VTU Resources
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link
-              to="/"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Home
-            </Link>
-            <Link
-              to="/notes/first-year"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              First Year
-            </Link>
-            <Link
-              to="/notes/cse-ise"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              CSE/ISE
-            </Link>
+          <nav className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
+                  isActive(link.to)
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <span className="relative z-10">{link.label}</span>
+                {isActive(link.to) && (
+                  <span className="absolute inset-0 bg-primary/10 rounded-lg" />
+                )}
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-600 group-hover:w-3/4 transition-all duration-300 rounded-full" />
+              </Link>
+            ))}
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="rounded-full"
+              className="rounded-full hover:bg-primary/10 transition-colors"
             >
               {isDark ? (
-                <Sun className="h-5 w-5" />
+                <Sun className="h-5 w-5 text-amber-500" />
               ) : (
-                <Moon className="h-5 w-5" />
+                <Moon className="h-5 w-5 text-slate-600" />
               )}
             </Button>
 
@@ -72,7 +88,7 @@ export function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden rounded-full"
+              className="md:hidden rounded-full hover:bg-primary/10"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
@@ -86,36 +102,22 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border/50 animate-slide-down">
-            <div className="flex flex-col gap-3">
-              <Link
-                to="/"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                to="/notes/first-year"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                First Year
-              </Link>
-              <Link
-                to="/notes/cse-ise"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                CSE/ISE
-              </Link>
-              <Link
-                to="/notes/ece"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                ECE
-              </Link>
+          <nav className="md:hidden py-4 border-t border-border/30 animate-fade-in">
+            <div className="flex flex-col gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`text-sm font-medium transition-all duration-200 px-4 py-3 rounded-lg ${
+                    isActive(link.to)
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </nav>
         )}
