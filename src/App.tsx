@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import FirstYear from "./pages/FirstYear";
 import FirstYearNotes from "./pages/FirstYearNotes";
+import SubjectNotes from "./pages/SubjectNotes";
 import CategoryNotes from "./pages/CategoryNotes";
 import NotFound from "./pages/NotFound";
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/notes/first-year" element={<FirstYear />} />
           <Route path="/notes/first-year/:scheme/:cycle" element={<FirstYearNotes />} />
+          <Route path="/notes/first-year/:scheme/:cycle/:subjectCode" element={<SubjectNotes />} />
           <Route path="/notes/:category" element={<CategoryNotes />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
