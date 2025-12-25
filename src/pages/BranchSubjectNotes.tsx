@@ -1,21 +1,47 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { ArrowLeft, Rocket, Download, FileText, BookOpen, ClipboardList } from "lucide-react";
+import { ArrowLeft, Rocket, Download, FileText, BookOpen, ClipboardList, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+interface Module {
+  name: string;
+  url: string;
+}
+
+interface NoteItem {
+  title: string;
+  source: string;
+  type: "notes" | "textbook" | "qp";
+  url: string;
+  modules?: Module[];
+}
 
 // Subject info with notes from different colleges
 const subjectNotesData: Record<string, {
   name: string;
   code: string;
   semester: number;
-  notes: { title: string; source: string; type: "notes" | "textbook" | "qp"; url: string }[];
+  notes: NoteItem[];
 }> = {
   "BCS301": {
     name: "Mathematics for CSE",
     code: "BCS301",
     semester: 3,
     notes: [
-      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { 
+        title: "Notes 1 — SVIT", 
+        source: "SVIT College", 
+        type: "notes", 
+        url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem3/MATHS/Module_1_SVIT.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem3/MATHS/Module_2_SVIT.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem3/MATHS/Module_3_SVIT.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem3/MATHS/Module_4_SVIT.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem3/MATHS/Module_5_SVIT.pdf" },
+        ]
+      },
       { title: "Notes 2 — RNSIT", source: "RNSIT College", type: "notes", url: "#" },
       { title: "Notes 3 — SJCIT", source: "SJCIT College", type: "notes", url: "#" },
       { title: "Notes 4 — ATME", source: "ATME College", type: "notes", url: "#" },
@@ -91,45 +117,72 @@ const subjectNotesData: Record<string, {
 };
 
 function NoteButton({ 
-  title, 
-  type, 
+  note, 
   index, 
-  onClick 
+  isExpanded,
+  onToggle,
+  onDownload 
 }: { 
-  title: string; 
-  type: "notes" | "textbook" | "qp"; 
+  note: NoteItem;
   index: number;
-  onClick: () => void;
+  isExpanded: boolean;
+  onToggle: () => void;
+  onDownload: (url: string, title: string) => void;
 }) {
   const getIcon = () => {
-    switch (type) {
+    switch (note.type) {
       case "textbook": return <BookOpen className="w-5 h-5" />;
       case "qp": return <ClipboardList className="w-5 h-5" />;
       default: return <FileText className="w-5 h-5" />;
     }
   };
 
+  const hasModules = note.modules && note.modules.length > 0;
+
   return (
-    <button
-      onClick={onClick}
-      className="group relative w-full animate-fade-in"
-      style={{ animationDelay: `${index * 80}ms` }}
-    >
-      <div className="relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-        {/* Gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
-        
-        {/* Shine effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-        
-        {/* Content */}
-        <div className="relative flex items-center justify-center gap-3 px-6 py-4 text-white font-semibold">
-          {getIcon()}
-          <span className="text-base">{title}</span>
-          <Download className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2" />
+    <div className="animate-fade-in" style={{ animationDelay: `${index * 80}ms` }}>
+      <button
+        onClick={() => hasModules ? onToggle() : onDownload(note.url, note.title)}
+        className="group relative w-full"
+      >
+        <div className={`relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${isExpanded ? 'rounded-t-xl' : 'rounded-xl'}`}>
+          {/* Gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+          
+          {/* Shine effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+          
+          {/* Content */}
+          <div className="relative flex items-center justify-center gap-3 px-6 py-4 text-white font-semibold">
+            {getIcon()}
+            <span className="text-base">{note.title}</span>
+            {hasModules ? (
+              <ChevronDown className={`w-4 h-4 ml-2 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+            ) : (
+              <Download className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2" />
+            )}
+          </div>
         </div>
-      </div>
-    </button>
+      </button>
+
+      {/* Modules dropdown */}
+      {hasModules && isExpanded && (
+        <div className="bg-card border border-t-0 border-border/50 rounded-b-xl overflow-hidden animate-fade-in">
+          <div className="p-4 space-y-2">
+            {note.modules!.map((module, idx) => (
+              <button
+                key={idx}
+                onClick={() => onDownload(module.url, module.name)}
+                className="w-full flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors duration-200 group"
+              >
+                <span className="text-sm font-medium text-foreground">{module.name}</span>
+                <Download className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -140,14 +193,20 @@ export default function BranchSubjectNotes() {
     subjectCode: string;
   }>();
 
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
   const subject = subjectCode ? subjectNotesData[subjectCode] : null;
 
-  const handleDownload = (title: string, url: string) => {
+  const handleDownload = (url: string, title: string) => {
     if (url === "#") {
       alert(`"${title}" will be available for download soon!`);
     } else {
       window.open(url, "_blank");
     }
+  };
+
+  const toggleExpand = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
   };
 
   if (!subject) {
@@ -199,10 +258,11 @@ export default function BranchSubjectNotes() {
             {subject.notes.map((note, index) => (
               <NoteButton
                 key={index}
-                title={note.title}
-                type={note.type}
+                note={note}
                 index={index}
-                onClick={() => handleDownload(note.title, note.url)}
+                isExpanded={expandedIndex === index}
+                onToggle={() => toggleExpand(index)}
+                onDownload={handleDownload}
               />
             ))}
           </div>
