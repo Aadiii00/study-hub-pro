@@ -1,31 +1,118 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { NoteCard } from "@/components/notes/NoteCard";
-import { NoteCardSkeleton } from "@/components/notes/NoteCardSkeleton";
-import { BulkDownloadBar } from "@/components/notes/BulkDownloadBar";
-import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
-import { FileX, ArrowLeft, BookOpen, Download, ChevronRight } from "lucide-react";
+import { FileX, ArrowLeft, BookOpen, Download, ChevronRight, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
-interface Note {
-  id: string;
-  title: string;
-  subject: string;
-  module: string | null;
-  semester: number;
-  branch: string;
-  university: string;
-  file_type: string;
-  file_size: number;
-  download_count: number;
-  file_url: string;
-}
+// Subject data per branch and semester
+const subjectData: Record<string, Record<number, { code: string; name: string; shortName: string }[]>> = {
+  "cse-ise": {
+    3: [
+      { code: "BCS301", name: "Mathematics for CSE", shortName: "Maths" },
+      { code: "BCS302", name: "Data Structures and Applications", shortName: "DSA" },
+      { code: "BCS303", name: "Digital Design and Computer Organization", shortName: "DDCO" },
+      { code: "BCS304", name: "Operating Systems", shortName: "OS" },
+      { code: "BCS305", name: "Object Oriented Programming with C++ and Java", shortName: "OOP" },
+      { code: "BCSL306", name: "Data Structures Lab", shortName: "DS Lab" },
+      { code: "BCS307", name: "Universal Human Values", shortName: "UHV" },
+    ],
+    4: [
+      { code: "BCS401", name: "Analysis and Design of Algorithms", shortName: "ADA" },
+      { code: "BCS402", name: "Microcontrollers", shortName: "MC" },
+      { code: "BCS403", name: "Database Management Systems", shortName: "DBMS" },
+      { code: "BCS404", name: "Discrete Mathematical Structures", shortName: "DMS" },
+      { code: "BCS405", name: "Software Engineering", shortName: "SE" },
+      { code: "BCSL406", name: "ADA Lab", shortName: "ADA Lab" },
+      { code: "BCS407", name: "Biology for Engineers", shortName: "BFE" },
+    ],
+    5: [
+      { code: "BCS501", name: "Computer Networks", shortName: "CN" },
+      { code: "BCS502", name: "Theory of Computation", shortName: "TOC" },
+      { code: "BCS503", name: "Artificial Intelligence", shortName: "AI" },
+      { code: "BCS504", name: "Web Technologies", shortName: "WT" },
+      { code: "BCSL505", name: "Computer Networks Lab", shortName: "CN Lab" },
+    ],
+    6: [
+      { code: "BCS601", name: "System Software and Compiler Design", shortName: "SSCD" },
+      { code: "BCS602", name: "Computer Graphics", shortName: "CG" },
+      { code: "BCS603", name: "Machine Learning", shortName: "ML" },
+      { code: "BCS604", name: "Cryptography and Network Security", shortName: "CNS" },
+      { code: "BCSL605", name: "System Software Lab", shortName: "SS Lab" },
+    ],
+    7: [
+      { code: "BCS701", name: "Big Data Analytics", shortName: "BDA" },
+      { code: "BCS702", name: "Cloud Computing", shortName: "CC" },
+      { code: "BCS703", name: "Internet of Things", shortName: "IoT" },
+      { code: "BCS704", name: "Project Phase 1", shortName: "Project 1" },
+    ],
+    8: [
+      { code: "BCS801", name: "Deep Learning", shortName: "DL" },
+      { code: "BCS802", name: "Blockchain Technology", shortName: "BT" },
+      { code: "BCS803", name: "Project Phase 2", shortName: "Project 2" },
+      { code: "BCS804", name: "Internship", shortName: "Internship" },
+    ],
+  },
+  "ece": {
+    3: [
+      { code: "BEC301", name: "Mathematics for EC", shortName: "Maths" },
+      { code: "BEC302", name: "Network Analysis", shortName: "NA" },
+      { code: "BEC303", name: "Electronic Devices", shortName: "ED" },
+      { code: "BEC304", name: "Digital Electronics", shortName: "DE" },
+      { code: "BEC305", name: "Signals and Systems", shortName: "S&S" },
+    ],
+    4: [
+      { code: "BEC401", name: "Analog Electronics", shortName: "AE" },
+      { code: "BEC402", name: "Control Systems", shortName: "CS" },
+      { code: "BEC403", name: "Microprocessors", shortName: "MP" },
+      { code: "BEC404", name: "Communication Systems", shortName: "Comm" },
+    ],
+    5: [],
+    6: [],
+    7: [],
+    8: [],
+  },
+  "eee": {
+    3: [
+      { code: "BEE301", name: "Mathematics for EE", shortName: "Maths" },
+      { code: "BEE302", name: "Electric Circuit Analysis", shortName: "ECA" },
+      { code: "BEE303", name: "Electrical Machines I", shortName: "EM-I" },
+      { code: "BEE304", name: "Electronic Devices", shortName: "ED" },
+    ],
+    4: [],
+    5: [],
+    6: [],
+    7: [],
+    8: [],
+  },
+  "civil": {
+    3: [
+      { code: "BCV301", name: "Engineering Mathematics III", shortName: "Maths" },
+      { code: "BCV302", name: "Strength of Materials", shortName: "SOM" },
+      { code: "BCV303", name: "Fluid Mechanics", shortName: "FM" },
+      { code: "BCV304", name: "Surveying", shortName: "Survey" },
+    ],
+    4: [],
+    5: [],
+    6: [],
+    7: [],
+    8: [],
+  },
+  "mech": {
+    3: [
+      { code: "BME301", name: "Engineering Mathematics III", shortName: "Maths" },
+      { code: "BME302", name: "Materials Science", shortName: "MS" },
+      { code: "BME303", name: "Basic Thermodynamics", shortName: "TD" },
+      { code: "BME304", name: "Mechanics of Materials", shortName: "MOM" },
+    ],
+    4: [],
+    5: [],
+    6: [],
+    7: [],
+    8: [],
+  },
+};
 
 const categoryInfo: Record<string, { name: string; semesters: number[]; gradient: string }> = {
-  "first-year": { name: "First Year (P & C Cycle)", semesters: [1, 2], gradient: "from-blue-600 to-cyan-500" },
   "cse-ise": { name: "CSE / ISE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-indigo-600 to-violet-500" },
   "ece": { name: "ECE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-rose-600 to-orange-500" },
   "eee": { name: "EEE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-amber-600 to-lime-500" },
@@ -42,16 +129,28 @@ const semesterGradients = [
   "from-indigo-500 to-blue-500",
 ];
 
+const subjectGradients = [
+  "from-cyan-500 to-blue-500",
+  "from-purple-500 to-violet-500",
+  "from-pink-500 to-rose-500",
+  "from-orange-500 to-amber-500",
+  "from-teal-500 to-emerald-500",
+  "from-blue-500 to-indigo-500",
+  "from-fuchsia-500 to-purple-500",
+];
+
 function SemesterCard({ 
   semester, 
   index, 
   onClick,
-  isActive 
+  isActive,
+  subjectCount
 }: { 
   semester: number; 
   index: number; 
   onClick: () => void;
   isActive: boolean;
+  subjectCount: number;
 }) {
   const gradient = semesterGradients[index % semesterGradients.length];
   
@@ -74,7 +173,7 @@ function SemesterCard({
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-foreground">Semester {semester}</h3>
-                <p className="text-sm text-muted-foreground">View all notes & materials</p>
+                <p className="text-sm text-muted-foreground">{subjectCount} subjects</p>
               </div>
             </div>
             <ChevronRight className={`w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 ${isActive ? 'text-primary rotate-90' : ''}`} />
@@ -85,87 +184,72 @@ function SemesterCard({
   );
 }
 
+function SubjectCard({
+  subject,
+  index,
+  onDownload,
+}: {
+  subject: { code: string; name: string; shortName: string };
+  index: number;
+  onDownload: () => void;
+}) {
+  const gradient = subjectGradients[index % subjectGradients.length];
+
+  return (
+    <div
+      className="group relative animate-fade-in"
+      style={{ animationDelay: `${index * 60}ms` }}
+    >
+      <div className="relative overflow-hidden rounded-2xl p-1 transition-all duration-300 hover:scale-[1.02]">
+        <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-300`} />
+        
+        <div className="relative bg-card/90 backdrop-blur-sm rounded-xl p-5 border border-border/50 group-hover:border-transparent transition-all duration-300">
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex items-start gap-4 flex-1">
+              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center text-white shadow-lg flex-shrink-0`}>
+                <FolderOpen className="w-5 h-5" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-xs text-muted-foreground font-mono mb-1">{subject.code}</p>
+                <h3 className="font-semibold text-foreground leading-tight mb-1 line-clamp-2">
+                  {subject.name}
+                </h3>
+                <p className="text-sm text-muted-foreground">Click to view notes</p>
+              </div>
+            </div>
+            <Button
+              size="sm"
+              onClick={onDownload}
+              className={`bg-gradient-to-r ${gradient} text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300`}
+            >
+              <Download className="w-4 h-4 mr-1" />
+              View
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function CategoryNotes() {
   const { category } = useParams<{ category: string }>();
-  const { toast } = useToast();
-  const [notes, setNotes] = useState<Note[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [selectedNotes, setSelectedNotes] = useState<Set<string>>(new Set());
-  const [searchQuery, setSearchQuery] = useState("");
   const [selectedSemester, setSelectedSemester] = useState<number | null>(null);
 
   const info = category ? categoryInfo[category] : null;
-
-  useEffect(() => {
-    if (selectedSemester && category) {
-      fetchNotes();
-    }
-  }, [selectedSemester, category]);
-
-  const fetchNotes = async () => {
-    if (!selectedSemester) return;
-    
-    setLoading(true);
-    const branchName = info?.name.replace(" (P & C Cycle)", "").replace(" / ", "/") || "";
-    
-    let query = supabase
-      .from("notes")
-      .select("*")
-      .eq("is_enabled", true)
-      .eq("semester", selectedSemester)
-      .order("created_at", { ascending: false });
-
-    if (category !== "first-year") {
-      query = query.ilike("branch", `%${branchName.split("/")[0]}%`);
-    }
-
-    const { data, error } = await query;
-    
-    if (error) {
-      toast({ title: "Error", description: "Failed to fetch notes", variant: "destructive" });
-    } else {
-      setNotes(data || []);
-    }
-    setLoading(false);
-  };
-
-  const filteredNotes = notes.filter((note) => {
-    const matchesSearch = searchQuery === "" || 
-      note.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-      note.subject.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesSearch;
-  });
-
-  const handleSelect = (id: string) => {
-    const newSelected = new Set(selectedNotes);
-    if (newSelected.has(id)) newSelected.delete(id);
-    else newSelected.add(id);
-    setSelectedNotes(newSelected);
-  };
-
-  const handleDownload = async (id: string, url: string, title: string) => {
-    try {
-      await supabase.rpc("increment_download_count", { note_id: id });
-    } catch {}
-    window.open(url, "_blank");
-    toast({ title: "Download started", description: `Downloading ${title}` });
-  };
-
-  const handlePreview = (url: string) => window.open(url, "_blank");
-
-  const handleBulkDownload = () => {
-    toast({ title: "Feature coming soon", description: "Bulk ZIP download will be available shortly" });
-  };
+  const subjects = category && selectedSemester ? subjectData[category]?.[selectedSemester] || [] : [];
 
   const handleSemesterClick = (sem: number) => {
     if (selectedSemester === sem) {
       setSelectedSemester(null);
-      setNotes([]);
     } else {
       setSelectedSemester(sem);
-      setSearchQuery("");
-      setSelectedNotes(new Set());
     }
+  };
+
+  const handleSubjectClick = (subject: { code: string; name: string }) => {
+    // For now, show alert - later can navigate to subject notes page
+    alert(`Notes for "${subject.name}" will be available soon!\n\nSubject Code: ${subject.code}`);
   };
 
   if (!info) {
@@ -200,7 +284,7 @@ export default function CategoryNotes() {
             </div>
             <div>
               <h1 className="text-3xl md:text-4xl font-bold">{info.name}</h1>
-              <p className="text-muted-foreground">Select a semester to view notes</p>
+              <p className="text-muted-foreground">Select a semester to view subjects</p>
             </div>
           </div>
         </div>
@@ -214,79 +298,40 @@ export default function CategoryNotes() {
               index={index}
               onClick={() => handleSemesterClick(sem)}
               isActive={selectedSemester === sem}
+              subjectCount={subjectData[category!]?.[sem]?.length || 0}
             />
           ))}
         </div>
 
-        {/* Notes Section */}
+        {/* Subjects Section */}
         {selectedSemester && (
           <div className="animate-fade-in">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${semesterGradients[(selectedSemester - 3) % semesterGradients.length]} flex items-center justify-center text-white font-bold`}>
-                  {selectedSemester}
-                </div>
-                <div>
-                  <h2 className="text-xl font-bold">Semester {selectedSemester} Notes</h2>
-                  <p className="text-sm text-muted-foreground">{filteredNotes.length} notes available</p>
-                </div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${semesterGradients[(selectedSemester - 3) % semesterGradients.length]} flex items-center justify-center text-white font-bold`}>
+                {selectedSemester}
               </div>
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                onClick={() => { setSelectedSemester(null); setNotes([]); }}
-                className="text-muted-foreground"
-              >
-                Close
-              </Button>
+              <div>
+                <h2 className="text-xl font-bold">Semester {selectedSemester} Subjects</h2>
+                <p className="text-sm text-muted-foreground">{subjects.length} subjects available</p>
+              </div>
             </div>
 
-            {/* Search */}
-            <div className="mb-6">
-              <Input
-                placeholder="Search notes by title or subject..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="max-w-md h-11"
-              />
-            </div>
-
-            {/* Notes Grid */}
-            {loading ? (
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {Array.from({ length: 4 }).map((_, i) => (
-                  <NoteCardSkeleton key={i} />
-                ))}
-              </div>
-            ) : filteredNotes.length === 0 ? (
+            {subjects.length === 0 ? (
               <div className="text-center py-16 bg-muted/30 rounded-2xl border border-border/50">
                 <FileX className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">No notes found</h3>
+                <h3 className="text-lg font-semibold mb-2">No subjects added yet</h3>
                 <p className="text-muted-foreground text-sm">
-                  {notes.length === 0 
-                    ? "Notes for this semester will be added soon" 
-                    : "Try adjusting your search"}
+                  Subjects for this semester will be added soon
                 </p>
               </div>
             ) : (
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {filteredNotes.map((note) => (
-                  <NoteCard
-                    key={note.id}
-                    id={note.id}
-                    title={note.title}
-                    subject={note.subject}
-                    module={note.module || undefined}
-                    semester={note.semester}
-                    branch={note.branch}
-                    fileType={note.file_type}
-                    fileSize={note.file_size}
-                    downloadCount={note.download_count}
-                    fileUrl={note.file_url}
-                    isSelected={selectedNotes.has(note.id)}
-                    onSelect={handleSelect}
-                    onPreview={handlePreview}
-                    onDownload={handleDownload}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {subjects.map((subject, index) => (
+                  <SubjectCard
+                    key={subject.code}
+                    subject={subject}
+                    index={index}
+                    onDownload={() => handleSubjectClick(subject)}
                   />
                 ))}
               </div>
@@ -300,16 +345,10 @@ export default function CategoryNotes() {
             <Download className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Select a Semester</h3>
             <p className="text-muted-foreground text-sm max-w-md mx-auto">
-              Click on any semester above to view and download notes, question papers, and study materials
+              Click on any semester above to view subjects and download study materials
             </p>
           </div>
         )}
-
-        <BulkDownloadBar
-          selectedCount={selectedNotes.size}
-          onDownloadAll={handleBulkDownload}
-          onClearSelection={() => setSelectedNotes(new Set())}
-        />
       </div>
     </Layout>
   );
