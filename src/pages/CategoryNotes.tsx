@@ -187,17 +187,20 @@ function SemesterCard({
 function SubjectCard({
   subject,
   index,
-  onDownload,
+  category,
+  semester,
 }: {
   subject: { code: string; name: string; shortName: string };
   index: number;
-  onDownload: () => void;
+  category: string;
+  semester: number;
 }) {
   const gradient = subjectGradients[index % subjectGradients.length];
 
   return (
-    <div
-      className="group relative animate-fade-in"
+    <Link
+      to={`/notes/${category}/${semester}/${subject.code}`}
+      className="group relative block animate-fade-in"
       style={{ animationDelay: `${index * 60}ms` }}
     >
       <div className="relative overflow-hidden rounded-2xl p-1 transition-all duration-300 hover:scale-[1.02]">
@@ -217,18 +220,14 @@ function SubjectCard({
                 <p className="text-sm text-muted-foreground">Click to view notes</p>
               </div>
             </div>
-            <Button
-              size="sm"
-              onClick={onDownload}
-              className={`bg-gradient-to-r ${gradient} text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300`}
-            >
-              <Download className="w-4 h-4 mr-1" />
+            <div className={`px-4 py-2 rounded-lg bg-gradient-to-r ${gradient} text-white text-sm font-medium shadow-lg`}>
+              <Download className="w-4 h-4 inline mr-1" />
               View
-            </Button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -247,10 +246,6 @@ export default function CategoryNotes() {
     }
   };
 
-  const handleSubjectClick = (subject: { code: string; name: string }) => {
-    // For now, show alert - later can navigate to subject notes page
-    alert(`Notes for "${subject.name}" will be available soon!\n\nSubject Code: ${subject.code}`);
-  };
 
   if (!info) {
     return (
@@ -331,7 +326,8 @@ export default function CategoryNotes() {
                     key={subject.code}
                     subject={subject}
                     index={index}
-                    onDownload={() => handleSubjectClick(subject)}
+                    category={category!}
+                    semester={selectedSemester}
                   />
                 ))}
               </div>
