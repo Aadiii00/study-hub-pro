@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import FirstYear from "./pages/FirstYear";
+import FirstYearNotes from "./pages/FirstYearNotes";
 import CategoryNotes from "./pages/CategoryNotes";
 import NotFound from "./pages/NotFound";
 
@@ -17,6 +19,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/notes/first-year" element={<FirstYear />} />
+          <Route path="/notes/first-year/:scheme/:cycle" element={<FirstYearNotes />} />
           <Route path="/notes/:category" element={<CategoryNotes />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
