@@ -77,7 +77,19 @@ const subjectNotesData: Record<string, {
     code: "BCS302",
     semester: 3,
     notes: [
-      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { 
+        title: "Notes 1 — SVIT", 
+        source: "SVIT College", 
+        type: "notes", 
+        url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem3/DSA/Module_1_SVIT.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem3/DSA/Module_2_SVIT.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem3/DSA/Module_3_SVIT.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem3/DSA/Module_4_SVIT.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem3/DSA/Module_5_SVIT.pdf" },
+        ]
+      },
       { title: "Notes 2 — RNSIT", source: "RNSIT College", type: "notes", url: "#" },
       { title: "Notes 3 — DSCE", source: "DSCE College", type: "notes", url: "#" },
       { title: "Textbooks", source: "Reference Books", type: "textbook", url: "#" },
