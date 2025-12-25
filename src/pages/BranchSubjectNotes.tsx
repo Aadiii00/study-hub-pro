@@ -170,14 +170,16 @@ function NoteButton({
         <div className="bg-card border border-t-0 border-border/50 rounded-b-xl overflow-hidden animate-fade-in">
           <div className="p-4 space-y-2">
             {note.modules!.map((module, idx) => (
-              <button
+              <a
                 key={idx}
-                onClick={() => onDownload(module.url, module.name)}
+                href={module.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors duration-200 group"
               >
                 <span className="text-sm font-medium text-foreground">{module.name}</span>
                 <Download className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-              </button>
+              </a>
             ))}
           </div>
         </div>
