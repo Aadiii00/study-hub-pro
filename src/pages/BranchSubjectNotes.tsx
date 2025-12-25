@@ -55,7 +55,7 @@ const subjectNotesData: Record<string, {
           { name: "Module 5", url: "/notes/CSE/Sem3/MATHS/Module_5_RNSIT.pdf" },
         ]
       },
-      { title: "Notes 3 — SJCIT", source: "SJCIT College", type: "notes", url: "#" },
+      { title: "Notes 3 — SJCIT", source: "SJCIT College", type: "notes", url: "/notes/CSE/Sem3/MATHS/Complete_Notes_SJCIT.pdf" },
       { title: "Notes 4 — ATME", source: "ATME College", type: "notes", url: "#" },
       { title: "Textbooks", source: "Reference Books", type: "textbook", url: "#" },
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
@@ -150,32 +150,44 @@ function NoteButton({
   };
 
   const hasModules = note.modules && note.modules.length > 0;
+  const hasValidUrl = note.url !== "#";
+
+  const buttonContent = (
+    <div className={`relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${isExpanded ? 'rounded-t-xl' : 'rounded-xl'}`}>
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      {/* Shine effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+      
+      {/* Content */}
+      <div className="relative flex items-center justify-center gap-3 px-6 py-4 text-white font-semibold">
+        {getIcon()}
+        <span className="text-base">{note.title}</span>
+        {hasModules ? (
+          <ChevronDown className={`w-4 h-4 ml-2 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+        ) : (
+          <Download className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2" />
+        )}
+      </div>
+    </div>
+  );
 
   return (
     <div className="animate-fade-in" style={{ animationDelay: `${index * 80}ms` }}>
-      <button
-        onClick={() => hasModules ? onToggle() : onDownload(note.url, note.title)}
-        className="group relative w-full"
-      >
-        <div className={`relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${isExpanded ? 'rounded-t-xl' : 'rounded-xl'}`}>
-          {/* Gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
-          
-          {/* Shine effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-          
-          {/* Content */}
-          <div className="relative flex items-center justify-center gap-3 px-6 py-4 text-white font-semibold">
-            {getIcon()}
-            <span className="text-base">{note.title}</span>
-            {hasModules ? (
-              <ChevronDown className={`w-4 h-4 ml-2 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
-            ) : (
-              <Download className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2" />
-            )}
-          </div>
-        </div>
-      </button>
+      {hasModules ? (
+        <button onClick={onToggle} className="group relative w-full">
+          {buttonContent}
+        </button>
+      ) : hasValidUrl ? (
+        <a href={note.url} download={note.title} className="group relative w-full block">
+          {buttonContent}
+        </a>
+      ) : (
+        <button onClick={() => onDownload(note.url, note.title)} className="group relative w-full">
+          {buttonContent}
+        </button>
+      )}
 
       {/* Modules dropdown */}
       {hasModules && isExpanded && (
