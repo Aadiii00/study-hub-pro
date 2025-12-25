@@ -23,7 +23,7 @@ export function Header() {
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/notes/first-year", label: "First Year" },
-    { to: "/notes/cse-ise", label: "CSE/ISE" },
+    { to: "/calculator", label: "Calculator" },
   ];
 
   return (

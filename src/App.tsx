@@ -8,6 +8,7 @@ import FirstYear from "./pages/FirstYear";
 import FirstYearNotes from "./pages/FirstYearNotes";
 import SubjectNotes from "./pages/SubjectNotes";
 import CategoryNotes from "./pages/CategoryNotes";
+import Calculator from "./pages/Calculator";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/notes/first-year/:scheme/:cycle" element={<FirstYearNotes />} />
           <Route path="/notes/first-year/:scheme/:cycle/:subjectCode" element={<SubjectNotes />} />
           <Route path="/notes/:category" element={<CategoryNotes />} />
+          <Route path="/calculator" element={<Calculator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
