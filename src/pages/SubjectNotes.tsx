@@ -73,7 +73,17 @@ export default function SubjectNotes() {
     try {
       await supabase.rpc("increment_download_count", { note_id: id });
     } catch {}
-    window.open(url, "_blank");
+    
+    // Create a temporary anchor element to trigger download without popup blockers
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = title + ".pdf";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
     toast({ title: "Download started", description: `Downloading ${title}` });
   };
 
