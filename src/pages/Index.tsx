@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { ArrowRight, BookOpen, Download, Users, Shield, Sparkles, GraduationCap, Star, ChevronRight } from "lucide-react";
+import { ArrowRight, BookOpen, Download, Users, Shield, Sparkles, GraduationCap, Star, ChevronRight, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const categories = [
@@ -13,16 +13,18 @@ const categories = [
     iconGradient: "from-blue-400 to-cyan-300",
     stats: "40K+ Downloads",
     icon: GraduationCap,
+    isLink: true,
   },
   {
-    id: "cse-ise",
-    name: "CSE / ISE",
-    subtitle: "3rd to 8th Semester",
-    tag: "Computer Science",
+    id: "calculator",
+    name: "Calculator",
+    subtitle: "SGPA & CGPA",
+    tag: "VTU Tools",
     gradient: "from-violet-600 via-purple-500 to-fuchsia-400",
     iconGradient: "from-violet-400 to-fuchsia-300",
-    stats: "119K+ Downloads",
-    icon: BookOpen,
+    stats: "Quick Calculate",
+    icon: Calculator,
+    isLink: true,
   },
   {
     id: "ece",
@@ -33,6 +35,7 @@ const categories = [
     iconGradient: "from-rose-400 to-orange-300",
     stats: "42K+ Downloads",
     icon: BookOpen,
+    isLink: true,
   },
   {
     id: "eee",
@@ -43,6 +46,7 @@ const categories = [
     iconGradient: "from-amber-400 to-lime-300",
     stats: "32K+ Downloads",
     icon: BookOpen,
+    isLink: true,
   },
   {
     id: "civil",
@@ -53,6 +57,7 @@ const categories = [
     iconGradient: "from-slate-400 to-zinc-300",
     stats: "28K+ Downloads",
     icon: BookOpen,
+    isLink: true,
   },
   {
     id: "mech",
@@ -63,15 +68,17 @@ const categories = [
     iconGradient: "from-emerald-400 to-cyan-300",
     stats: "35K+ Downloads",
     icon: BookOpen,
+    isLink: true,
   },
 ];
 
 function CategoryCard({ category, index }: { category: typeof categories[0]; index: number }) {
   const Icon = category.icon;
+  const linkPath = category.id === "calculator" ? "/calculator" : `/notes/${category.id}`;
   
   return (
     <Link 
-      to={`/notes/${category.id}`} 
+      to={linkPath} 
       className="group relative block animate-fade-in"
       style={{ animationDelay: `${index * 100}ms` }}
     >
@@ -249,7 +256,7 @@ export default function Index() {
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Why Choose <span className="gradient-text">NoteVault</span>?
+              Why Choose <span className="gradient-text">Campus Notes</span>?
             </h2>
             <p className="text-muted-foreground text-lg">
               Everything you need to succeed in your exams
