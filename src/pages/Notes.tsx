@@ -65,7 +65,9 @@ export default function Notes() {
   };
 
   const handleDownload = async (id: string, url: string, title: string) => {
-    await supabase.rpc("increment_download_count", { note_id: id }).catch(() => {});
+    try {
+      await supabase.rpc("increment_download_count", { note_id: id });
+    } catch {}
     window.open(url, "_blank");
     toast({ title: "Download started", description: `Downloading ${title}` });
   };
