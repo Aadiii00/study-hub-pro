@@ -58,7 +58,17 @@ const subjectNotesData: Record<string, {
       { title: "Notes 3 — SJCIT", source: "SJCIT College", type: "notes", url: "/notes/CSE/Sem3/MATHS/Complete_Notes_SJCIT.pdf" },
       { title: "Notes 4 — ATME", source: "ATME College", type: "notes", url: "/notes/CSE/Sem3/MATHS/Complete_Notes_ATME.pdf" },
       { title: "Textbooks", source: "Reference Books", type: "textbook", url: "/notes/CSE/Sem3/MATHS/Textbook_1.pdf" },
-      { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
+      { 
+        title: "Model QP with Solution", 
+        source: "VTU Model Papers", 
+        type: "qp", 
+        url: "#",
+        modules: [
+          { name: "Model QP 1", url: "/notes/CSE/Sem3/MATHS/Model_QP_1.pdf" },
+          { name: "Model QP 2", url: "/notes/CSE/Sem3/MATHS/Model_QP_2.pdf" },
+          { name: "Question Bank", url: "/notes/CSE/Sem3/MATHS/Question_Bank.pdf" },
+        ]
+      },
     ],
   },
   "BCS302": {
