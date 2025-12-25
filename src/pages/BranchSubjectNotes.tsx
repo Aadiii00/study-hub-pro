@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { ArrowLeft, Rocket, Download, FileText, BookOpen, ClipboardList, ChevronDown } from "lucide-react";
@@ -176,19 +176,21 @@ function NoteButton({
   const hasValidUrl = note.url !== "#";
 
   const buttonContent = (
-    <div className={`relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${isExpanded ? 'rounded-t-xl' : 'rounded-xl'}`}>
+    <div className={`relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${isExpanded ? "rounded-t-xl" : "rounded-xl"}`}>
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
-      
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+
       {/* Shine effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-      
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+
       {/* Content */}
       <div className="relative flex items-center justify-center gap-3 px-6 py-4 text-white font-semibold">
         {getIcon()}
         <span className="text-base">{note.title}</span>
         {hasModules ? (
-          <ChevronDown className={`w-4 h-4 ml-2 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+          <ChevronDown
+            className={`w-4 h-4 ml-2 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
+          />
         ) : (
           <Download className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2" />
         )}
@@ -199,7 +201,12 @@ function NoteButton({
   return (
     <div className="animate-fade-in" style={{ animationDelay: `${index * 80}ms` }}>
       {hasModules ? (
-        <button onClick={onToggle} className="group relative w-full">
+        <button
+          type="button"
+          onClick={onToggle}
+          aria-expanded={isExpanded}
+          className="group relative w-full"
+        >
           {buttonContent}
         </button>
       ) : hasValidUrl ? (
@@ -207,7 +214,11 @@ function NoteButton({
           {buttonContent}
         </a>
       ) : (
-        <button onClick={() => onDownload(note.url, note.title)} className="group relative w-full">
+        <button
+          type="button"
+          onClick={() => onDownload(note.url, note.title)}
+          className="group relative w-full"
+        >
           {buttonContent}
         </button>
       )}
@@ -235,15 +246,27 @@ function NoteButton({
 }
 
 export default function BranchSubjectNotes() {
-  const { category, semester, subjectCode } = useParams<{ 
-    category: string; 
-    semester: string; 
+  const { category, semester, subjectCode } = useParams<{
+    category: string;
+    semester: string;
     subjectCode: string;
   }>();
 
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
   const subject = subjectCode ? subjectNotesData[subjectCode] : null;
+
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(() => {
+    if (!subject) return null;
+    const idx = subject.notes.findIndex((n) => (n.modules?.length ?? 0) > 0);
+    return idx >= 0 ? idx : null;
+  });
+
+  useEffect(() => {
+    if (!subject) return;
+
+    // Ensure the first section with modules (e.g. Notes 1 — SVIT) is visible
+    const idx = subject.notes.findIndex((n) => (n.modules?.length ?? 0) > 0);
+    setExpandedIndex(idx >= 0 ? idx : null);
+  }, [subjectCode]);
 
   const handleDownload = (url: string, title: string) => {
     if (url === "#") {
@@ -254,7 +277,7 @@ export default function BranchSubjectNotes() {
   };
 
   const toggleExpand = (index: number) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
+    setExpandedIndex((current) => (current === index ? null : index));
   };
 
   if (!subject) {
