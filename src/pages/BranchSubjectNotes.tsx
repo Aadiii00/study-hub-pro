@@ -57,7 +57,7 @@ const subjectNotesData: Record<string, {
       },
       { title: "Notes 3 — SJCIT", source: "SJCIT College", type: "notes", url: "/notes/CSE/Sem3/MATHS/Complete_Notes_SJCIT.pdf" },
       { title: "Notes 4 — ATME", source: "ATME College", type: "notes", url: "/notes/CSE/Sem3/MATHS/Complete_Notes_ATME.pdf" },
-      { title: "Textbooks", source: "Reference Books", type: "textbook", url: "#" },
+      { title: "Textbooks", source: "Reference Books", type: "textbook", url: "/notes/CSE/Sem3/MATHS/Textbook_1.pdf" },
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
