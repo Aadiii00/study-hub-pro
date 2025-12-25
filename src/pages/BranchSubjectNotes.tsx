@@ -173,8 +173,7 @@ function NoteButton({
               <a
                 key={idx}
                 href={module.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                download={module.name}
                 className="w-full flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors duration-200 group"
               >
                 <span className="text-sm font-medium text-foreground">{module.name}</span>
