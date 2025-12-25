@@ -195,11 +195,11 @@ export default function Index() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 animate-fade-in stagger-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 animate-fade-in stagger-3">
               {stats.map((stat, i) => (
-                <div key={i} className="text-center p-4 rounded-2xl glass border border-primary-foreground/10">
-                  <div className="text-3xl md:text-4xl font-bold text-primary-foreground mb-1">{stat.value}</div>
-                  <div className="text-sm text-primary-foreground/60">{stat.label}</div>
+                <div key={i} className="group text-center p-5 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-cyan-500/30 transition-all duration-300">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent mb-1 group-hover:from-cyan-400 group-hover:to-blue-400 transition-all duration-300">{stat.value}</div>
+                  <div className="text-sm text-white/60">{stat.label}</div>
                 </div>
               ))}
             </div>
