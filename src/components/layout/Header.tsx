@@ -40,16 +40,16 @@ export function Header() {
               Home
             </Link>
             <Link
-              to="/notes"
+              to="/notes/first-year"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              Browse Notes
+              First Year
             </Link>
             <Link
-              to="/admin"
+              to="/notes/cse-ise"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              Admin
+              CSE/ISE
             </Link>
           </nav>
 
@@ -96,18 +96,25 @@ export function Header() {
                 Home
               </Link>
               <Link
-                to="/notes"
+                to="/notes/first-year"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Browse Notes
+                First Year
               </Link>
               <Link
-                to="/admin"
+                to="/notes/cse-ise"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Admin
+                CSE/ISE
+              </Link>
+              <Link
+                to="/notes/ece"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                ECE
               </Link>
             </div>
           </nav>
