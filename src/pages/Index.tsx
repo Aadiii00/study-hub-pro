@@ -16,6 +16,17 @@ const categories = [
     isLink: true,
   },
   {
+    id: "cse-ise",
+    name: "CSE / ISE",
+    subtitle: "3rd to 8th Semester",
+    tag: "Computer Science",
+    gradient: "from-indigo-600 via-purple-500 to-violet-400",
+    iconGradient: "from-indigo-400 to-violet-300",
+    stats: "119K+ Downloads",
+    icon: BookOpen,
+    isLink: true,
+  },
+  {
     id: "calculator",
     name: "Calculator",
     subtitle: "SGPA & CGPA",
