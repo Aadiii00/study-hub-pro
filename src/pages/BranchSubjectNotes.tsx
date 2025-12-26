@@ -228,15 +228,23 @@ function NoteButton({
         <div className="bg-card border border-t-0 border-border/50 rounded-b-xl overflow-hidden animate-fade-in">
           <div className="p-4 space-y-2">
             {note.modules!.map((module, idx) => (
-              <a
+              <button
                 key={idx}
-                href={module.url}
-                download={module.name}
+                type="button"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = module.url;
+                  link.target = '_blank';
+                  link.rel = 'noopener noreferrer';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
                 className="w-full flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors duration-200 group"
               >
                 <span className="text-sm font-medium text-foreground">{module.name}</span>
                 <Download className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-              </a>
+              </button>
             ))}
           </div>
         </div>
