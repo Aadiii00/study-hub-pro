@@ -103,7 +103,19 @@ const subjectNotesData: Record<string, {
           { name: "Module 4", url: "/notes/CSE/Sem3/DSA/Module_4_RNSIT.pdf" },
         ]
       },
-      { title: "Notes 3 — DSCE", source: "DSCE College", type: "notes", url: "#" },
+      { 
+        title: "Notes 3 — DSCE", 
+        source: "DSCE College", 
+        type: "notes", 
+        url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem3/DSA/Module_1_DSCE.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem3/DSA/Module_2_DSCE.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem3/DSA/Module_3_DSCE.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem3/DSA/Module_4_DSCE.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem3/DSA/Module_5_DSCE.pdf" },
+        ]
+      },
       { title: "Textbooks", source: "Reference Books", type: "textbook", url: "#" },
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
