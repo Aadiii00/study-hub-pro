@@ -19,21 +19,24 @@ interface NoteItem {
 }
 
 // Subject info with notes from different colleges
-const subjectNotesData: Record<string, {
-  name: string;
-  code: string;
-  semester: number;
-  notes: NoteItem[];
-}> = {
-  "BCS301": {
+const subjectNotesData: Record<
+  string,
+  {
+    name: string;
+    code: string;
+    semester: number;
+    notes: NoteItem[];
+  }
+> = {
+  BCS301: {
     name: "Mathematics for CSE",
     code: "BCS301",
     semester: 3,
     notes: [
-      { 
-        title: "Notes 1 — SVIT", 
-        source: "SVIT College", 
-        type: "notes", 
+      {
+        title: "Notes 1 — SVIT",
+        source: "SVIT College",
+        type: "notes",
         url: "#",
         modules: [
           { name: "Module 1", url: "/notes/CSE/Sem3/MATHS/Module_1_SVIT.pdf" },
@@ -41,12 +44,12 @@ const subjectNotesData: Record<string, {
           { name: "Module 3", url: "/notes/CSE/Sem3/MATHS/Module_3_SVIT.pdf" },
           { name: "Module 4", url: "/notes/CSE/Sem3/MATHS/Module_4_SVIT.pdf" },
           { name: "Module 5", url: "/notes/CSE/Sem3/MATHS/Module_5_SVIT.pdf" },
-        ]
+        ],
       },
-      { 
-        title: "Notes 2 — RNSIT", 
-        source: "RNSIT College", 
-        type: "notes", 
+      {
+        title: "Notes 2 — RNSIT",
+        source: "RNSIT College",
+        type: "notes",
         url: "#",
         modules: [
           { name: "Module 1", url: "/notes/CSE/Sem3/MATHS/Module_1_RNSIT.pdf" },
@@ -54,34 +57,44 @@ const subjectNotesData: Record<string, {
           { name: "Module 3", url: "/notes/CSE/Sem3/MATHS/Module_3_RNSIT.pdf" },
           { name: "Module 4", url: "/notes/CSE/Sem3/MATHS/Module_4_RNSIT.pdf" },
           { name: "Module 5", url: "/notes/CSE/Sem3/MATHS/Module_5_RNSIT.pdf" },
-        ]
+        ],
       },
-      { title: "Notes 3 — SJCIT", source: "SJCIT College", type: "notes", url: "/notes/CSE/Sem3/MATHS/Complete_Notes_SJCIT.pdf" },
-      { title: "Notes 4 — ATME", source: "ATME College", type: "notes", url: "/notes/CSE/Sem3/MATHS/Complete_Notes_ATME.pdf" },
+      {
+        title: "Notes 3 — SJCIT",
+        source: "SJCIT College",
+        type: "notes",
+        url: "/notes/CSE/Sem3/MATHS/Complete_Notes_SJCIT.pdf",
+      },
+      {
+        title: "Notes 4 — ATME",
+        source: "ATME College",
+        type: "notes",
+        url: "/notes/CSE/Sem3/MATHS/Complete_Notes_ATME.pdf",
+      },
       { title: "Textbooks", source: "Reference Books", type: "textbook", url: "/notes/CSE/Sem3/MATHS/Textbook_1.pdf" },
-      { 
-        title: "Model QP with Solution", 
-        source: "VTU Model Papers", 
-        type: "qp", 
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
         url: "#",
         modules: [
           { name: "Model QP 1", url: "/notes/CSE/Sem3/MATHS/Model_QP_1.pdf" },
           { name: "Model QP 2", url: "/notes/CSE/Sem3/MATHS/Model_QP_2.pdf" },
           { name: "BIET Model QP", url: "/notes/CSE/Sem3/MATHS/BIET_Model_QP.pdf" },
           { name: "Question Bank", url: "/notes/CSE/Sem3/MATHS/Question_Bank.pdf" },
-        ]
+        ],
       },
     ],
   },
-  "BCS302": {
+  BCS302: {
     name: "Data Structures and Applications",
     code: "BCS302",
     semester: 3,
     notes: [
-      { 
-        title: "Notes 1 — SVIT", 
-        source: "SVIT College", 
-        type: "notes", 
+      {
+        title: "Notes 1 — SVIT",
+        source: "SVIT College",
+        type: "notes",
         url: "#",
         modules: [
           { name: "Module 1", url: "/notes/CSE/Sem3/DSA/Module_1_SVIT.pdf" },
@@ -89,24 +102,24 @@ const subjectNotesData: Record<string, {
           { name: "Module 3", url: "/notes/CSE/Sem3/DSA/Module_3_SVIT.pdf" },
           { name: "Module 4", url: "/notes/CSE/Sem3/DSA/Module_4_SVIT.pdf" },
           { name: "Module 5", url: "/notes/CSE/Sem3/DSA/Module_5_SVIT.pdf" },
-        ]
+        ],
       },
-      { 
-        title: "Notes 2 — RNSIT", 
-        source: "RNSIT College", 
-        type: "notes", 
+      {
+        title: "Notes 2 — RNSIT",
+        source: "RNSIT College",
+        type: "notes",
         url: "#",
         modules: [
           { name: "Module 1", url: "/notes/CSE/Sem3/DSA/Module_1_RNSIT.pdf" },
           { name: "Module 2", url: "/notes/CSE/Sem3/DSA/Module_2_RNSIT.pdf" },
           { name: "Module 3", url: "/notes/CSE/Sem3/DSA/Module_3_RNSIT.pdf" },
           { name: "Module 4", url: "/notes/CSE/Sem3/DSA/Module_4_RNSIT.pdf" },
-        ]
+        ],
       },
-      { 
-        title: "Notes 3 — DSCE", 
-        source: "DSCE College", 
-        type: "notes", 
+      {
+        title: "Notes 3 — DSCE",
+        source: "DSCE College",
+        type: "notes",
         url: "#",
         modules: [
           { name: "Module 1", url: "/notes/CSE/Sem3/DSA/Module_1_DSCE.pdf" },
@@ -114,13 +127,13 @@ const subjectNotesData: Record<string, {
           { name: "Module 3", url: "/notes/CSE/Sem3/DSA/Module_3_DSCE.pdf" },
           { name: "Module 4", url: "/notes/CSE/Sem3/DSA/Module_4_DSCE.pdf" },
           { name: "Module 5", url: "/notes/CSE/Sem3/DSA/Module_5_DSCE.pdf" },
-        ]
+        ],
       },
-      { title: "Textbooks", source: "Reference Books", type: "textbook", url: "#" },
+
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
-  "BCS303": {
+  BCS303: {
     name: "Digital Design and Computer Organization",
     code: "BCS303",
     semester: 3,
@@ -131,7 +144,7 @@ const subjectNotesData: Record<string, {
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
-  "BCS304": {
+  BCS304: {
     name: "Operating Systems",
     code: "BCS304",
     semester: 3,
@@ -142,7 +155,7 @@ const subjectNotesData: Record<string, {
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
-  "BCS305": {
+  BCS305: {
     name: "Object Oriented Programming with C++ and Java",
     code: "BCS305",
     semester: 3,
@@ -153,7 +166,7 @@ const subjectNotesData: Record<string, {
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
-  "BCSL306": {
+  BCSL306: {
     name: "Data Structures Lab",
     code: "BCSL306",
     semester: 3,
@@ -163,7 +176,7 @@ const subjectNotesData: Record<string, {
       { title: "Viva Questions", source: "Lab Viva Q&A", type: "qp", url: "#" },
     ],
   },
-  "BCS307": {
+  BCS307: {
     name: "Universal Human Values",
     code: "BCS307",
     semester: 3,
@@ -175,13 +188,13 @@ const subjectNotesData: Record<string, {
   },
 };
 
-function NoteButton({ 
-  note, 
-  index, 
+function NoteButton({
+  note,
+  index,
   isExpanded,
   onToggle,
-  onDownload 
-}: { 
+  onDownload,
+}: {
   note: NoteItem;
   index: number;
   isExpanded: boolean;
@@ -190,9 +203,12 @@ function NoteButton({
 }) {
   const getIcon = () => {
     switch (note.type) {
-      case "textbook": return <BookOpen className="w-5 h-5" />;
-      case "qp": return <ClipboardList className="w-5 h-5" />;
-      default: return <FileText className="w-5 h-5" />;
+      case "textbook":
+        return <BookOpen className="w-5 h-5" />;
+      case "qp":
+        return <ClipboardList className="w-5 h-5" />;
+      default:
+        return <FileText className="w-5 h-5" />;
     }
   };
 
@@ -200,7 +216,9 @@ function NoteButton({
   const hasValidUrl = note.url !== "#";
 
   const buttonContent = (
-    <div className={`relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${isExpanded ? "rounded-t-xl" : "rounded-xl"}`}>
+    <div
+      className={`relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${isExpanded ? "rounded-t-xl" : "rounded-xl"}`}
+    >
       {/* Gradient background */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -212,9 +230,7 @@ function NoteButton({
         {getIcon()}
         <span className="text-base">{note.title}</span>
         {hasModules ? (
-          <ChevronDown
-            className={`w-4 h-4 ml-2 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
-          />
+          <ChevronDown className={`w-4 h-4 ml-2 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`} />
         ) : (
           <Download className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2" />
         )}
@@ -225,12 +241,7 @@ function NoteButton({
   return (
     <div className="animate-fade-in" style={{ animationDelay: `${index * 80}ms` }}>
       {hasModules ? (
-        <button
-          type="button"
-          onClick={onToggle}
-          aria-expanded={isExpanded}
-          className="group relative w-full"
-        >
+        <button type="button" onClick={onToggle} aria-expanded={isExpanded} className="group relative w-full">
           {buttonContent}
         </button>
       ) : hasValidUrl ? (
@@ -242,11 +253,7 @@ function NoteButton({
           {buttonContent}
         </button>
       ) : (
-        <button
-          type="button"
-          onClick={() => onDownload(note.url, note.title)}
-          className="group relative w-full"
-        >
+        <button type="button" onClick={() => onDownload(note.url, note.title)} className="group relative w-full">
           {buttonContent}
         </button>
       )}
@@ -399,9 +406,7 @@ export default function BranchSubjectNotes() {
 
           {/* Footer info */}
           <div className="mt-10 text-center animate-fade-in" style={{ animationDelay: "500ms" }}>
-            <p className="text-sm text-muted-foreground">
-              Click on any option above to download the study material
-            </p>
+            <p className="text-sm text-muted-foreground">Click on any option above to download the study material</p>
           </div>
         </div>
       </div>
