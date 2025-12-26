@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { ArrowLeft, Rocket, Download, FileText, BookOpen, ClipboardList, ChevronDown } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 
 interface Module {
@@ -210,9 +211,13 @@ function NoteButton({
           {buttonContent}
         </button>
       ) : hasValidUrl ? (
-        <a href={note.url} download={note.title} className="group relative w-full block">
+        <button
+          type="button"
+          onClick={() => onDownload(note.url, note.title)}
+          className="group relative w-full block text-left"
+        >
           {buttonContent}
-        </a>
+        </button>
       ) : (
         <button
           type="button"
@@ -231,15 +236,7 @@ function NoteButton({
               <button
                 key={idx}
                 type="button"
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = module.url;
-                  link.target = '_blank';
-                  link.rel = 'noopener noreferrer';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
+                onClick={() => onDownload(module.url, `${note.title} — ${module.name}`)}
                 className="w-full flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors duration-200 group"
               >
                 <span className="text-sm font-medium text-foreground">{module.name}</span>
@@ -276,11 +273,42 @@ export default function BranchSubjectNotes() {
     setExpandedIndex(idx >= 0 ? idx : null);
   }, [subjectCode]);
 
-  const handleDownload = (url: string, title: string) => {
+  const filenameFromUrl = (url: string) => {
+    const clean = (url ?? "").split("#")[0].split("?")[0];
+    const base = clean.split("/").filter(Boolean).pop();
+    return base && base.length > 0 ? base : "download.pdf";
+  };
+
+  const handleDownload = async (url: string, title: string) => {
     if (url === "#") {
-      alert(`"${title}" will be available for download soon!`);
-    } else {
-      window.open(url, "_blank");
+      toast("Coming soon", {
+        description: `"${title}" will be available for download soon.`,
+      });
+      return;
+    }
+
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`Download failed (${res.status})`);
+
+      const blob = await res.blob();
+      const blobUrl = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = blobUrl;
+      a.download = filenameFromUrl(url);
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      URL.revokeObjectURL(blobUrl);
+
+      toast.success("Download started", { description: title });
+    } catch (e) {
+      console.error(e);
+      toast.error("Download blocked/failed", {
+        description: "Please try again. If it keeps happening, contact support.",
+      });
     }
   };
 
