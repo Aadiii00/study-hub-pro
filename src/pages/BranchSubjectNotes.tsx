@@ -269,7 +269,7 @@ const subjectNotesData: Record<
     semester: 3,
     notes: [
       { title: "Lab Manual", source: "Official Lab Manual", type: "notes", url: "/notes/CSE/Sem3/DSA/Lab_Manual.pdf" },
-      { title: "Viva Questions", source: "Lab Viva Q&A", type: "qp", url: "#" },
+      { title: "Viva Questions", source: "Lab Viva Q&A", type: "qp", url: "/notes/CSE/Sem3/DSA/Viva_Questions.pdf" },
     ],
   },
   BCS307: {
