@@ -316,6 +316,11 @@ const subjectNotesData: Record<
         source: "VTU Model Papers",
         type: "qp",
         url: "#",
+        modules: [
+          { name: "Lab Manual - SVIT", url: "/notes/CSE/Sem4/MC/Lab_Manual_SVIT.pdf" },
+          { name: "Lab Manual - DSATM", url: "/notes/CSE/Sem4/MC/Lab_Manual_DSATM.pdf" },
+          { name: "Lab Manual - East Point", url: "/notes/CSE/Sem4/MC/Lab_Manual_EastPoint.pdf" },
+        ],
       },
     ],
   },
