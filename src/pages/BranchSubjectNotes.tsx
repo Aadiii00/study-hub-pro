@@ -340,6 +340,13 @@ const subjectNotesData: Record<
         source: "VTU Model Papers",
         type: "qp",
         url: "#",
+        modules: [
+          { name: "Module 1 QB", url: "/notes/CSE/Sem4/DAA/ADA_QB_M1.pdf" },
+          { name: "Module 2 QB", url: "/notes/CSE/Sem4/DAA/ADA_QB_M2.pdf" },
+          { name: "Module 3 QB", url: "/notes/CSE/Sem4/DAA/ADA_QB_M3.pdf" },
+          { name: "Module 4 QB", url: "/notes/CSE/Sem4/DAA/ADA_QB_M4.pdf" },
+          { name: "Module 1 Extra", url: "/notes/CSE/Sem4/DAA/Module_1_QB.pdf" },
+        ],
       },
     ],
   },
