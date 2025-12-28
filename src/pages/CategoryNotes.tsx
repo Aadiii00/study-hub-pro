@@ -17,13 +17,13 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
       { code: "BCS307", name: "Universal Human Values", shortName: "UHV" },
     ],
     4: [
-      { code: "BCS401", name: "Microcontrollers", shortName: "MC" },
-      { code: "BCS402", name: "Design and Analysis of Algorithms", shortName: "DAA" },
+      { code: "BCS401", name: "Microcontrollers", shortName: "MFC" },
+      { code: "BCS402", name: "Analysis and design of Algorithms", shortName: "ADA" },
       { code: "BCS403", name: "Database Management Systems", shortName: "DBMS" },
-      { code: "BCS404", name: "Computer Organization and Architecture", shortName: "COA" },
+      { code: "BCS404", name: "Biology for computer engineers", shortName: "COA" },
       { code: "BCS405", name: "Software Engineering", shortName: "SE" },
       { code: "BCSL406", name: "Database Management Systems Lab", shortName: "DBMS Lab" },
-      { code: "BCS407", name: "Constitution of India and Professional Ethics", shortName: "CIPE" },
+      { code: "BCS407", name: "discrete mathematical structures", shortName: "CIPE" },
     ],
     5: [
       { code: "BCS501", name: "Computer Networks", shortName: "CN" },
@@ -52,7 +52,7 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
       { code: "BCS804", name: "Internship", shortName: "Internship" },
     ],
   },
-  "ece": {
+  ece: {
     3: [
       { code: "BEC301", name: "Mathematics for EC", shortName: "Maths" },
       { code: "BEC302", name: "Network Analysis", shortName: "NA" },
@@ -71,7 +71,7 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
     7: [],
     8: [],
   },
-  "eee": {
+  eee: {
     3: [
       { code: "BEE301", name: "Mathematics for EE", shortName: "Maths" },
       { code: "BEE302", name: "Electric Circuit Analysis", shortName: "ECA" },
@@ -84,7 +84,7 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
     7: [],
     8: [],
   },
-  "civil": {
+  civil: {
     3: [
       { code: "BCV301", name: "Engineering Mathematics III", shortName: "Maths" },
       { code: "BCV302", name: "Strength of Materials", shortName: "SOM" },
@@ -97,7 +97,7 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
     7: [],
     8: [],
   },
-  "mech": {
+  mech: {
     3: [
       { code: "BME301", name: "Engineering Mathematics III", shortName: "Maths" },
       { code: "BME302", name: "Materials Science", shortName: "MS" },
@@ -114,10 +114,10 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
 
 const categoryInfo: Record<string, { name: string; semesters: number[]; gradient: string }> = {
   "cse-ise": { name: "CSE / ISE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-indigo-600 to-violet-500" },
-  "ece": { name: "ECE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-rose-600 to-orange-500" },
-  "eee": { name: "EEE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-amber-600 to-lime-500" },
-  "civil": { name: "Civil", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-slate-600 to-zinc-500" },
-  "mech": { name: "Mechanical", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-emerald-600 to-cyan-500" },
+  ece: { name: "ECE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-rose-600 to-orange-500" },
+  eee: { name: "EEE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-amber-600 to-lime-500" },
+  civil: { name: "Civil", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-slate-600 to-zinc-500" },
+  mech: { name: "Mechanical", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-emerald-600 to-cyan-500" },
 };
 
 const semesterGradients = [
@@ -139,36 +139,42 @@ const subjectGradients = [
   "from-fuchsia-500 to-purple-500",
 ];
 
-function SemesterCard({ 
-  semester, 
-  index, 
+function SemesterCard({
+  semester,
+  index,
   onClick,
   isActive,
-  subjectCount
-}: { 
-  semester: number; 
-  index: number; 
+  subjectCount,
+}: {
+  semester: number;
+  index: number;
   onClick: () => void;
   isActive: boolean;
   subjectCount: number;
 }) {
   const gradient = semesterGradients[index % semesterGradients.length];
-  
+
   return (
     <button
       onClick={onClick}
       className={`group relative block w-full text-left animate-fade-in transition-all duration-300 ${
-        isActive ? 'scale-[1.02]' : 'hover:scale-[1.02]'
+        isActive ? "scale-[1.02]" : "hover:scale-[1.02]"
       }`}
       style={{ animationDelay: `${index * 80}ms` }}
     >
-      <div className={`relative overflow-hidden rounded-2xl p-1 ${isActive ? 'ring-2 ring-primary ring-offset-2 ring-offset-background' : ''}`}>
-        <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-300`} />
-        
+      <div
+        className={`relative overflow-hidden rounded-2xl p-1 ${isActive ? "ring-2 ring-primary ring-offset-2 ring-offset-background" : ""}`}
+      >
+        <div
+          className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-300`}
+        />
+
         <div className="relative bg-card/90 backdrop-blur-sm rounded-xl p-5 border border-border/50 group-hover:border-transparent transition-all duration-300">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-bold text-lg shadow-lg`}>
+              <div
+                className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-bold text-lg shadow-lg`}
+              >
                 {semester}
               </div>
               <div>
@@ -176,7 +182,9 @@ function SemesterCard({
                 <p className="text-sm text-muted-foreground">{subjectCount} subjects</p>
               </div>
             </div>
-            <ChevronRight className={`w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 ${isActive ? 'text-primary rotate-90' : ''}`} />
+            <ChevronRight
+              className={`w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 ${isActive ? "text-primary rotate-90" : ""}`}
+            />
           </div>
         </div>
       </div>
@@ -204,23 +212,27 @@ function SubjectCard({
       style={{ animationDelay: `${index * 60}ms` }}
     >
       <div className="relative overflow-hidden rounded-2xl p-1 transition-all duration-300 hover:scale-[1.02]">
-        <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-300`} />
-        
+        <div
+          className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-300`}
+        />
+
         <div className="relative bg-card/90 backdrop-blur-sm rounded-xl p-5 border border-border/50 group-hover:border-transparent transition-all duration-300">
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-start gap-4 flex-1">
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center text-white shadow-lg flex-shrink-0`}>
+              <div
+                className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center text-white shadow-lg flex-shrink-0`}
+              >
                 <FolderOpen className="w-5 h-5" />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-xs text-muted-foreground font-mono mb-1">{subject.code}</p>
-                <h3 className="font-semibold text-foreground leading-tight mb-1 line-clamp-2">
-                  {subject.name}
-                </h3>
+                <h3 className="font-semibold text-foreground leading-tight mb-1 line-clamp-2">{subject.name}</h3>
                 <p className="text-sm text-muted-foreground">Click to view notes</p>
               </div>
             </div>
-            <div className={`px-4 py-2 rounded-lg bg-gradient-to-r ${gradient} text-white text-sm font-medium shadow-lg`}>
+            <div
+              className={`px-4 py-2 rounded-lg bg-gradient-to-r ${gradient} text-white text-sm font-medium shadow-lg`}
+            >
               <Download className="w-4 h-4 inline mr-1" />
               View
             </div>
@@ -246,7 +258,6 @@ export default function CategoryNotes() {
     }
   };
 
-
   if (!info) {
     return (
       <Layout>
@@ -254,7 +265,10 @@ export default function CategoryNotes() {
           <FileX className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
           <h2 className="text-2xl font-bold mb-2">Category not found</h2>
           <Button asChild variant="outline" className="mt-4">
-            <Link to="/"><ArrowLeft className="h-4 w-4 mr-2" />Back to Home</Link>
+            <Link to="/">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Home
+            </Link>
           </Button>
         </div>
       </Layout>
@@ -272,9 +286,11 @@ export default function CategoryNotes() {
               Back to Home
             </Link>
           </Button>
-          
+
           <div className="flex items-center gap-4">
-            <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${info.gradient} flex items-center justify-center shadow-lg`}>
+            <div
+              className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${info.gradient} flex items-center justify-center shadow-lg`}
+            >
               <BookOpen className="w-7 h-7 text-white" />
             </div>
             <div>
@@ -302,7 +318,9 @@ export default function CategoryNotes() {
         {selectedSemester && (
           <div className="animate-fade-in">
             <div className="flex items-center gap-3 mb-6">
-              <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${semesterGradients[(selectedSemester - 3) % semesterGradients.length]} flex items-center justify-center text-white font-bold`}>
+              <div
+                className={`w-10 h-10 rounded-lg bg-gradient-to-br ${semesterGradients[(selectedSemester - 3) % semesterGradients.length]} flex items-center justify-center text-white font-bold`}
+              >
                 {selectedSemester}
               </div>
               <div>
@@ -315,9 +333,7 @@ export default function CategoryNotes() {
               <div className="text-center py-16 bg-muted/30 rounded-2xl border border-border/50">
                 <FileX className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">No subjects added yet</h3>
-                <p className="text-muted-foreground text-sm">
-                  Subjects for this semester will be added soon
-                </p>
+                <p className="text-muted-foreground text-sm">Subjects for this semester will be added soon</p>
               </div>
             ) : (
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
