@@ -276,11 +276,13 @@ const subjectNotesData: Record<
     name: "Universal Human Values",
     code: "BCS307",
     semester: 3,
-    notes: [{ title: "Question Bank", source: "UHV Question Bank", type: "qp", url: "/notes/CSE/Sem3/UHV/Question_Bank.pdf" }],
+    notes: [
+      { title: "Question Bank", source: "UHV Question Bank", type: "qp", url: "/notes/CSE/Sem3/UHV/Question_Bank.pdf" },
+    ],
   },
   // Semester 4 Subjects
   BCS401: {
-    name: "Mathematical Foundation for Computing",
+    name: "Microcontrollers",
     code: "BCS401",
     semester: 4,
     notes: [
@@ -305,7 +307,7 @@ const subjectNotesData: Record<
     ],
   },
   BCS402: {
-    name: "Design and Analysis of Algorithms",
+    name: "Analysis and design of Algorithms",
     code: "BCS402",
     semester: 4,
     notes: [
@@ -376,7 +378,7 @@ const subjectNotesData: Record<
     ],
   },
   BCS404: {
-    name: "Computer Organization and Architecture",
+    name: "Biology for Computer enginners",
     code: "BCS404",
     semester: 4,
     notes: [
@@ -401,7 +403,7 @@ const subjectNotesData: Record<
     ],
   },
   BCS405: {
-    name: "Software Engineering",
+    name: "Discrete Mathemathical structures",
     code: "BCS405",
     semester: 4,
     notes: [
