@@ -130,9 +130,18 @@ const subjectNotesData: Record<
         ],
       },
 
-      { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
-    ],
-  },
+     {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+        modules: [
+          { name: "Module 1 question bank", url: "/notes/CSE/Sem3/DSA/DS_M1_Question_Bank.pdf" },
+          { name: "Module 2 question bank", url:"/notes/CSE/Sem3/DSA/DS_M2_Question_Bank.pdf"},
+          { name: "Module 3 question bank", url:"/notes/CSE/Sem3/DSA/DS_M3_Question_Bank.pdf" },
+          { name: "Module 4 question bank", url: "/notes/CSE/Sem3/DSA/DS_M4_Question_Bank.pdf" },
+        ],
+      },
   BCS303: {
     name: "Digital Design and Computer Organization",
     code: "BCS303",
