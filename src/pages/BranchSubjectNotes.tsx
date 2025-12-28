@@ -130,15 +130,15 @@ const subjectNotesData: Record<
         ],
       },
 
-     {
+      {
         title: "Model QP with Solution",
         source: "VTU Model Papers",
         type: "qp",
         url: "#",
         modules: [
           { name: "Module 1 question bank", url: "/notes/CSE/Sem3/DSA/DS_M1_Question_Bank.pdf" },
-          { name: "Module 2 question bank", url:"/notes/CSE/Sem3/DSA/DS_M2_Question_Bank.pdf"},
-          { name: "Module 3 question bank", url:"/notes/CSE/Sem3/DSA/DS_M3_Question_Bank.pdf" },
+          { name: "Module 2 question bank", url: "/notes/CSE/Sem3/DSA/DS_M2_Question_Bank.pdf" },
+          { name: "Module 3 question bank", url: "/notes/CSE/Sem3/DSA/DS_M3_Question_Bank.pdf" },
           { name: "Module 4 question bank", url: "/notes/CSE/Sem3/DSA/DS_M4_Question_Bank.pdf" },
         ],
       },
@@ -150,7 +150,7 @@ const subjectNotesData: Record<
     semester: 3,
     notes: [
       {
-        title: "Notes 1 — SVIT",
+        title: "Notes 1",
         source: "SVIT College",
         type: "notes",
         url: "#",
@@ -163,7 +163,7 @@ const subjectNotesData: Record<
         ],
       },
       {
-        title: "Notes 2 — RNSIT",
+        title: "Notes 2 ",
         source: "RNSIT College",
         type: "notes",
         url: "#",
@@ -192,8 +192,8 @@ const subjectNotesData: Record<
     code: "BCS304",
     semester: 3,
     notes: [
-      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
-      { title: "Notes 2 — RNSIT", source: "RNSIT College", type: "notes", url: "#" },
+      { title: "Notes 1 ", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2 ", source: "RNSIT College", type: "notes", url: "#" },
       { title: "Textbooks", source: "Reference Books", type: "textbook", url: "#" },
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
