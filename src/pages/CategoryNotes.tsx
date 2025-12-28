@@ -17,13 +17,13 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
       { code: "BCS307", name: "Universal Human Values", shortName: "UHV" },
     ],
     4: [
-      { code: "BCS401", name: "Analysis and Design of Algorithms", shortName: "ADA" },
-      { code: "BCS402", name: "Microcontrollers", shortName: "MC" },
+      { code: "BCS401", name: "Mathematical Foundation for Computing", shortName: "MFC" },
+      { code: "BCS402", name: "Design and Analysis of Algorithms", shortName: "DAA" },
       { code: "BCS403", name: "Database Management Systems", shortName: "DBMS" },
-      { code: "BCS404", name: "Discrete Mathematical Structures", shortName: "DMS" },
+      { code: "BCS404", name: "Computer Organization and Architecture", shortName: "COA" },
       { code: "BCS405", name: "Software Engineering", shortName: "SE" },
-      { code: "BCSL406", name: "ADA Lab", shortName: "ADA Lab" },
-      { code: "BCS407", name: "Biology for Engineers", shortName: "BFE" },
+      { code: "BCSL406", name: "Database Management Systems Lab", shortName: "DBMS Lab" },
+      { code: "BCS407", name: "Constitution of India and Professional Ethics", shortName: "CIPE" },
     ],
     5: [
       { code: "BCS501", name: "Computer Networks", shortName: "CN" },
