@@ -269,7 +269,6 @@ const subjectNotesData: Record<
     semester: 3,
     notes: [
       { title: "Lab Manual", source: "Official Lab Manual", type: "notes", url: "#" },
-      { title: "Lab Programs with Output", source: "Complete Programs", type: "notes", url: "#" },
       { title: "Viva Questions", source: "Lab Viva Q&A", type: "qp", url: "#" },
     ],
   },
