@@ -17,7 +17,7 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
       { code: "BCS307", name: "Universal Human Values", shortName: "UHV" },
     ],
     4: [
-      { code: "BCS401", name: "Mathematical Foundation for Computing", shortName: "MFC" },
+      { code: "BCS401", name: "Microcontrollers", shortName: "MC" },
       { code: "BCS402", name: "Design and Analysis of Algorithms", shortName: "DAA" },
       { code: "BCS403", name: "Database Management Systems", shortName: "DBMS" },
       { code: "BCS404", name: "Computer Organization and Architecture", shortName: "COA" },
