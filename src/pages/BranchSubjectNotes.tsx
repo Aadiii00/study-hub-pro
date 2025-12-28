@@ -192,7 +192,7 @@ const subjectNotesData: Record<
     code: "BCS304",
     semester: 3,
     notes: [
-      { title: "Notes 1 ", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 1 ", source: "SVIT College", type: "notes", url: "/notes/CSE/Sem3/OS/All_Modules_SVIT.pdf" },
       { title: "Notes 2 ", source: "RNSIT College", type: "notes", url: "#" },
       { title: "Textbooks", source: "Reference Books", type: "textbook", url: "#" },
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
