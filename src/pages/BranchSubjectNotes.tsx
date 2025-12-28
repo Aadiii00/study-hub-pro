@@ -380,6 +380,13 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem4/DAA/Module_1_Notes1.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem4/DAA/Module_2_Notes1.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem4/DAA/Module_3_Notes1.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem4/DAA/Module_4_Notes1.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem4/DAA/Module_5_Notes1.pdf" },
+        ],
       },
       {
         title: "Notes 2",
