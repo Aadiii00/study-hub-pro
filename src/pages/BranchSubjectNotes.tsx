@@ -223,7 +223,19 @@ const subjectNotesData: Record<
     code: "BCS305",
     semester: 3,
     notes: [
-      { title: "Notes for C++", source: "SVIT College", type: "notes", url: "#" },
+      {
+        title: "Notes for C++",
+        source: "C++ Modules",
+        type: "notes",
+        url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem3/CPP/Module_1.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem3/CPP/Module_2.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem3/CPP/Module_3.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem3/CPP/Module_4.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem3/CPP/Module_5.pdf" },
+        ],
+      },
       { title: "Notes for JAVA", source: "RNSIT College", type: "notes", url: "#" },
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
