@@ -401,7 +401,7 @@ export default function BranchSubjectNotes() {
     return base && base.length > 0 ? base : "download.pdf";
   };
 
-  const handleDownload = async (url: string, title: string) => {
+  const handleDownload = (url: string, title: string) => {
     if (url === "#") {
       toast("Coming soon", {
         description: `"${title}" will be available for download soon.`,
@@ -409,29 +409,16 @@ export default function BranchSubjectNotes() {
       return;
     }
 
-    try {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`Download failed (${res.status})`);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filenameFromUrl(url);
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
 
-      const blob = await res.blob();
-      const blobUrl = URL.createObjectURL(blob);
-
-      const a = document.createElement("a");
-      a.href = blobUrl;
-      a.download = filenameFromUrl(url);
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-
-      URL.revokeObjectURL(blobUrl);
-
-      toast.success("Download started", { description: title });
-    } catch (e) {
-      console.error(e);
-      toast.error("Download blocked/failed", {
-        description: "Please try again. If it keeps happening, contact support.",
-      });
-    }
+    toast.success("Download started", { description: title });
   };
 
   const toggleExpand = (index: number) => {
