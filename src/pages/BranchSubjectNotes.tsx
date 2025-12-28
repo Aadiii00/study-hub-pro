@@ -175,7 +175,6 @@ const subjectNotesData: Record<
           { name: "Module 5", url: "/notes/CSE/Sem3/DDCO/Module_5_RNSIT.pdf" },
         ],
       },
-      { title: "Textbooks", source: "Reference Books", type: "textbook", url: "#" },
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
