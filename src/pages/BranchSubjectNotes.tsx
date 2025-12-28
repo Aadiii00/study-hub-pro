@@ -142,6 +142,8 @@ const subjectNotesData: Record<
           { name: "Module 4 question bank", url: "/notes/CSE/Sem3/DSA/DS_M4_Question_Bank.pdf" },
         ],
       },
+    ],
+  },
   BCS303: {
     name: "Digital Design and Computer Organization",
     code: "BCS303",
