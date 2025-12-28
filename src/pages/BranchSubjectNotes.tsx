@@ -268,7 +268,7 @@ const subjectNotesData: Record<
     code: "BCSL306",
     semester: 3,
     notes: [
-      { title: "Lab Manual", source: "Official Lab Manual", type: "notes", url: "#" },
+      { title: "Lab Manual", source: "Official Lab Manual", type: "notes", url: "/notes/CSE/Sem3/DSA/Lab_Manual.pdf" },
       { title: "Viva Questions", source: "Lab Viva Q&A", type: "qp", url: "#" },
     ],
   },
