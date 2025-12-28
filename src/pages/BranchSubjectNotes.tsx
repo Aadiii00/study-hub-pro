@@ -206,7 +206,16 @@ const subjectNotesData: Record<
           { name: "Module 5", url: "/notes/CSE/Sem3/OS/Module_5_RNSIT.pdf" },
         ],
       },
-      { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+        modules: [
+          { name: "Question Bank", url: "/notes/CSE/Sem3/OS/Question_Bank.pdf" },
+          { name: "Model Paper Solution", url: "/notes/CSE/Sem3/OS/Model_Paper_Solution.pdf" },
+        ],
+      },
     ],
   },
   BCS305: {
