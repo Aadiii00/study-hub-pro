@@ -223,9 +223,8 @@ const subjectNotesData: Record<
     code: "BCS305",
     semester: 3,
     notes: [
-      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
-      { title: "Notes 2 — RNSIT", source: "RNSIT College", type: "notes", url: "#" },
-      { title: "Textbooks", source: "Reference Books", type: "textbook", url: "#" },
+      { title: "Notes for C++", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes for JAVA", source: "RNSIT College", type: "notes", url: "#" },
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
