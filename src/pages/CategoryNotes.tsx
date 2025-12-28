@@ -22,7 +22,6 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
       { code: "BCS403", name: "Database Management Systems", shortName: "DBMS" },
       { code: "BCS404", name: "Biology for computer engineers", shortName: "COA" },
       { code: "BCS405", name: "Software Engineering", shortName: "SE" },
-      { code: "BCSL406", name: "Database Management Systems Lab", shortName: "DBMS Lab" },
       { code: "BCS407", name: "discrete mathematical structures", shortName: "CIPE" },
     ],
     5: [
