@@ -192,9 +192,20 @@ const subjectNotesData: Record<
     code: "BCS304",
     semester: 3,
     notes: [
-      { title: "Notes 1 ", source: "SVIT College", type: "notes", url: "#" },
-      { title: "Notes 2 ", source: "RNSIT College", type: "notes", url: "#" },
-
+      { title: "Notes 1", source: "SVIT College", type: "notes", url: "/notes/CSE/Sem3/OS/All_Modules_SVIT.pdf" },
+      {
+        title: "Notes 2",
+        source: "RNSIT College",
+        type: "notes",
+        url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem3/OS/Module_1_RNSIT.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem3/OS/Module_2_RNSIT.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem3/OS/Module_3_RNSIT.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem3/OS/Module_4_RNSIT.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem3/OS/Module_5_RNSIT.pdf" },
+        ],
+      },
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
