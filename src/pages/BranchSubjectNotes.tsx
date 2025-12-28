@@ -250,7 +250,17 @@ const subjectNotesData: Record<
           { name: "Module 5 Part 2", url: "/notes/CSE/Sem3/JAVA/Module_5_Part_2.pdf" },
         ],
       },
-      { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+        modules: [
+          { name: "Solved Model QP", url: "/notes/CSE/Sem3/CPP/OOP_Java_Solved_Model_QP.pdf" },
+          { name: "Java Module Wise QB", url: "/notes/CSE/Sem3/CPP/Java_Module_Wise_QB.pdf" },
+          { name: "OOP Java Module Wise QB", url: "/notes/CSE/Sem3/CPP/OOP_Java_Module_Wise_QB.pdf" },
+        ],
+      },
     ],
   },
   BCSL306: {
