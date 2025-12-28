@@ -406,6 +406,11 @@ const subjectNotesData: Record<
         source: "VTU Model Papers",
         type: "qp",
         url: "#",
+        modules: [
+          { name: "Lab Manual - MIT", url: "/notes/CSE/Sem4/DBMS/Lab_Manual_MIT.pdf" },
+          { name: "Lab Manual - RNSIT", url: "/notes/CSE/Sem4/DBMS/Lab_Manual_RNSIT.pdf" },
+          { name: "Lab Manual - SVIT", url: "/notes/CSE/Sem4/DBMS/Lab_Manual_SVIT.pdf" },
+        ],
       },
     ],
   },
