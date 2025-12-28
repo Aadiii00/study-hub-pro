@@ -276,7 +276,7 @@ const subjectNotesData: Record<
     name: "Universal Human Values",
     code: "BCS307",
     semester: 3,
-    notes: [{ title: "Question Bank", source: "UHV Question Bank", type: "qp", url: "/notes/CSE/Sem3/OS/Question_Bank.pdf" }],
+    notes: [{ title: "Question Bank", source: "UHV Question Bank", type: "qp", url: "/notes/CSE/Sem3/UHV/Question_Bank.pdf" }],
   },
 };
 
