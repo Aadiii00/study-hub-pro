@@ -278,6 +278,170 @@ const subjectNotesData: Record<
     semester: 3,
     notes: [{ title: "Question Bank", source: "UHV Question Bank", type: "qp", url: "/notes/CSE/Sem3/UHV/Question_Bank.pdf" }],
   },
+  // Semester 4 Subjects
+  BCS401: {
+    name: "Mathematical Foundation for Computing",
+    code: "BCS401",
+    semester: 4,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BCS402: {
+    name: "Design and Analysis of Algorithms",
+    code: "BCS402",
+    semester: 4,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BCS403: {
+    name: "Database Management Systems",
+    code: "BCS403",
+    semester: 4,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BCS404: {
+    name: "Computer Organization and Architecture",
+    code: "BCS404",
+    semester: 4,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BCS405: {
+    name: "Software Engineering",
+    code: "BCS405",
+    semester: 4,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BCSL406: {
+    name: "Database Management Systems Lab",
+    code: "BCSL406",
+    semester: 4,
+    notes: [
+      {
+        title: "Lab Manual",
+        source: "Official Lab Manual",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Viva Questions",
+        source: "Lab Viva Q&A",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BCS407: {
+    name: "Constitution of India and Professional Ethics",
+    code: "BCS407",
+    semester: 4,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Question Bank",
+        source: "VTU Question Bank",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
 };
 
 function NoteButton({
