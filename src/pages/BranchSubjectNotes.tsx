@@ -276,11 +276,7 @@ const subjectNotesData: Record<
     name: "Universal Human Values",
     code: "BCS307",
     semester: 3,
-    notes: [
-      { title: "Notes 1 — Complete", source: "All Modules", type: "notes", url: "#" },
-      { title: "Important Questions", source: "Frequently Asked", type: "qp", url: "#" },
-      { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
-    ],
+    notes: [{ title: "question bank", source: "All Modules", type: "notes", url: "#" }],
   },
 };
 
