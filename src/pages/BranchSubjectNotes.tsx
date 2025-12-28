@@ -288,9 +288,15 @@ const subjectNotesData: Record<
     notes: [
       {
         title: "Notes 1",
-        source: "College Notes",
+        source: "SVIT College",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem4/MC/Module_1_SVIT.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem4/MC/Module_2_SVIT.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem4/MC/Module_3_SVIT.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem4/MC/Module_4_SVIT.pdf" },
+        ],
       },
       {
         title: "Notes 2",
