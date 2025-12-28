@@ -149,7 +149,19 @@ const subjectNotesData: Record<
     code: "BCS303",
     semester: 3,
     notes: [
-      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      {
+        title: "Notes 1 — SVIT",
+        source: "SVIT College",
+        type: "notes",
+        url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem3/DDCO/Module1.pdf" },
+          { name: "Module 2", url:"/notes/CSE/Sem3/DDCO/Module2.pdf" },
+          { name: "Module 3", url:"/notes/CSE/Sem3/DDCO/Module3.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem3/DDCO/Module4.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem3/DDCO/Module5.pdf" },
+        ],
+      },
       { title: "Notes 2 — RNSIT", source: "RNSIT College", type: "notes", url: "#" },
       { title: "Textbooks", source: "Reference Books", type: "textbook", url: "#" },
       { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
