@@ -175,7 +175,16 @@ const subjectNotesData: Record<
           { name: "Module 5", url: "/notes/CSE/Sem3/DDCO/Module_5_RNSIT.pdf" },
         ],
       },
-      { title: "Model QP with Solution", source: "VTU Model Papers", type: "qp", url: "#" },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+        modules: [
+          { name: "Module Wise QB", url: "/notes/CSE/Sem3/DDCO/Module_Wise_QB.pdf" },
+          { name: "QB With Solutions", url: "/notes/CSE/Sem3/DDCO/QB_With_Solutions.pdf" },
+        ],
+      },
     ],
   },
   BCS304: {
