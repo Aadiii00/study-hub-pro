@@ -563,6 +563,10 @@ const subjectNotesData: Record<
         source: "VTU Model Papers",
         type: "qp",
         url: "#",
+        modules: [
+          { name: "Model QP Solution", url: "/notes/CSE/Sem5/BCS501/Model_QP_Solution.pdf" },
+          { name: "Question Bank", url: "/notes/CSE/Sem5/BCS501/Question_Bank.pdf" },
+        ],
       },
     ],
   },
