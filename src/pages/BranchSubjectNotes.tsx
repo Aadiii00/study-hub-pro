@@ -939,6 +939,10 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem6/BIKS609/Module_1_IKS.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem6/BIKS609/Module_2_IKS.pdf" },
+        ],
       },
       {
         title: "Notes 2",
