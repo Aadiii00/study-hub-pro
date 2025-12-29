@@ -776,6 +776,31 @@ const subjectNotesData: Record<
       },
     ],
   },
+  BCS515B: {
+    name: "Artificial Intelligence",
+    code: "BCS515B",
+    semester: 5,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Question Bank",
+        source: "VTU Question Bank",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
 };
 
 function NoteButton({
