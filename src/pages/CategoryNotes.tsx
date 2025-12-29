@@ -25,11 +25,13 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
       { code: "BCS407", name: "discrete mathematical structures", shortName: "CIPE" },
     ],
     5: [
-      { code: "BCS501", name: "Computer Networks", shortName: "CN" },
-      { code: "BCS502", name: "Theory of Computation", shortName: "TOC" },
-      { code: "BCS503", name: "Artificial Intelligence", shortName: "AI" },
-      { code: "BCS504", name: "Web Technologies", shortName: "WT" },
-      { code: "BCSL505", name: "Computer Networks Lab", shortName: "CN Lab" },
+      { code: "BCS501", name: "Software Engineering & Project Management", shortName: "SEPM" },
+      { code: "BCS502", name: "Computer Networks", shortName: "CN" },
+      { code: "BCS503", name: "Theory of Computation", shortName: "TOC" },
+      { code: "BCSL504", name: "Web Technology Lab", shortName: "WT Lab" },
+      { code: "BRMK557", name: "Research Methodology and IPR", shortName: "RM & IPR" },
+      { code: "BESK508", name: "Environmental Studies", shortName: "EVS" },
+      { code: "BAIL504", name: "Data Visualization Lab", shortName: "DV Lab" },
     ],
     6: [
       { code: "BCS601", name: "System Software and Compiler Design", shortName: "SSCD" },
