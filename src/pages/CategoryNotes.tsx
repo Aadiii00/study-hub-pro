@@ -32,6 +32,7 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
       { code: "BRMK557", name: "Research Methodology and IPR", shortName: "RM & IPR" },
       { code: "BESK508", name: "Environmental Studies", shortName: "EVS" },
       { code: "BAIL504", name: "Data Visualization Lab", shortName: "DV Lab" },
+      { code: "BCS515B", name: "Artificial Intelligence", shortName: "AI" },
     ],
     6: [
       { code: "BCS601", name: "System Software and Compiler Design", shortName: "SSCD" },
