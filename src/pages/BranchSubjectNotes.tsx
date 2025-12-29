@@ -671,22 +671,15 @@ const subjectNotesData: Record<
     semester: 5,
     notes: [
       {
-        title: "Notes 1",
-        source: "College Notes",
+        title: "Lab Manual",
+        source: "College Lab Manuals",
         type: "notes",
         url: "#",
-      },
-      {
-        title: "Notes 2",
-        source: "College Notes",
-        type: "notes",
-        url: "#",
-      },
-      {
-        title: "Model QP with Solution",
-        source: "VTU Model Papers",
-        type: "qp",
-        url: "#",
+        modules: [
+          { name: "Lab Manual - ATME", url: "/notes/CSE/Sem5/BCSL504/Lab_Manual_ATME.pdf" },
+          { name: "Lab Manual - EPCET", url: "/notes/CSE/Sem5/BCSL504/Lab_Manual_EPCET.pdf" },
+          { name: "Web Technology Programs", url: "/notes/CSE/Sem5/BCSL504/Web_Technology_Programs.pdf" },
+        ],
       },
     ],
   },
