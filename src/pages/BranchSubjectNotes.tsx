@@ -800,6 +800,9 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "AI Notes", url: "/notes/CSE/Sem5/BCS515B/AI_Notes.pdf" },
+        ],
       },
       {
         title: "Question Bank",
