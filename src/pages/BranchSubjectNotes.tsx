@@ -955,6 +955,10 @@ const subjectNotesData: Record<
         source: "VTU Question Bank",
         type: "qp",
         url: "#",
+        modules: [
+          { name: "IA 2 QB Answers", url: "/notes/CSE/Sem6/BIKS609/IKS_IA_2_QB_Answers.pdf" },
+          { name: "IKS Assignment", url: "/notes/CSE/Sem6/BIKS609/IKS_Assignment.pdf" },
+        ],
       },
     ],
   },
