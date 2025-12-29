@@ -849,6 +849,12 @@ const subjectNotesData: Record<
         source: "VTU Question Bank",
         type: "qp",
         url: "#",
+        modules: [
+          { name: "IA1 Question Bank", url: "/notes/CSE/Sem6/BCS601/CC_IA1_Question_Bank.pdf" },
+          { name: "IA2 Question Bank", url: "/notes/CSE/Sem6/BCS601/CC_IA2_Question_Bank.pdf" },
+          { name: "Important Questions", url: "/notes/CSE/Sem6/BCS601/BCS601_Imp_Questions.pdf" },
+          { name: "QB Module 1 & 2", url: "/notes/CSE/Sem6/BCS601/QB_Module_1_2.pdf" },
+        ],
       },
     ],
   },
