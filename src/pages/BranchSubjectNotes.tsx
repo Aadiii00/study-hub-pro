@@ -894,6 +894,12 @@ const subjectNotesData: Record<
         source: "VTU Question Bank",
         type: "qp",
         url: "#",
+        modules: [
+          { name: "Question Bank 1", url: "/notes/CSE/Sem6/BCS602/Question_Bank_1.pdf" },
+          { name: "Question Bank 2", url: "/notes/CSE/Sem6/BCS602/Question_Bank_2.pdf" },
+          { name: "Question Bank 3", url: "/notes/CSE/Sem6/BCS602/Question_Bank_3.pdf" },
+          { name: "Extra Problems", url: "/notes/CSE/Sem6/BCS602/Extra_Problems.pdf" },
+        ],
       },
     ],
   },
