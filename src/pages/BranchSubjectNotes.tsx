@@ -1040,7 +1040,7 @@ const subjectNotesData: Record<
         title: "Lab Manual",
         source: "College Notes",
         type: "notes",
-        url: "#",
+        url: "/notes/CSE/Sem6/BCSL657B/React_Lab_Manual.pdf",
       },
     ],
   },
