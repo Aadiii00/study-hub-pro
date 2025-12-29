@@ -836,6 +836,13 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem6/BCS601/CC_Module_1.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem6/BCS601/CC_Module_2.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem6/BCS601/CC_Module_3.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem6/BCS601/CC_Module_4.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem6/BCS601/CC_Module_5.pdf" },
+        ],
       },
       {
         title: "Question Bank",
