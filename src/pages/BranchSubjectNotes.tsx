@@ -593,6 +593,16 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem5/BCS502/Module_1_Notes2.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem5/BCS502/Module_2_Notes2.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem5/BCS502/Module_3_Notes2.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem5/BCS502/Module_4_Notes2.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem5/BCS502/Module_5_Notes2.pdf" },
+          { name: "Module 1 (Alt)", url: "/notes/CSE/Sem5/BCS502/Module_1_Notes2_Alt.pdf" },
+          { name: "Module 2 (Alt)", url: "/notes/CSE/Sem5/BCS502/Module_2_Notes2_Alt.pdf" },
+          { name: "Module 3 (Alt)", url: "/notes/CSE/Sem5/BCS502/Module_3_Notes2_Alt.pdf" },
+        ],
       },
       {
         title: "Model QP with Solution",
