@@ -526,6 +526,182 @@ const subjectNotesData: Record<
       },
     ],
   },
+  // 5th Semester CSE Subjects
+  BCS501: {
+    name: "Software Engineering & Project Management",
+    code: "BCS501",
+    semester: 5,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BCS502: {
+    name: "Computer Networks",
+    code: "BCS502",
+    semester: 5,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BCS503: {
+    name: "Theory of Computation",
+    code: "BCS503",
+    semester: 5,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BCSL504: {
+    name: "Web Technology Lab",
+    code: "BCSL504",
+    semester: 5,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BRMK557: {
+    name: "Research Methodology and IPR",
+    code: "BRMK557",
+    semester: 5,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BESK508: {
+    name: "Environmental Studies",
+    code: "BESK508",
+    semester: 5,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BAIL504: {
+    name: "Data Visualization Lab",
+    code: "BAIL504",
+    semester: 5,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
 };
 
 function NoteButton({
