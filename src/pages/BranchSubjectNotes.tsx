@@ -786,6 +786,14 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem5/BCS515B/Module_1.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem5/BCS515B/Module_2.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem5/BCS515B/Module_3.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem5/BCS515B/Module_4.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem5/BCS515B/Module_5.pdf" },
+          { name: "Module 1 (Alt)", url: "/notes/CSE/Sem5/BCS515B/Module_1_Alt.pdf" },
+        ],
       },
       {
         title: "Notes 2",
