@@ -913,6 +913,13 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "BCSL606 Lab Manual", url: "/notes/CSE/Sem6/BCSL606/BCSL606_Lab_Manual.pdf" },
+          { name: "ML Lab - RNSIT", url: "/notes/CSE/Sem6/BCSL606/ML_Lab_Manual_RNSIT.pdf" },
+          { name: "ML Lab - SVIT", url: "/notes/CSE/Sem6/BCSL606/ML_Lab_Manual_SVIT.pdf" },
+          { name: "ML Lab - SMVITM", url: "/notes/CSE/Sem6/BCSL606/ML_Lab_Manual_SMVITM.pdf" },
+          { name: "ML Lab - PESIT", url: "/notes/CSE/Sem6/BCSL606/ML_Lab_Manual_PESIT.pdf" },
+        ],
       },
       {
         title: "Lab Manual 2",
