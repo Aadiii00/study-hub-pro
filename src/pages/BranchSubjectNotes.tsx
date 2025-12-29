@@ -465,26 +465,7 @@ const subjectNotesData: Record<
     name: "ADA Lab Mannual",
     code: "BCS405",
     semester: 4,
-    notes: [
-      {
-        title: "Notes 1",
-        source: "College Notes",
-        type: "notes",
-        url: "#",
-      },
-      {
-        title: "Notes 2",
-        source: "College Notes",
-        type: "notes",
-        url: "#",
-      },
-      {
-        title: "Model QP with Solution",
-        source: "VTU Model Papers",
-        type: "qp",
-        url: "#",
-      },
-    ],
+    notes: [],
   },
   BCSL406: {
     name: "Database Management Systems Lab",
