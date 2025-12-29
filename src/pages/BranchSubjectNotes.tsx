@@ -765,22 +765,14 @@ const subjectNotesData: Record<
     semester: 5,
     notes: [
       {
-        title: "Notes 1",
-        source: "College Notes",
+        title: "Lab Manual",
+        source: "College Lab Manuals",
         type: "notes",
         url: "#",
-      },
-      {
-        title: "Notes 2",
-        source: "College Notes",
-        type: "notes",
-        url: "#",
-      },
-      {
-        title: "Model QP with Solution",
-        source: "VTU Model Papers",
-        type: "qp",
-        url: "#",
+        modules: [
+          { name: "Lab Manual", url: "/notes/CSE/Sem5/BAIL504/Lab_Manual.pdf" },
+          { name: "Lab Manual - BGSCET", url: "/notes/CSE/Sem5/BAIL504/Lab_Manual_BGSCET.pdf" },
+        ],
       },
     ],
   },
