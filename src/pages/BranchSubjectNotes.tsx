@@ -462,21 +462,27 @@ const subjectNotesData: Record<
     ],
   },
   BCS405: {
-    name: "Discrete Mathemathical structures",
+    name: "ADA Lab Mannual",
     code: "BCS405",
     semester: 4,
     notes: [
       {
-        title: "Lab Manuals",
-        source: "College Lab Manuals",
+        title: "Notes 1",
+        source: "College Notes",
         type: "notes",
         url: "#",
-        modules: [
-          { name: "Lab Manual - MIT", url: "/notes/CSE/Sem4/DMS/Lab_Manual_MIT.pdf" },
-          { name: "Lab Manual - MVIT", url: "/notes/CSE/Sem4/DMS/Lab_Manual_MVIT.pdf" },
-          { name: "Lab Manual - RNSIT", url: "/notes/CSE/Sem4/DMS/Lab_Manual_RNSIT.pdf" },
-          { name: "Final Lab Manual", url: "/notes/CSE/Sem4/DMS/Final_Lab_Manual.pdf" },
-        ],
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
       },
     ],
   },
@@ -500,7 +506,7 @@ const subjectNotesData: Record<
     ],
   },
   BCS407: {
-    name: "Constitution of India and Professional Ethics",
+    name: "Discrete Mathematical structures",
     code: "BCS407",
     semester: 4,
     notes: [
@@ -509,20 +515,12 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
-        modules: [
-          { name: "Module 1", url: "/notes/CSE/Sem4/BCS407/Module_1.pdf" },
-          { name: "Module 1 (Quantifiers)", url: "/notes/CSE/Sem4/BCS407/Module_1_Quantifiers.pdf" },
-          { name: "Module 2", url: "/notes/CSE/Sem4/BCS407/Module_2.pdf" },
-          { name: "Module 3", url: "/notes/CSE/Sem4/BCS407/Module_3.pdf" },
-          { name: "Module 4", url: "/notes/CSE/Sem4/BCS407/Module_4.pdf" },
-          { name: "Module 5", url: "/notes/CSE/Sem4/BCS407/Module_5.pdf" },
-        ],
       },
       {
         title: "Question Bank",
         source: "VTU Question Bank",
         type: "qp",
-        url: "/notes/CSE/Sem4/BCS407/Question_Bank.pdf",
+        url: "#",
       },
     ],
   },
