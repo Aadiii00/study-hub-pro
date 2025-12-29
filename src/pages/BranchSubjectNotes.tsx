@@ -655,6 +655,13 @@ const subjectNotesData: Record<
         source: "VTU Model Papers",
         type: "qp",
         url: "#",
+        modules: [
+          { name: "QB Module 1", url: "/notes/CSE/Sem5/BCS503/QB_Module_1.pdf" },
+          { name: "QB Module 3", url: "/notes/CSE/Sem5/BCS503/QB_Module_3.pdf" },
+          { name: "QB Module 4", url: "/notes/CSE/Sem5/BCS503/QB_Module_4.pdf" },
+          { name: "QB Module 5", url: "/notes/CSE/Sem5/BCS503/QB_Module_5.pdf" },
+          { name: "QB All Modules", url: "/notes/CSE/Sem5/BCS503/QB_All_Modules.pdf" },
+        ],
       },
     ],
   },
