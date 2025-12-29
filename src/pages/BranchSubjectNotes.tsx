@@ -823,6 +823,13 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem6/BCS601/Module_1.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem6/BCS601/Module_2.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem6/BCS601/Module_3.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem6/BCS601/Module_4.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem6/BCS601/Module_5.pdf" },
+        ],
       },
       {
         title: "Notes 2",
