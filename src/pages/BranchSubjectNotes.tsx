@@ -437,6 +437,13 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem4/BIO/Module_1_Notes2.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem4/BIO/Module_2_Notes2.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem4/BIO/Module_3_Notes2.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem4/BIO/Module_4_Notes2.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem4/BIO/Module_5_Notes2.pdf" },
+        ],
       },
       {
         title: "Model QP with Solution",
