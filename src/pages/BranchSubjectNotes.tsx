@@ -1060,6 +1060,11 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "Gen AI Lab - PES", url: "/notes/CSE/Sem6/BAIL657C/Gen_AI_Lab_Manual_PES.pdf" },
+          { name: "Gen AI Lab - TCE", url: "/notes/CSE/Sem6/BAIL657C/Gen_AI_Lab_Manual_TCE.pdf" },
+          { name: "Gen AI Lab - GNDEC", url: "/notes/CSE/Sem6/BAIL657C/Gen_AI_Lab_Manual_GNDEC.pdf" },
+        ],
       },
     ],
   },
