@@ -465,7 +465,20 @@ const subjectNotesData: Record<
     name: "Discrete Mathemathical structures",
     code: "BCS405",
     semester: 4,
-    notes: [],
+    notes: [
+      {
+        title: "Lab Manuals",
+        source: "College Lab Manuals",
+        type: "notes",
+        url: "#",
+        modules: [
+          { name: "Lab Manual - MIT", url: "/notes/CSE/Sem4/DMS/Lab_Manual_MIT.pdf" },
+          { name: "Lab Manual - MVIT", url: "/notes/CSE/Sem4/DMS/Lab_Manual_MVIT.pdf" },
+          { name: "Lab Manual - RNSIT", url: "/notes/CSE/Sem4/DMS/Lab_Manual_RNSIT.pdf" },
+          { name: "Final Lab Manual", url: "/notes/CSE/Sem4/DMS/Final_Lab_Manual.pdf" },
+        ],
+      },
+    ],
   },
   BCSL406: {
     name: "Database Management Systems Lab",
