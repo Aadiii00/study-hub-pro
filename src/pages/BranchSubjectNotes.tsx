@@ -812,6 +812,126 @@ const subjectNotesData: Record<
       },
     ],
   },
+  // Semester 6 Subjects
+  BCS601: {
+    name: "Cloud Computing (Open Stack/Google)",
+    code: "BCS601",
+    semester: 6,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Question Bank",
+        source: "VTU Question Bank",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BCS602: {
+    name: "Machine Learning",
+    code: "BCS602",
+    semester: 6,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Question Bank",
+        source: "VTU Question Bank",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BCSL606: {
+    name: "Machine Learning Lab",
+    code: "BCSL606",
+    semester: 6,
+    notes: [
+      {
+        title: "Lab Manual 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Lab Manual 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+    ],
+  },
+  BIKS609: {
+    name: "Indian Knowledge System",
+    code: "BIKS609",
+    semester: 6,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Question Bank",
+        source: "VTU Question Bank",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
+  BIS601: {
+    name: "Full Stack Development",
+    code: "BIS601",
+    semester: 6,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Question Bank",
+        source: "VTU Question Bank",
+        type: "qp",
+        url: "#",
+      },
+    ],
+  },
 };
 
 function NoteButton({

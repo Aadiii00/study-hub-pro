@@ -35,11 +35,11 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
       { code: "BCS515B", name: "Artificial Intelligence", shortName: "AI" },
     ],
     6: [
-      { code: "BCS601", name: "System Software and Compiler Design", shortName: "SSCD" },
-      { code: "BCS602", name: "Computer Graphics", shortName: "CG" },
-      { code: "BCS603", name: "Machine Learning", shortName: "ML" },
-      { code: "BCS604", name: "Cryptography and Network Security", shortName: "CNS" },
-      { code: "BCSL605", name: "System Software Lab", shortName: "SS Lab" },
+      { code: "BCS601", name: "Cloud Computing (Open Stack/Google)", shortName: "CC" },
+      { code: "BCS602", name: "Machine Learning", shortName: "ML" },
+      { code: "BCSL606", name: "Machine Learning Lab", shortName: "ML Lab" },
+      { code: "BIKS609", name: "Indian Knowledge System", shortName: "IKS" },
+      { code: "BIS601", name: "Full Stack Development", shortName: "FSD" },
     ],
     7: [
       { code: "BCS701", name: "Big Data Analytics", shortName: "BDA" },
