@@ -998,6 +998,10 @@ const subjectNotesData: Record<
         source: "VTU Question Bank",
         type: "qp",
         url: "#",
+        modules: [
+          { name: "Lab Manual - SIET", url: "/notes/CSE/Sem6/BIS601/FSD_Lab_Manual_SIET.pdf" },
+          { name: "Lab Manual - EWIT", url: "/notes/CSE/Sem6/BIS601/FSD_Lab_Manual_EWIT.pdf" },
+        ],
       },
     ],
   },
