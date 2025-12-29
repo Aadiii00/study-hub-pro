@@ -732,6 +732,10 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "EVS Syllabus", url: "/notes/CSE/Sem5/BESK508/EVS_Syllabus.pdf" },
+          { name: "EVS Full Notes", url: "/notes/CSE/Sem5/BESK508/EVS_Full_Notes.pdf" },
+        ],
       },
       {
         title: "Notes 2",
