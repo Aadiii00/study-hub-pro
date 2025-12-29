@@ -522,7 +522,7 @@ const subjectNotesData: Record<
         title: "Question Bank",
         source: "VTU Question Bank",
         type: "qp",
-        url: "#",
+        url: "/notes/CSE/Sem4/BCS407/Question_Bank.pdf",
       },
     ],
   },
