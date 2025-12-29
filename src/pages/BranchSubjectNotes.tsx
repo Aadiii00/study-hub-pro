@@ -932,6 +932,83 @@ const subjectNotesData: Record<
       },
     ],
   },
+  // Skill Enhancement Courses - Semester 6
+  BISL657A: {
+    name: "Tosca – Automated Software Testing",
+    code: "BISL657A",
+    semester: 6,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Lab Manual",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+    ],
+  },
+  BCSL657B: {
+    name: "React",
+    code: "BCSL657B",
+    semester: 6,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Lab Manual",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+    ],
+  },
+  BAIL657C: {
+    name: "Generative AI",
+    code: "BAIL657C",
+    semester: 6,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Lab Manual",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+    ],
+  },
+  BCSL657D: {
+    name: "DevOps",
+    code: "BCSL657D",
+    semester: 6,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+      {
+        title: "Lab Manual",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+      },
+    ],
+  },
 };
 
 function NoteButton({

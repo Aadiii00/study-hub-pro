@@ -40,6 +40,10 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
       { code: "BCSL606", name: "Machine Learning Lab", shortName: "ML Lab" },
       { code: "BIKS609", name: "Indian Knowledge System", shortName: "IKS" },
       { code: "BIS601", name: "Full Stack Development", shortName: "FSD" },
+      { code: "BISL657A", name: "Tosca – Automated Software Testing", shortName: "Tosca" },
+      { code: "BCSL657B", name: "React", shortName: "React" },
+      { code: "BAIL657C", name: "Generative AI", shortName: "Gen AI" },
+      { code: "BCSL657D", name: "DevOps", shortName: "DevOps" },
     ],
     7: [
       { code: "BCS701", name: "Big Data Analytics", shortName: "BDA" },
