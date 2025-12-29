@@ -1084,6 +1084,11 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "DevOps Lab - RNSIT", url: "/notes/CSE/Sem6/BCSL657D/DevOps_Lab_Manual_RNSIT.pdf" },
+          { name: "DevOps Lab - KCT", url: "/notes/CSE/Sem6/BCSL657D/DevOps_Manual_KCT.pdf" },
+          { name: "DevOps Lab - SMVIT", url: "/notes/CSE/Sem6/BCSL657D/DevOps_Manual_SMVIT.pdf" },
+        ],
       },
     ],
   },
