@@ -985,6 +985,13 @@ const subjectNotesData: Record<
         source: "College Notes",
         type: "notes",
         url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem6/BIS601/FSD_M1.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem6/BIS601/FSD_Module_2.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem6/BIS601/FSD_Module_3.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem6/BIS601/FSD_Module_4.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem6/BIS601/FSD_Module_5.pdf" },
+        ],
       },
       {
         title: "Question Bank",
