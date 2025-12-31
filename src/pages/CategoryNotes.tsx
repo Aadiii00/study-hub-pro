@@ -162,7 +162,10 @@ function SemesterCard({
 
   return (
     <button
-      onClick={onClick}
+      onClick={(e) => {
+        e.preventDefault();
+        onClick();
+      }}
       className={`group relative block w-full text-left animate-fade-in transition-all duration-300 ${
         isActive ? "scale-[1.02]" : "hover:scale-[1.02]"
       }`}
