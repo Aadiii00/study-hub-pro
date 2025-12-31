@@ -67,7 +67,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border/50 mt-8 pt-8 text-center">
+        <div className="border-t border-border/50 mt-8 pt-8 text-center space-y-2">
+          <p className="text-sm text-muted-foreground">
+            Created by <span className="font-semibold text-foreground">Code Blooded</span> team
+          </p>
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} NoteVault. All rights reserved.
           </p>
