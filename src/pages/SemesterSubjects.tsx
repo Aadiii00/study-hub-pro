@@ -1,9 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { FileX, ArrowLeft, BookOpen, ChevronRight } from "lucide-react";
+import { FileX, ArrowLeft, BookOpen, Download, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Subject data per branch and semester (for subject count)
+// Subject data per branch and semester
 const subjectData: Record<string, Record<number, { code: string; name: string; shortName: string }[]>> = {
   "cse-ise": {
     3: [
@@ -117,12 +117,12 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
   },
 };
 
-const categoryInfo: Record<string, { name: string; semesters: number[]; gradient: string }> = {
-  "cse-ise": { name: "CSE / ISE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-indigo-600 to-violet-500" },
-  ece: { name: "ECE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-rose-600 to-orange-500" },
-  eee: { name: "EEE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-amber-600 to-lime-500" },
-  civil: { name: "Civil", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-slate-600 to-zinc-500" },
-  mech: { name: "Mechanical", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-emerald-600 to-cyan-500" },
+const categoryInfo: Record<string, { name: string; gradient: string }> = {
+  "cse-ise": { name: "CSE / ISE", gradient: "from-indigo-600 to-violet-500" },
+  ece: { name: "ECE", gradient: "from-rose-600 to-orange-500" },
+  eee: { name: "EEE", gradient: "from-amber-600 to-lime-500" },
+  civil: { name: "Civil", gradient: "from-slate-600 to-zinc-500" },
+  mech: { name: "Mechanical", gradient: "from-emerald-600 to-cyan-500" },
 };
 
 const semesterGradients = [
@@ -134,46 +134,60 @@ const semesterGradients = [
   "from-indigo-500 to-blue-500",
 ];
 
-function SemesterCard({
-  semester,
+const subjectGradients = [
+  "from-cyan-500 to-blue-500",
+  "from-purple-500 to-violet-500",
+  "from-pink-500 to-rose-500",
+  "from-orange-500 to-amber-500",
+  "from-teal-500 to-emerald-500",
+  "from-blue-500 to-indigo-500",
+  "from-fuchsia-500 to-purple-500",
+];
+
+function SubjectCard({
+  subject,
   index,
   category,
-  subjectCount,
+  semester,
 }: {
-  semester: number;
+  subject: { code: string; name: string; shortName: string };
   index: number;
   category: string;
-  subjectCount: number;
+  semester: number;
 }) {
-  const gradient = semesterGradients[index % semesterGradients.length];
+  const gradient = subjectGradients[index % subjectGradients.length];
 
   return (
     <Link
-      to={`/notes/${category}/${semester}`}
-      className="group relative block w-full text-left animate-fade-in transition-all duration-300 hover:scale-[1.02]"
-      style={{ animationDelay: `${index * 80}ms` }}
+      to={`/notes/${category}/${semester}/${subject.code}`}
+      className="group relative block animate-fade-in"
+      style={{ animationDelay: `${index * 60}ms` }}
     >
-      <div className="relative overflow-hidden rounded-2xl p-1">
+      <div className="relative overflow-hidden rounded-2xl p-1 transition-all duration-300 hover:scale-[1.02]">
         <div
-          className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-300`}
+          className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-300`}
         />
 
         <div className="relative bg-card/90 backdrop-blur-sm rounded-xl p-5 border border-border/50 group-hover:border-transparent transition-all duration-300">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex items-start gap-4 flex-1">
               <div
-                className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-bold text-lg shadow-lg`}
+                className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center text-white shadow-lg flex-shrink-0`}
               >
-                {semester}
+                <FolderOpen className="w-5 h-5" />
               </div>
-              <div>
-                <h3 className="font-semibold text-lg text-foreground">Semester {semester}</h3>
-                <p className="text-sm text-muted-foreground">{subjectCount} subjects</p>
+              <div className="flex-1 min-w-0">
+                <p className="text-xs text-muted-foreground font-mono mb-1">{subject.code}</p>
+                <h3 className="font-semibold text-foreground leading-tight mb-1 line-clamp-2">{subject.name}</h3>
+                <p className="text-sm text-muted-foreground">Click to view notes</p>
               </div>
             </div>
-            <ChevronRight
-              className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300"
-            />
+            <div
+              className={`px-4 py-2 rounded-lg bg-gradient-to-r ${gradient} text-white text-sm font-medium shadow-lg`}
+            >
+              <Download className="w-4 h-4 inline mr-1" />
+              View
+            </div>
           </div>
         </div>
       </div>
@@ -181,17 +195,20 @@ function SemesterCard({
   );
 }
 
-export default function CategoryNotes() {
-  const { category } = useParams<{ category: string }>();
+export default function SemesterSubjects() {
+  const { category, semester } = useParams<{ category: string; semester: string }>();
+  const semesterNum = semester ? parseInt(semester) : null;
 
   const info = category ? categoryInfo[category] : null;
+  const subjects = category && semesterNum ? subjectData[category]?.[semesterNum] || [] : [];
+  const semesterGradient = semesterNum ? semesterGradients[(semesterNum - 3) % semesterGradients.length] : semesterGradients[0];
 
-  if (!info) {
+  if (!info || !semesterNum) {
     return (
       <Layout>
         <div className="container mx-auto px-4 py-20 text-center">
           <FileX className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-          <h2 className="text-2xl font-bold mb-2">Category not found</h2>
+          <h2 className="text-2xl font-bold mb-2">Page not found</h2>
           <Button asChild variant="outline" className="mt-4">
             <Link to="/">
               <ArrowLeft className="h-4 w-4 mr-2" />
@@ -209,37 +226,45 @@ export default function CategoryNotes() {
         {/* Header */}
         <div className="mb-8">
           <Button asChild variant="ghost" size="sm" className="mb-4 hover:bg-primary/10">
-            <Link to="/">
+            <Link to={`/notes/${category}`}>
               <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Home
+              Back to {info.name}
             </Link>
           </Button>
 
           <div className="flex items-center gap-4">
             <div
-              className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${info.gradient} flex items-center justify-center shadow-lg`}
+              className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${semesterGradient} flex items-center justify-center shadow-lg`}
             >
-              <BookOpen className="w-7 h-7 text-white" />
+              <span className="text-white font-bold text-xl">{semesterNum}</span>
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold">{info.name}</h1>
-              <p className="text-muted-foreground">Select a semester to view subjects</p>
+              <h1 className="text-3xl md:text-4xl font-bold">{info.name} - Semester {semesterNum}</h1>
+              <p className="text-muted-foreground">{subjects.length} subjects available</p>
             </div>
           </div>
         </div>
 
-        {/* Semester Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {info.semesters.map((sem, index) => (
-            <SemesterCard
-              key={sem}
-              semester={sem}
-              index={index}
-              category={category!}
-              subjectCount={subjectData[category!]?.[sem]?.length || 0}
-            />
-          ))}
-        </div>
+        {/* Subjects Grid */}
+        {subjects.length === 0 ? (
+          <div className="text-center py-16 bg-muted/30 rounded-2xl border border-border/50">
+            <FileX className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+            <h3 className="text-lg font-semibold mb-2">No subjects added yet</h3>
+            <p className="text-muted-foreground text-sm">Subjects for this semester will be added soon</p>
+          </div>
+        ) : (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {subjects.map((subject, index) => (
+              <SubjectCard
+                key={subject.code}
+                subject={subject}
+                index={index}
+                category={category!}
+                semester={semesterNum}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </Layout>
   );
