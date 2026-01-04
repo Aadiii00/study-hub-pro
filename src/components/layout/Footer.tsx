@@ -67,9 +67,23 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border/50 mt-8 pt-8 text-center space-y-2">
+        <div className="border-t border-border/50 mt-8 pt-8 text-center space-y-3">
           <p className="text-sm text-muted-foreground">
-            Created by <span className="font-semibold text-foreground">Code Blooded</span> team
+            Developed by <span className="font-semibold text-foreground">Team Code-Blooded</span>
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+            <span>Aditya</span>
+            <span>•</span>
+            <span>Hemadri</span>
+            <span>•</span>
+            <span>Shashank</span>
+            <span>•</span>
+            <span>Mallikarjun</span>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            <a href="mailto:ccodebloodedd@gmail.com" className="hover:text-foreground transition-colors">
+              ccodebloodedd@gmail.com
+            </a>
           </p>
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} NoteVault. All rights reserved.
