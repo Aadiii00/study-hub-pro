@@ -1,45 +1,41 @@
-# StudyHub: AI-powered learning 📚💡
+# 📚 Campus Notes (NoteVault)
 
-**StudyHub** is an innovative educational platform designed to enhance learning and collaboration between students.
+**Campus Notes** (also known as **NoteVault**) is a modern web platform built for VTU students to access, browse, and download high-quality academic notes organized by **branch** and **semester** — all in one place.
+
+🌐 Live Demo: https://study-hub-pro.vercel.app/
+
+---
 
 ## 🚀 Features
 
-- Connect and collaborate with fellow learners
-- AI-powered tools for smarter studying
-- Academic discussions and resources in one place
-- Tailored study assistance and virtual tutoring
+- 📖 Access 1000+ curated VTU notes
+- 🏫 Notes organized by **branch** and **semester**
+- ⬇️ Download individual files or complete sets
+- 🌙 Dark / Light mode support
+- 🔐 Admin portal for managing notes
+- ⚡ Fast and responsive UI
+- ☁️ Cloud-powered backend using Supabase
 
-## 🛠️ Built With
+---
 
-This project uses a variety of technologies:
+## 🛠️ Tech Stack
 
-- Python
-- JavaScript
-- Flask
-- Bootstrap
-- MySQL
-- Amazon S3
-- OpenAI
-- Pinecone
-- DigitalOcean
+### Frontend
+- **React + TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **Shadcn/UI**
+- **Lucide Icons**
 
-## 📥 Getting Started
+### Backend / Services
+- **Supabase** (Auth, Database, Storage)
 
-These instructions will help you run the project locally for development and testing.
+### Tooling
+- ESLint
+- PostCSS
+- Bun / npm
+- Vercel (Deployment)
 
-### 🧰 Prerequisites
+---
 
-Make sure you have:
 
-- Python (3.11 recommended)
-- OpenAI API Key
-- Pinecone API Key & Index Name
-- An AWS S3 bucket
-
-### 📦 Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/TheTrustyPwo/StudyHub.git
-   cd StudyHub
