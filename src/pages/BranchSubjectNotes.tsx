@@ -82,6 +82,7 @@ const subjectNotesData: Record<
           { name: "Model QP 2", url: "/notes/CSE/Sem3/MATHS/Model_QP_2.pdf" },
           { name: "BIET Model QP", url: "/notes/CSE/Sem3/MATHS/BIET_Model_QP.pdf" },
           { name: "Question Bank", url: "/notes/CSE/Sem3/MATHS/Question_Bank.pdf" },
+          { name: "VTU Previous QB", url: "/notes/CSE/Sem3/MATHS/VTU_Previous_QB.pdf" },
         ],
       },
     ],
