@@ -219,6 +219,7 @@ const subjectNotesData: Record<
         modules: [
           { name: "Question Bank", url: "/notes/CSE/Sem3/OS/Question_Bank.pdf" },
           { name: "Model Paper Solution", url: "/notes/CSE/Sem3/OS/Model_Paper_Solution.pdf" },
+          { name: "BIET Model QB", url: "/notes/CSE/Sem3/OS/BIET_Model_QB.pdf" },
         ],
       },
     ],
