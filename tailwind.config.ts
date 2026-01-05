@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+        display: ["Space Grotesk", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -67,8 +67,10 @@ export default {
         },
         teal: {
           DEFAULT: "hsl(var(--teal))",
+          dark: "hsl(var(--teal-dark))",
           light: "hsl(var(--teal-light))",
         },
+        cyan: "hsl(var(--cyan))",
         sky: {
           DEFAULT: "hsl(var(--sky))",
           light: "hsl(var(--sky-light))",
@@ -85,12 +87,14 @@ export default {
         premium: "var(--shadow-card)",
         "premium-hover": "var(--shadow-card-hover)",
         glow: "var(--shadow-glow)",
+        "glow-lg": "var(--shadow-glow-lg)",
       },
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
         "gradient-hero": "var(--gradient-hero)",
         "gradient-card": "var(--gradient-card)",
         "gradient-glow": "var(--gradient-glow)",
+        "gradient-text": "var(--gradient-text)",
       },
       keyframes: {
         "accordion-down": {

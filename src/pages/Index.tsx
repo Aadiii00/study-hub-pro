@@ -163,49 +163,50 @@ export default function Index() {
         <div className="absolute inset-0 hero-gradient">
           <div className="absolute inset-0 hero-glow" />
           {/* Floating orbs */}
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/30 rounded-full blur-[100px] animate-float" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-float" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px]" />
           
-          {/* Grid pattern */}
-          <div className="absolute inset-0 opacity-[0.02]" style={{ 
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{ 
             backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
-            backgroundSize: '50px 50px'
+            backgroundSize: '60px 60px'
           }} />
         </div>
 
         <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass mb-8 animate-fade-in border border-primary/20">
+            <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 backdrop-blur-md mb-10 animate-fade-in border border-primary/30 shadow-glow">
               <Sparkles className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium text-primary-foreground">Free access to 1000+ premium notes</span>
+              <span className="text-sm font-medium text-white">Free access to 1000+ premium notes</span>
               <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
             </div>
             
             {/* Main heading */}
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-slide-up text-primary-foreground">
-              Your Gateway to
-              <span className="block mt-2 bg-gradient-to-r from-cyan-400 via-primary to-accent bg-clip-text text-transparent animate-shimmer" style={{ backgroundSize: '200% auto' }}>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 animate-slide-up font-display tracking-tight">
+              <span className="text-white">Your Gateway to</span>
+              <span className="block mt-3 bg-gradient-to-r from-primary via-cyan to-accent bg-clip-text text-transparent animate-shimmer" style={{ backgroundSize: '200% auto' }}>
                 Academic Excellence
               </span>
+              <span className="inline-block w-2.5 h-2.5 bg-primary rounded-full ml-1 animate-pulse" />
             </h1>
             
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-primary-foreground/70 mb-10 max-w-2xl mx-auto animate-slide-up stagger-1">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/70 mb-12 max-w-2xl mx-auto animate-slide-up stagger-1 leading-relaxed">
               Access quality VTU notes organized by branch and semester. 
               Download individual files or get everything in one click.
             </p>
             
             {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up stagger-2">
-              <Button asChild size="lg" className="btn-gradient rounded-full px-8 py-6 text-lg shadow-glow hover:shadow-xl transition-all duration-300">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5 animate-slide-up stagger-2">
+              <Button asChild size="lg" className="group btn-gradient rounded-full px-10 py-7 text-lg font-semibold shadow-glow hover:shadow-glow-lg transition-all duration-500 hover:scale-105">
                 <Link to="/notes/first-year">
                   <span>Start Learning</span>
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full px-8 py-6 text-lg border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 backdrop-blur-sm">
+              <Button asChild variant="outline" size="lg" className="rounded-full px-10 py-7 text-lg font-semibold border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-primary/50 backdrop-blur-md transition-all duration-300">
                 <Link to="/notes/cse-ise">
                   Browse All Notes
                 </Link>
@@ -213,11 +214,16 @@ export default function Index() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 animate-fade-in stagger-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-20 animate-fade-in stagger-3">
               {stats.map((stat, i) => (
-                <div key={i} className="group text-center p-5 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-cyan-500/30 transition-all duration-300">
-                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent mb-1 group-hover:from-cyan-400 group-hover:to-blue-400 transition-all duration-300">{stat.value}</div>
-                  <div className="text-sm text-white/60">{stat.label}</div>
+                <div 
+                  key={i} 
+                  className="group text-center p-6 md:p-7 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/10 hover:border-primary/40 hover:bg-white/[0.06] transition-all duration-500"
+                >
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold font-display bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent mb-2 group-hover:from-primary group-hover:to-cyan transition-all duration-500">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm md:text-base text-white/50 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -226,31 +232,31 @@ export default function Index() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2">
-            <div className="w-1.5 h-3 rounded-full bg-primary-foreground/50 animate-pulse" />
+          <div className="w-7 h-12 rounded-full border-2 border-white/20 flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 rounded-full bg-primary animate-pulse" />
           </div>
         </div>
       </section>
 
       {/* Categories Section */}
-      <section className="py-24 bg-background relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/5 to-transparent dark:from-navy/20" />
+      <section className="py-28 bg-background relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/5 via-transparent to-transparent dark:from-navy/30" />
         
         <div className="container mx-auto px-4 relative">
-          <div className="text-center mb-16">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+          <div className="text-center mb-20">
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-5 border border-primary/20">
               <BookOpen className="w-4 h-4 mr-2" />
               Explore by Branch
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 font-display">
               Choose Your <span className="gradient-text">Branch</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
               Select your engineering branch to access semester-wise notes and study materials
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {categories.map((category, index) => (
               <CategoryCard key={category.id} category={category} index={index} />
             ))}
@@ -259,39 +265,39 @@ export default function Index() {
       </section>
 
       {/* Features */}
-      <section className="py-24 bg-secondary/30 relative overflow-hidden">
+      <section className="py-28 bg-secondary/30 relative overflow-hidden">
         {/* Background decorations */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[150px]" />
         
         <div className="container mx-auto px-4 relative">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 font-display">
               Why Choose <span className="gradient-text">Campus Notes</span>?
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto">
               Everything you need to succeed in your exams
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {features.map((feature, i) => (
               <div 
                 key={i} 
-                className="group relative p-8 rounded-3xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 animate-fade-in"
+                className="group relative p-8 lg:p-10 rounded-3xl bg-card border border-border/50 hover:border-primary/40 transition-all duration-500 hover:-translate-y-3 animate-fade-in"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
                 {/* Gradient glow on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`} />
                 
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.color} p-0.5 mb-6`}>
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} p-0.5 mb-7`}>
                   <div className="w-full h-full rounded-[14px] bg-card flex items-center justify-center">
-                    <feature.icon className="h-6 w-6 text-primary" />
+                    <feature.icon className="h-7 w-7 text-primary" />
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <h3 className="text-xl lg:text-2xl font-bold mb-3 font-display">{feature.title}</h3>
+                <p className="text-muted-foreground text-base">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -299,30 +305,33 @@ export default function Index() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-background relative overflow-hidden">
+      <section className="py-28 bg-background relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 hero-gradient opacity-50" />
+          <div className="absolute inset-0 hero-gradient opacity-60" />
           <div className="absolute inset-0 hero-glow" />
+          {/* Decorative orbs */}
+          <div className="absolute top-10 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-[100px]" />
+          <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-accent/15 rounded-full blur-[120px]" />
         </div>
         
         <div className="container mx-auto px-4 relative">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6 border border-primary/20">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md mb-8 border border-white/20">
               <Sparkles className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium">Join 50,000+ students</span>
+              <span className="text-sm font-semibold text-white">Join 50,000+ students</span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary-foreground">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-7 text-white font-display">
               Ready to Ace Your Exams?
             </h2>
-            <p className="text-lg text-primary-foreground/70 mb-10 max-w-xl mx-auto">
+            <p className="text-lg md:text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
               Get instant access to comprehensive notes, solved papers, and question banks. Start your journey to academic success today.
             </p>
             
-            <Button asChild size="lg" className="btn-gradient rounded-full px-10 py-6 text-lg shadow-glow hover:shadow-xl transition-all duration-300">
+            <Button asChild size="lg" className="group btn-gradient rounded-full px-12 py-7 text-lg font-semibold shadow-glow hover:shadow-glow-lg transition-all duration-500 hover:scale-105">
               <Link to="/notes/first-year">
                 <span>Get Started Free</span>
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
           </div>
