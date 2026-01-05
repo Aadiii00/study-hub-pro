@@ -141,6 +141,8 @@ const subjectNotesData: Record<
           { name: "Module 2 question bank", url: "/notes/CSE/Sem3/DSA/DS_M2_Question_Bank.pdf" },
           { name: "Module 3 question bank", url: "/notes/CSE/Sem3/DSA/DS_M3_Question_Bank.pdf" },
           { name: "Module 4 question bank", url: "/notes/CSE/Sem3/DSA/DS_M4_Question_Bank.pdf" },
+          { name: "DSA Question Paper", url: "/notes/CSE/Sem3/DSA/DSA_QP.pdf" },
+          { name: "VTU Previous QB", url: "/notes/CSE/Sem3/DSA/DSA_VTU_QB.pdf" },
         ],
       },
     ],
