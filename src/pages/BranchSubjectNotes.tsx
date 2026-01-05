@@ -186,6 +186,8 @@ const subjectNotesData: Record<
         modules: [
           { name: "Module Wise QB", url: "/notes/CSE/Sem3/DDCO/Module_Wise_QB.pdf" },
           { name: "QB With Solutions", url: "/notes/CSE/Sem3/DDCO/QB_With_Solutions.pdf" },
+          { name: "DDCO VTU QB", url: "/notes/CSE/Sem3/DDCO/DDCO_VTU_QB.pdf" },
+          { name: "BIET QB", url: "/notes/CSE/Sem3/DDCO/BIET_QB.pdf" },
         ],
       },
     ],
