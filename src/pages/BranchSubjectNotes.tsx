@@ -1174,12 +1174,16 @@ function NoteButton({
       {hasModules && isExpanded && (
         <div className="bg-card border border-t-0 border-border/50 rounded-b-xl overflow-hidden animate-fade-in">
           <div className="p-4 space-y-2">
-            {note.modules!.map((module, idx) => (
+            {note.modules!.map((module) => (
               <button
-                key={idx}
+                key={`${note.title}-${module.name}-${module.url}`}
                 type="button"
-                onClick={() => onDownload(module.url, `${note.title} — ${module.name}`)}
-                className="w-full flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors duration-200 group"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onDownload(module.url, `${note.title} — ${module.name}`);
+                }}
+                className="w-full flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted active:bg-muted transition-colors duration-200 group touch-manipulation"
               >
                 <span className="text-sm font-medium text-foreground">{module.name}</span>
                 <Download className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
