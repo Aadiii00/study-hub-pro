@@ -1293,7 +1293,19 @@ const subjectNotesData: Record<
     code: "BCS701",
     semester: 7,
     notes: [
-      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem7/BDA/Module_1.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem7/BDA/Module_2.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem7/BDA/Module_3.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem7/BDA/Module_4.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem7/BDA/Module_5.pdf" },
+        ],
+      },
       { title: "Notes 2 — Hirasugar", source: "Hirasugar College", type: "notes", url: "#" },
       { title: "Notes 3 — Old Notes", source: "Previous Year Notes", type: "notes", url: "#" },
       { title: "Notes 4 — SVIT", source: "SVIT College", type: "notes", url: "#" },
