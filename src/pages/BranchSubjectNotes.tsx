@@ -1104,7 +1104,19 @@ const subjectNotesData: Record<
     code: "BMATEC301",
     semester: 3,
     notes: [
-      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      {
+        title: "Notes 1 — SVIT",
+        source: "SVIT College",
+        type: "notes",
+        url: "#",
+        modules: [
+          { name: "Module 1 - Fourier Series", url: "/notes/ECE/Sem3/MATHS/Module_1.pdf" },
+          { name: "Module 2 - Fourier Transforms", url: "/notes/ECE/Sem3/MATHS/Module_2.pdf" },
+          { name: "Module 3 - Z-Transforms", url: "/notes/ECE/Sem3/MATHS/Module_3.pdf" },
+          { name: "Module 4 - ODE of Higher Order", url: "/notes/ECE/Sem3/MATHS/Module_4.pdf" },
+          { name: "Module 5 - Curve Fitting", url: "/notes/ECE/Sem3/MATHS/Module_5.pdf" },
+        ],
+      },
       { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
       { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
