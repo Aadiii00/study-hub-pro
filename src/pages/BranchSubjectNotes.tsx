@@ -1301,9 +1301,9 @@ const subjectNotesData: Record<
       { title: "Textbook", source: "Reference Books", type: "textbook", url: "#" },
     ],
   },
-  BIS701: {
+  BCS714D: {
     name: "Big Data Analytics",
-    code: "BIS701",
+    code: "BCS714D",
     semester: 7,
     notes: [
       {
