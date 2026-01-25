@@ -1319,7 +1319,7 @@ const subjectNotesData: Record<
           { name: "Module 5", url: "/notes/CSE/Sem7/BDA/Module_5_Notes2.pdf" },
         ],
       },
-      { title: "Notes 3 — Old Notes", source: "Previous Year Notes", type: "notes", url: "#" },
+      { title: "Notes 3 — Old Notes", source: "Previous Year Notes", type: "notes", url: "/notes/CSE/Sem7/BDA/Complete_Notes_Old.pdf" },
       { title: "Notes 4 — SVIT", source: "SVIT College", type: "notes", url: "#" },
       { title: "Question Bank (Updated)", source: "VTU Question Bank", type: "qp", url: "#" },
       { title: "Textbook", source: "Reference Books", type: "textbook", url: "#" },
