@@ -1289,8 +1289,21 @@ const subjectNotesData: Record<
   },
   // CSE/ISE Semester 7 Subjects
   BCS701: {
-    name: "Big Data Analytics",
+    name: "Internet of Things",
     code: "BCS701",
+    semester: 7,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2 — Hirasugar", source: "Hirasugar College", type: "notes", url: "#" },
+      { title: "Notes 3 — Old Notes", source: "Previous Year Notes", type: "notes", url: "#" },
+      { title: "Notes 4 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Question Bank (Updated)", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Textbook", source: "Reference Books", type: "textbook", url: "#" },
+    ],
+  },
+  BIS701: {
+    name: "Big Data Analytics",
+    code: "BIS701",
     semester: 7,
     notes: [
       {
