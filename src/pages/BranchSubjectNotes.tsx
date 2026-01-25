@@ -1139,6 +1139,16 @@ const subjectNotesData: Record<
           { name: "Model QP 2", url: "/notes/ECE/Sem3/MATHS/Model_QP_2.pdf" },
         ],
       },
+      {
+        title: "Model QP",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+        modules: [
+          { name: "Model QP 1", url: "/notes/ECE/Sem3/MATHS/Model_QP_3.pdf" },
+          { name: "Model QP 2", url: "/notes/ECE/Sem3/MATHS/Model_QP_4.pdf" },
+        ],
+      },
     ],
   },
   BEC302: {
