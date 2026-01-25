@@ -1287,6 +1287,55 @@ const subjectNotesData: Record<
       { title: "Lab Manual", source: "Official Lab Manual", type: "notes", url: "#" },
     ],
   },
+  // CSE/ISE Semester 7 Subjects
+  BCS701: {
+    name: "Big Data Analytics",
+    code: "BCS701",
+    semester: 7,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2 — Hirasugar", source: "Hirasugar College", type: "notes", url: "#" },
+      { title: "Notes 3 — Old Notes", source: "Previous Year Notes", type: "notes", url: "#" },
+      { title: "Notes 4 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Question Bank (Updated)", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Textbook", source: "Reference Books", type: "textbook", url: "#" },
+    ],
+  },
+  BCS702: {
+    name: "Cloud Computing",
+    code: "BCS702",
+    semester: 7,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2 — Hirasugar", source: "Hirasugar College", type: "notes", url: "#" },
+      { title: "Notes 3 — Old Notes", source: "Previous Year Notes", type: "notes", url: "#" },
+      { title: "Notes 4 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Question Bank (Updated)", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Textbook", source: "Reference Books", type: "textbook", url: "#" },
+    ],
+  },
+  BCS703: {
+    name: "Internet of Things",
+    code: "BCS703",
+    semester: 7,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2 — Hirasugar", source: "Hirasugar College", type: "notes", url: "#" },
+      { title: "Notes 3 — Old Notes", source: "Previous Year Notes", type: "notes", url: "#" },
+      { title: "Notes 4 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Question Bank (Updated)", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Textbook", source: "Reference Books", type: "textbook", url: "#" },
+    ],
+  },
+  BCS704: {
+    name: "Project Phase 1",
+    code: "BCS704",
+    semester: 7,
+    notes: [
+      { title: "Project Guidelines", source: "VTU Guidelines", type: "notes", url: "#" },
+      { title: "Sample Reports", source: "Reference Reports", type: "notes", url: "#" },
+    ],
+  },
 };
 
 function NoteButton({
