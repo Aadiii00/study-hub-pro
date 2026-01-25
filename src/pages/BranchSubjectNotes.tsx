@@ -1129,8 +1129,16 @@ const subjectNotesData: Record<
           { name: "Module 5", url: "/notes/ECE/Sem3/MATHS/Module_5_Notes2.pdf" },
         ],
       },
-      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
-      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+      {
+        title: "Question Bank",
+        source: "VTU Question Bank",
+        type: "qp",
+        url: "#",
+        modules: [
+          { name: "Model QP 1", url: "/notes/ECE/Sem3/MATHS/Model_QP_1.pdf" },
+          { name: "Model QP 2", url: "/notes/ECE/Sem3/MATHS/Model_QP_2.pdf" },
+        ],
+      },
     ],
   },
   BEC302: {
