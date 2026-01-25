@@ -1333,7 +1333,7 @@ const subjectNotesData: Record<
           { name: "Module 5", url: "/notes/CSE/Sem7/BDA/Module_5_Notes4.pdf" },
         ],
       },
-      { title: "Question Bank (Updated)", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Question Bank (Updated)", source: "VTU Question Bank", type: "qp", url: "/notes/CSE/Sem7/BDA/Question_Bank.pdf" },
       { title: "Textbook", source: "Reference Books", type: "textbook", url: "#" },
     ],
   },
