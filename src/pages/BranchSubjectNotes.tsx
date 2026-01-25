@@ -1098,6 +1098,154 @@ const subjectNotesData: Record<
       },
     ],
   },
+  // ECE Semester 3 Subjects
+  BMATEC301: {
+    name: "AV Mathematics-III for EC Engineering",
+    code: "BMATEC301",
+    semester: 3,
+    notes: [
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BEC302: {
+    name: "Digital System Design using Verilog",
+    code: "BEC302",
+    semester: 3,
+    notes: [
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BEC303: {
+    name: "Electronic Principles and Circuits",
+    code: "BEC303",
+    semester: 3,
+    notes: [
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BEC304: {
+    name: "Network Analysis",
+    code: "BEC304",
+    semester: 3,
+    notes: [
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECL305: {
+    name: "Analog and Digital Systems Design Lab",
+    code: "BECL305",
+    semester: 3,
+    notes: [
+      { title: "Lab Manual", source: "Official Lab Manual", type: "notes", url: "#" },
+      { title: "Viva Questions", source: "Lab Viva Q&A", type: "qp", url: "#" },
+    ],
+  },
+  BSCK307: {
+    name: "Social Connect and Responsibility",
+    code: "BSCK307",
+    semester: 3,
+    notes: [
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+    ],
+  },
+  BEC306A: {
+    name: "Electronic Devices",
+    code: "BEC306A",
+    semester: 3,
+    notes: [
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BEC306B: {
+    name: "Sensors and Instrumentation",
+    code: "BEC306B",
+    semester: 3,
+    notes: [
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BEC306C: {
+    name: "Computer Organization and Architecture",
+    code: "BEC306C",
+    semester: 3,
+    notes: [
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BEC306D: {
+    name: "Applied Numerical Methods for EC Engineers",
+    code: "BEC306D",
+    semester: 3,
+    notes: [
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BEC358A: {
+    name: "LABVIEW Programming",
+    code: "BEC358A",
+    semester: 3,
+    notes: [
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Lab Manual", source: "Official Lab Manual", type: "notes", url: "#" },
+    ],
+  },
+  BEC358B: {
+    name: "MATLAB Programming",
+    code: "BEC358B",
+    semester: 3,
+    notes: [
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Lab Manual", source: "Official Lab Manual", type: "notes", url: "#" },
+    ],
+  },
+  BEC358C: {
+    name: "C++ Basics",
+    code: "BEC358C",
+    semester: 3,
+    notes: [
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Lab Manual", source: "Official Lab Manual", type: "notes", url: "#" },
+    ],
+  },
+  BEC358D: {
+    name: "IOT for Smart Infrastructure",
+    code: "BEC358D",
+    semester: 3,
+    notes: [
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Lab Manual", source: "Official Lab Manual", type: "notes", url: "#" },
+    ],
+  },
 };
 
 function NoteButton({
