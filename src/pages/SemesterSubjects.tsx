@@ -14,6 +14,7 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
       { code: "BCS305", name: "Object Oriented Programming with C++ and Java", shortName: "OOP" },
       { code: "BCSL306", name: "Data Structures Lab", shortName: "DS Lab" },
       { code: "BCS307", name: "Universal Human Values", shortName: "UHV" },
+      { code: "BIET-IA", name: "BIET IA Papers", shortName: "IA Papers" },
     ],
     4: [
       { code: "BCS401", name: "Microcontrollers", shortName: "MFC" },
