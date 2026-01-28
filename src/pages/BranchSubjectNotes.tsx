@@ -1532,16 +1532,9 @@ export default function BranchSubjectNotes() {
       return;
     }
 
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filenameFromUrl(url);
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-
-    toast.success("Download started", { description: title });
+    // Open PDF in new tab - more reliable than programmatic download
+    window.open(url, "_blank", "noopener,noreferrer");
+    toast.success("Opening file", { description: title });
   };
 
   const toggleExpand = (index: number) => {
