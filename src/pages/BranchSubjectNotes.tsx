@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { ArrowLeft, Rocket, Download, FileText, BookOpen, ClipboardList, ChevronDown, GraduationCap } from "lucide-react";
+import { ArrowLeft, Rocket, Download, FileText, BookOpen, ClipboardList, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { BIETIATable } from "@/components/notes/BIETIATable";
 
 interface Module {
   name: string;
@@ -285,6 +284,18 @@ const subjectNotesData: Record<
     semester: 3,
     notes: [
       { title: "Question Bank", source: "UHV Question Bank", type: "qp", url: "/notes/CSE/Sem3/UHV/Question_Bank.pdf" },
+    ],
+  },
+  "BIET-IA": {
+    name: "BIET IA Papers",
+    code: "BIET-IA",
+    semester: 3,
+    notes: [
+      { title: "Mathematics for CSE — CIE 1", source: "BCS301", type: "qp", url: "/ia-papers/sem3/MAT-CIE_1.pdf" },
+      { title: "Data Structures — CIE 1", source: "BCS302", type: "qp", url: "/ia-papers/sem3/DSA-CIE_1.pdf" },
+      { title: "DDCO — CIE 1", source: "BCS303", type: "qp", url: "/ia-papers/sem3/DDCO-CIE_1.pdf" },
+      { title: "Operating Systems — CIE 1", source: "BCS304", type: "qp", url: "/ia-papers/sem3/OS-CIE_1.pdf" },
+      { title: "OOP with Java — CIE 1", source: "BCS305", type: "qp", url: "/ia-papers/sem3/JAVA-CIE_1.pdf" },
     ],
   },
   // Semester 4 Subjects
@@ -1595,16 +1606,6 @@ export default function BranchSubjectNotes() {
             ))}
           </div>
 
-          {/* BIET IA Paper Section */}
-          {subject.semester === 3 && (
-            <div className="mt-8 animate-fade-in" style={{ animationDelay: "400ms" }}>
-              <div className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary/10 border border-primary/20 mx-auto w-fit mb-4">
-                <GraduationCap className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium">BIET IA Papers — All 3rd Semester Subjects</span>
-              </div>
-              <BIETIATable semester={subject.semester} />
-            </div>
-          )}
 
           {/* Footer info */}
           <div className="mt-10 text-center animate-fade-in" style={{ animationDelay: "500ms" }}>
