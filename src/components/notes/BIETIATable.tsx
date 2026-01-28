@@ -10,11 +10,11 @@ interface IAItem {
 }
 
 const sem3IAData: IAItem[] = [
-  { subjectCode: "BCS301", subjectName: "Mathematics for CSE", ia1Url: "#", ia2Url: "#" },
-  { subjectCode: "BCS302", subjectName: "Data Structures and Applications", ia1Url: "#", ia2Url: "#" },
-  { subjectCode: "BCS303", subjectName: "Digital Design and Computer Organization", ia1Url: "#", ia2Url: "#" },
-  { subjectCode: "BCS304", subjectName: "Operating Systems", ia1Url: "#", ia2Url: "#" },
-  { subjectCode: "BCS305", subjectName: "Object Oriented Programming with C++ and Java", ia1Url: "#", ia2Url: "#" },
+  { subjectCode: "BCS301", subjectName: "Mathematics for CSE", ia1Url: "/ia-papers/sem3/MAT-CIE_1.pdf", ia2Url: "#" },
+  { subjectCode: "BCS302", subjectName: "Data Structures and Applications", ia1Url: "/ia-papers/sem3/DSA-CIE_1.pdf", ia2Url: "#" },
+  { subjectCode: "BCS303", subjectName: "Digital Design and Computer Organization", ia1Url: "/ia-papers/sem3/DDCO-CIE_1.pdf", ia2Url: "#" },
+  { subjectCode: "BCS304", subjectName: "Operating Systems", ia1Url: "/ia-papers/sem3/OS-CIE_1.pdf", ia2Url: "#" },
+  { subjectCode: "BCS305", subjectName: "Object Oriented Programming with C++ and Java", ia1Url: "/ia-papers/sem3/JAVA-CIE_1.pdf", ia2Url: "#" },
   { subjectCode: "BCSL306", subjectName: "Data Structures Lab", ia1Url: "#", ia2Url: "#" },
   { subjectCode: "BCS307", subjectName: "Universal Human Values", ia1Url: "#", ia2Url: "#" },
 ];
