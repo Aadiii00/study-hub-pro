@@ -291,11 +291,11 @@ const subjectNotesData: Record<
     code: "BIET-IA",
     semester: 3,
     notes: [
-      { title: "Mathematics for CSE — CIE 1", source: "BCS301", type: "qp", url: "/ia-papers/sem3/MAT-CIE_1.pdf" },
-      { title: "Data Structures — CIE 1", source: "BCS302", type: "qp", url: "/ia-papers/sem3/DSA-CIE_1.pdf" },
-      { title: "DDCO — CIE 1", source: "BCS303", type: "qp", url: "/ia-papers/sem3/DDCO-CIE_1.pdf" },
-      { title: "Operating Systems — CIE 1", source: "BCS304", type: "qp", url: "/ia-papers/sem3/OS-CIE_1.pdf" },
-      { title: "OOP with Java — CIE 1", source: "BCS305", type: "qp", url: "/ia-papers/sem3/JAVA-CIE_1.pdf" },
+      { title: "Mathematics for CSE", source: "BCS301", type: "qp", url: "/ia-papers/sem3/MAT-CIE_1.pdf" },
+      { title: "Data Structures", source: "BCS302", type: "qp", url: "/ia-papers/sem3/DSA-CIE_1.pdf" },
+      { title: "DDCO", source: "BCS303", type: "qp", url: "/ia-papers/sem3/DDCO-CIE_1.pdf" },
+      { title: "Operating Systems", source: "BCS304", type: "qp", url: "/ia-papers/sem3/OS-CIE_1.pdf" },
+      { title: "OOP with Java", source: "BCS305", type: "qp", url: "/ia-papers/sem3/JAVA-CIE_1.pdf" },
     ],
   },
   // Semester 4 Subjects
