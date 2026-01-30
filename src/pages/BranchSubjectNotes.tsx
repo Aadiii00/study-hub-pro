@@ -296,6 +296,7 @@ const subjectNotesData: Record<
       { title: "DDCO", source: "BCS303", type: "qp", url: "/ia-papers/sem3/DDCO-CIE_1.pdf" },
       { title: "Operating Systems", source: "BCS304", type: "qp", url: "/ia-papers/sem3/OS-CIE_1.pdf" },
       { title: "OOP with Java", source: "BCS305", type: "qp", url: "/ia-papers/sem3/JAVA-CIE_1.pdf" },
+      { title: "BIET Model Question Paper", source: "MQP", type: "qp", url: "/ia-papers/sem3/MQP-CSE-3Sem.pdf" },
     ],
   },
   // Semester 4 Subjects
