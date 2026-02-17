@@ -72,14 +72,15 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             Developed by <span className="font-semibold text-foreground">Team Code-Blooded</span>
           </p>
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
-            <span>Aditya</span>
-            <span>•</span>
-            <span>Hemadri</span>
-            <span>•</span>
-            <span>Shashank</span>
-            <span>•</span>
-            <span>Mallikarjun</span>
+          <p className="text-sm text-muted-foreground">Connect With Us for More Updates</p>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm">
+            <a href="https://linkedin.com/in/aditya-b-p" target="_blank" rel="noopener noreferrer" className="font-bold text-foreground underline hover:text-primary transition-colors">Adithya</a>
+            <span className="text-muted-foreground">•</span>
+            <a href="https://linkedin.com/in/c-hemadri" target="_blank" rel="noopener noreferrer" className="font-bold text-foreground underline hover:text-primary transition-colors">Hemadri</a>
+            <span className="text-muted-foreground">•</span>
+            <a href="https://linkedin.com/in/shashank-bhavihalli" target="_blank" rel="noopener noreferrer" className="font-bold text-foreground underline hover:text-primary transition-colors">Shashank</a>
+            <span className="text-muted-foreground">•</span>
+            <a href="https://linkedin.com/in/mallikarjun-patil-bb5634340" target="_blank" rel="noopener noreferrer" className="font-bold text-foreground underline hover:text-primary transition-colors">Mallikarjun</a>
           </div>
           <p className="text-sm text-muted-foreground">
             <a href="mailto:ccodebloodedd@gmail.com" className="hover:text-foreground transition-colors">
