@@ -1372,6 +1372,25 @@ const subjectNotesData: Record<
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
+  BECPCC403: {
+    name: "Control Systems",
+    code: "BECPCC403",
+    semester: 4,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#", modules: [
+        { name: "Module 1", url: "/notes/becpcc403/CS_Module_1.pdf" },
+        { name: "Module 2", url: "/notes/becpcc403/CS_Module_2.pdf" },
+        { name: "Module 3", url: "/notes/becpcc403/CS_Module_3.pdf" },
+        { name: "Module 4 - Stability Analysis", url: "/notes/becpcc403/CS_Module_4.pdf" },
+        { name: "Module 5B - Bode Plots", url: "/notes/becpcc403/CS_Module_5B.pdf" },
+        { name: "Root Locus", url: "/notes/becpcc403/Root_Locus.pdf" },
+        { name: "Signal Flow Graph", url: "/notes/becpcc403/Signal_Flow_Graph.pdf" },
+      ] },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
   // CSE/ISE Semester 7 Subjects
   BCS701: {
     name: "Internet of Things",
