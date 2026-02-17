@@ -168,7 +168,7 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
 };
 
 const categoryInfo: Record<string, { name: string; gradient: string }> = {
-  "cse-ise": { name: "CSE / ISE", gradient: "from-indigo-600 to-violet-500" },
+  "cse-ise": { name: "CSE Stream", gradient: "from-indigo-600 to-violet-500" },
   ece: { name: "ECE", gradient: "from-rose-600 to-orange-500" },
   eee: { name: "EEE", gradient: "from-amber-600 to-lime-500" },
   civil: { name: "Civil", gradient: "from-slate-600 to-zinc-500" },

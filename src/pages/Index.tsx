@@ -17,7 +17,7 @@ const categories = [
   },
   {
     id: "cse-ise",
-    name: "CSE / ISE",
+    name: "CSE Stream",
     subtitle: "3rd to 8th Semester",
     tag: "Computer Science",
     gradient: "from-indigo-600 via-purple-500 to-violet-400",
