@@ -1467,7 +1467,13 @@ const subjectNotesData: Record<
     code: "BECMAE503",
     semester: 5,
     notes: [
-      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#", modules: [
+        { name: "Module 1", url: "/notes/becmae503/TIME_Module_1.pdf" },
+        { name: "Module 2", url: "/notes/becmae503/TIME_Module_2.pdf" },
+        { name: "Module 3", url: "/notes/becmae503/TIME_Module_3.pdf" },
+        { name: "Module 4", url: "/notes/becmae503/TIME_Module_4.pdf" },
+        { name: "Module 5", url: "/notes/becmae503/TIME_Module_5.pdf" },
+      ] },
       { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
       { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
