@@ -1193,7 +1193,7 @@ const subjectNotesData: Record<
         { name: "Module 4", url: "/notes/bec303/Module_4_SVIT.pdf" },
         { name: "Module 5", url: "/notes/bec303/Module_5_SVIT.pdf" },
       ] },
-      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "/notes/bec303/EPC_Notes_BEC303.pdf" },
       { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
