@@ -361,17 +361,17 @@ function SGPACalculator() {
 interface Semester {
   id: string;
   sgpa: number;
-  credits: number;
 }
 
 function CGPACalculator() {
+  const DEFAULT_CREDITS = 20;
   const [semesters, setSemesters] = useState<Semester[]>([
-    { id: "1", sgpa: 9.0, credits: 20 },
-    { id: "2", sgpa: 8.5, credits: 22 },
+    { id: "1", sgpa: 9.0 },
+    { id: "2", sgpa: 8.5 },
   ]);
 
   const addSemester = () => {
-    setSemesters([...semesters, { id: Date.now().toString(), sgpa: 8.0, credits: 20 }]);
+    setSemesters([...semesters, { id: Date.now().toString(), sgpa: 8.0 }]);
   };
 
   const removeSemester = (id: string) => {
@@ -380,7 +380,7 @@ function CGPACalculator() {
     }
   };
 
-  const updateSemester = (id: string, field: "sgpa" | "credits", value: number) => {
+  const updateSemester = (id: string, field: "sgpa", value: number) => {
     setSemesters(
       semesters.map((s) =>
         s.id === id ? { ...s, [field]: value } : s
@@ -389,15 +389,15 @@ function CGPACalculator() {
   };
 
   const calculateCGPA = () => {
-    const totalCredits = semesters.reduce((sum, s) => sum + s.credits, 0);
-    const totalPoints = semesters.reduce((sum, s) => sum + s.credits * s.sgpa, 0);
+    const totalCredits = semesters.length * DEFAULT_CREDITS;
+    const totalPoints = semesters.reduce((sum, s) => sum + DEFAULT_CREDITS * s.sgpa, 0);
     return totalCredits > 0 ? (totalPoints / totalCredits).toFixed(2) : "0.00";
   };
 
   const resetCGPA = () => {
     setSemesters([
-      { id: "1", sgpa: 9.0, credits: 20 },
-      { id: "2", sgpa: 8.5, credits: 22 },
+      { id: "1", sgpa: 9.0 },
+      { id: "2", sgpa: 8.5 },
     ]);
   };
 
@@ -439,17 +439,6 @@ function CGPACalculator() {
                 className="bg-background"
               />
             </div>
-            <div className="flex-1">
-              <label className="text-xs text-muted-foreground mb-1 block">Credits</label>
-              <Input
-                type="number"
-                min="1"
-                max="30"
-                value={semester.credits}
-                onChange={(e) => updateSemester(semester.id, "credits", parseInt(e.target.value) || 0)}
-                className="bg-background"
-              />
-            </div>
             <Button
               variant="ghost"
               size="icon"
@@ -474,7 +463,7 @@ function CGPACalculator() {
           <div>
             <p className="text-sm text-muted-foreground mb-1">Total Credits</p>
             <p className="text-3xl font-bold text-foreground">
-              {semesters.reduce((sum, s) => sum + s.credits, 0)}
+              {semesters.length * DEFAULT_CREDITS}
             </p>
           </div>
           <div>
@@ -497,7 +486,7 @@ function CGPACalculator() {
         <Button
           onClick={() =>
             generateCGPACardPDF({
-              semesters: semesters.map((s) => ({ sgpa: s.sgpa, credits: s.credits })),
+              semesters: semesters.map((s) => ({ sgpa: s.sgpa, credits: DEFAULT_CREDITS })),
               cgpa: calculateCGPA(),
               percentage,
             })
