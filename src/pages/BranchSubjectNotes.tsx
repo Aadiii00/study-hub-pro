@@ -1586,7 +1586,16 @@ const subjectNotesData: Record<
     code: "BECPCC602",
     semester: 6,
     notes: [
-      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#", modules: [
+        { name: "Module 1 & 2", url: "/notes/becpcc602/Module_1_2.pdf" },
+        { name: "Ch 3 - Characteristics & Quality", url: "/notes/becpcc602/Ch3_Characteristics.pdf" },
+        { name: "Ch 7 - HW/SW Co-Design", url: "/notes/becpcc602/Ch7_HWSW_CoDesign.pdf" },
+        { name: "Ch 9 - Firmware Design", url: "/notes/becpcc602/Ch9_Firmware.pdf" },
+        { name: "Ch 10 - RTOS1 Threads & Process", url: "/notes/becpcc602/Ch10_RTOS1_Threads.pdf" },
+        { name: "Ch 10 - RTOS2 Multitasking", url: "/notes/becpcc602/Ch10_RTOS2_Multitasking.pdf" },
+        { name: "Ch 10 - RTOS3 Task Communication", url: "/notes/becpcc602/Ch10_RTOS3_Task_Comm.pdf" },
+        { name: "Ch 12 - Embedded BE", url: "/notes/becpcc602/Ch12_Embedded_BE.pdf" },
+      ] },
       { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
       { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
