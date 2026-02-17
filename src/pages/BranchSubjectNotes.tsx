@@ -1222,7 +1222,7 @@ const subjectNotesData: Record<
     code: "BECL305",
     semester: 3,
     notes: [
-      { title: "Lab Manual", source: "Official Lab Manual", type: "notes", url: "#" },
+      { title: "Lab Manual", source: "Official Lab Manual", type: "notes", url: "/notes/becl305/BECL305_Lab_Manual.pdf" },
       { title: "Viva Questions", source: "Lab Viva Q&A", type: "qp", url: "#" },
     ],
   },
