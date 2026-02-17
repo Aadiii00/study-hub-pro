@@ -1345,7 +1345,7 @@ const subjectNotesData: Record<
         { name: "Module 4", url: "/notes/becpcc401/EMW_Module_4.pdf" },
         { name: "Module 5", url: "/notes/becpcc401/EMW_Module_5.pdf" },
       ] },
-      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "/notes/becpcc401/EMW_Module_1-5.pdf" },
       { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
