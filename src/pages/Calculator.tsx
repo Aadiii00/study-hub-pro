@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { Layout } from "@/components/layout/Layout";
-import { ArrowLeft, Calculator as CalcIcon, Plus, Trash2, RotateCcw, Info, AlertTriangle } from "lucide-react";
+import { ArrowLeft, Calculator as CalcIcon, Plus, Trash2, RotateCcw, Info, AlertTriangle, Download } from "lucide-react";
+import { generateMarksCardPDF, generateCGPACardPDF } from "@/utils/generate-marks-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
@@ -323,6 +324,36 @@ function SGPACalculator() {
           </div>
         </div>
       )}
+
+      {/* Download Button */}
+      {subjectMarks.length > 0 && subjectMarks.some((s) => s.marks > 0) && (
+        <div className="flex justify-center animate-fade-in">
+          <Button
+            onClick={() =>
+              generateMarksCardPDF({
+                studentName,
+                usn,
+                branch,
+                semester,
+                scheme,
+                subjects: subjectMarks.map((s) => ({
+                  ...s,
+                  grade: marksToGrade(s.marks).grade,
+                  gradePoint: marksToGrade(s.marks).gradePoint,
+                })),
+                sgpa: result.sgpa,
+                percentage: result.percentage,
+                totalCredits: result.totalCredits,
+                hasFailed,
+              })
+            }
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8"
+          >
+            <Download className="w-4 h-4 mr-2" />
+            Download Marks Card (PDF)
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
@@ -459,6 +490,23 @@ function CGPACalculator() {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Download Button */}
+      <div className="flex justify-center">
+        <Button
+          onClick={() =>
+            generateCGPACardPDF({
+              semesters: semesters.map((s) => ({ sgpa: s.sgpa, credits: s.credits })),
+              cgpa: calculateCGPA(),
+              percentage,
+            })
+          }
+          className="bg-gradient-to-r from-violet-500 to-purple-500 hover:from-violet-600 hover:to-purple-600 text-white px-8"
+        >
+          <Download className="w-4 h-4 mr-2" />
+          Download CGPA Report (PDF)
+        </Button>
       </div>
     </div>
   );
