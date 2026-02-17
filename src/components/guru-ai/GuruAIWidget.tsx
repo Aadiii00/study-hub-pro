@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import ReactMarkdown from "react-markdown";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
+import guruBotImage from "@/assets/guru-ai-bot.jpg";
 
 type Message = {
   id: string;
@@ -302,14 +303,29 @@ export function GuruAIWidget() {
 
   if (!isOpen) {
     return (
-      <button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 text-white shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center group"
-        aria-label="Open GURU AI"
-      >
-        <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
-        <span className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-white animate-pulse" />
-      </button>
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+        {/* Intro frame */}
+        <div className="flex items-center gap-3 bg-card border border-border rounded-2xl shadow-lg px-3 py-2.5 animate-fade-in">
+          <img
+            src={guruBotImage}
+            alt="Guru AI"
+            className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+          />
+          <div className="leading-tight">
+            <p className="text-sm font-bold text-foreground">Hi I'm Guru AI!</p>
+            <p className="text-xs text-muted-foreground">Ask me any doubts.</p>
+          </div>
+        </div>
+        {/* FAB button */}
+        <button
+          onClick={() => setIsOpen(true)}
+          className="w-14 h-14 rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 text-white shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+          aria-label="Open GURU AI"
+        >
+          <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
+          <span className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-white animate-pulse" />
+        </button>
+      </div>
     );
   }
 
