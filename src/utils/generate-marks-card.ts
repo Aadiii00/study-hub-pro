@@ -170,13 +170,11 @@ export function generateMarksCardPDF(data: MarksCardData) {
   doc.setTextColor(150, 150, 150);
   doc.setFontSize(8);
   doc.setFont("helvetica", "normal");
-  doc.text("with ❤ by Shashank", pageWidth / 2, pageHeight - 10, { align: "center" });
+  doc.text("With \u2764\uFE0F By Team Code-blooded", pageWidth / 2, pageHeight - 10, { align: "center" });
 
   // Save
-  const fileName = data.usn
-    ? `MarksCard_${data.usn}_Sem${data.semester}.pdf`
-    : `MarksCard_Sem${data.semester}.pdf`;
-  doc.save(fileName);
+  const safeName = (data.studentName || "Student").replace(/\s+/g, "");
+  doc.save(`${safeName}smarkscard.pdf`);
 }
 
 interface CGPACardData {
@@ -247,7 +245,7 @@ export function generateCGPACardPDF(data: CGPACardData) {
   doc.setTextColor(150, 150, 150);
   doc.setFontSize(8);
   doc.setFont("helvetica", "normal");
-  doc.text("with ❤ by Shashank", pageWidth / 2, pageHeight - 10, { align: "center" });
+  doc.text("With \u2764\uFE0F By Team Code-blooded", pageWidth / 2, pageHeight - 10, { align: "center" });
 
   doc.save("CGPA_Report.pdf");
 }
