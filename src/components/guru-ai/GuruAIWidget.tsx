@@ -3,6 +3,7 @@ import { MessageCircle, X, Send, Paperclip, Trash2, FileText, Loader2, Bot } fro
 import { Button } from "@/components/ui/button";
 import ReactMarkdown from "react-markdown";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
 
 type Message = {
   id: string;
@@ -167,11 +168,25 @@ export function GuruAIWidget() {
     const assistantId = (Date.now() + 1).toString();
 
     try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session?.access_token) {
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: (Date.now() + 1).toString(),
+            role: "assistant",
+            content: "⚠️ Please sign in to use GURU AI. You need an account to access the AI assistant.",
+          },
+        ]);
+        setIsLoading(false);
+        return;
+      }
+
       const resp = await fetch(CHAT_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+          Authorization: `Bearer ${session.access_token}`,
         },
         body: JSON.stringify({
           messages: chatHistory,
