@@ -281,6 +281,7 @@ export function GuruAIWidget() {
   if (!isOpen) {
     return (
       <button
+        data-guru-ai-toggle
         onClick={() => setIsOpen(true)}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 text-white shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center group"
         aria-label="Open GURU AI"
