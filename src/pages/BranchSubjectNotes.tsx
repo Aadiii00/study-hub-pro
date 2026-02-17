@@ -1177,7 +1177,7 @@ const subjectNotesData: Record<
         { name: "Module 5", url: "/notes/bec302/Module_5_SVIT.pdf" },
       ] },
       { title: "Notes 2", source: "College Notes", type: "notes", url: "/notes/bec302/BEC302_IPCC_DSDV.pdf" },
-      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "/notes/bec302/Imp_Questions.pdf" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
@@ -1194,8 +1194,11 @@ const subjectNotesData: Record<
         { name: "Module 5", url: "/notes/bec303/Module_5_SVIT.pdf" },
       ] },
       { title: "Notes 2", source: "College Notes", type: "notes", url: "/notes/bec303/EPC_Notes_BEC303.pdf" },
-      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "/notes/bec303/EPC_IMP_Questions.pdf" },
-      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#", modules: [
+        { name: "EPC Important Questions", url: "/notes/bec303/EPC_IMP_Questions.pdf" },
+        { name: "Important Questions", url: "/notes/bec303/Imp_Questions.pdf" },
+      ] },
     ],
   },
   BEC304: {
