@@ -123,7 +123,7 @@ export default function FirstYearNotes() {
   const { scheme, cycle } = useParams<{ scheme: string; cycle: string }>();
   
   const cycleName = cycle === "p-cycle" ? "P Cycle" : "C Cycle";
-  const schemeName = scheme === "2022" ? "2022 Scheme" : "2025 Scheme";
+  const schemeName = "";
   const subjects = cycle === "p-cycle" ? pCycleSubjects : cCycleSubjects;
 
   return (
@@ -141,7 +141,7 @@ export default function FirstYearNotes() {
             <p className="text-muted-foreground mt-1">
               <span className="inline-flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                {schemeName} • {subjects.length} Subjects
+                {cycleName} • {subjects.length} Subjects
               </span>
             </p>
           </div>

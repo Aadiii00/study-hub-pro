@@ -534,8 +534,7 @@ export default function Calculator() {
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-2">VTU Calculator</h1>
             <p className="text-muted-foreground">
-              Calculate your Semester Grade Point Average (SGPA), Percentage and Class for{" "}
-              <span className="text-primary font-medium">VTU 2022 Scheme</span> with precision
+              Calculate your Semester Grade Point Average (SGPA), Percentage and Class with precision
             </p>
           </div>
 

@@ -2057,7 +2057,7 @@ export default function BranchSubjectNotes() {
           <div className="text-center mb-10 animate-fade-in">
             <p className="text-sm text-muted-foreground font-mono mb-2">{subject.code}</p>
             <h1 className="text-2xl md:text-3xl font-bold mb-2">{subject.name}</h1>
-            <p className="text-muted-foreground">2022 Scheme • Semester {subject.semester}</p>
+            <p className="text-muted-foreground">Semester {subject.semester}</p>
           </div>
 
           {/* Banner */}
