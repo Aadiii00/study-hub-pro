@@ -1362,7 +1362,12 @@ const subjectNotesData: Record<
         { name: "Module 4", url: "/notes/becpcc402/Module_4_SVIT.pdf" },
         { name: "Module 5", url: "/notes/becpcc402/Module_5_SVIT.pdf" },
       ] },
-      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#", modules: [
+        { name: "Module 1", url: "/notes/becpcc402/Module_1_RV.pdf" },
+        { name: "Module 2", url: "/notes/becpcc402/Module_2_AM.pdf" },
+        { name: "Module 3", url: "/notes/becpcc402/Module_3_FM.pdf" },
+        { name: "Module 4", url: "/notes/becpcc402/Module_4_Digital.pdf" },
+      ] },
       { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
