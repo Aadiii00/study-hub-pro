@@ -1563,6 +1563,106 @@ const subjectNotesData: Record<
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
+  // ECE Semester 6 Subjects
+  BECPCC601: {
+    name: "VLSI Design and Testing",
+    code: "BECPCC601",
+    semester: 6,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECPCC602: {
+    name: "Embedded System Design",
+    code: "BECPCC602",
+    semester: 6,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECPEC603X: {
+    name: "Professional Elective Course (PEC)",
+    code: "BECPEC603X",
+    semester: 6,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECOEC604X: {
+    name: "Open Elective Course (OEC)",
+    code: "BECOEC604X",
+    semester: 6,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECPRJ605: {
+    name: "Capstone Project Work – Phase I",
+    code: "BECPRJ605",
+    semester: 6,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECPCL606: {
+    name: "VLSI Design and Testing Lab",
+    code: "BECPCL606",
+    semester: 6,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECAEC607X: {
+    name: "Ability / Skill Enhancement Course (AEC)",
+    code: "BECAEC607X",
+    semester: 6,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BHSIKS608: {
+    name: "Indian Knowledge System",
+    code: "BHSIKS608",
+    semester: 6,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BMNCLB609X: {
+    name: "Club Activities",
+    code: "BMNCLB609X",
+    semester: 6,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
   // CSE/ISE Semester 7 Subjects
   BCS701: {
     name: "Internet of Things",
