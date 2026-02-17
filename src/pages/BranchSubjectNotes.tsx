@@ -1683,7 +1683,13 @@ const subjectNotesData: Record<
     code: "BEC613A",
     semester: 6,
     notes: [
-      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#", modules: [
+        { name: "Module 1", url: "/notes/bec613a/MMC_Module_1.pdf" },
+        { name: "Module 2", url: "/notes/bec613a/MMC_Module_2.pdf" },
+        { name: "Module 3", url: "/notes/bec613a/MMC_Module_3.pdf" },
+        { name: "Module 4", url: "/notes/bec613a/MMC_Module_4.pdf" },
+        { name: "Module 5", url: "/notes/bec613a/MMC_Module_5.pdf" },
+      ] },
       { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
       { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
