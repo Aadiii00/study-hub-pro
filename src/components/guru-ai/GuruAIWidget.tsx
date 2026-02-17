@@ -38,9 +38,17 @@ export function GuruAIWidget() {
   const [fileContent, setFileContent] = useState<string | null>(null);
   const [fileName, setFileName] = useState<string | null>(null);
   const [isProcessingFile, setIsProcessingFile] = useState(false);
+  const [showFrame, setShowFrame] = useState(true);
+  const [isHovering, setIsHovering] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Auto-hide frame after 10 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setShowFrame(false), 10000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -303,19 +311,25 @@ export function GuruAIWidget() {
 
   if (!isOpen) {
     return (
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+      <div
+        className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2"
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
         {/* Intro frame */}
-        <div className="flex items-center gap-3 bg-card border border-border rounded-2xl shadow-lg px-3 py-2.5 animate-fade-in">
-          <img
-            src={guruBotImage}
-            alt="Guru AI"
-            className="w-10 h-10 rounded-full object-cover flex-shrink-0"
-          />
-          <div className="leading-tight">
-            <p className="text-sm font-bold text-foreground">Hi I'm Guru AI!</p>
-            <p className="text-xs text-muted-foreground">Ask me any doubts.</p>
+        {(showFrame || isHovering) && (
+          <div className="flex items-center gap-3 bg-card border border-border rounded-2xl shadow-lg px-3 py-2.5 animate-fade-in">
+            <img
+              src={guruBotImage}
+              alt="Guru AI"
+              className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+            />
+            <div className="leading-tight">
+              <p className="text-sm font-bold text-foreground">Hi I'm Guru AI!</p>
+              <p className="text-xs text-muted-foreground">Ask me any doubts.</p>
+            </div>
           </div>
-        </div>
+        )}
         {/* FAB button */}
         <button
           onClick={() => setIsOpen(true)}
