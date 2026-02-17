@@ -51,12 +51,19 @@ export function GuruAIWidget() {
 
   const extractTextFromFile = async (file: File): Promise<string> => {
     const text = await file.text();
-    // For text-based files, return directly
-    if (file.type === "text/plain" || file.name.endsWith(".txt") || file.name.endsWith(".md")) {
-      return text;
+
+    // Validate content isn't mostly binary garbage
+    const printableChars = text.replace(/[^\x20-\x7E\n\r\t]/g, "");
+    if (printableChars.length < text.length * 0.3) {
+      throw new Error("File contains too much binary content to extract text.");
     }
-    // For PDFs and other formats, extract what we can from text representation
-    // Remove binary content markers and keep readable text
+
+    // For text-based files, return cleaned content
+    if (file.type === "text/plain" || file.name.endsWith(".txt") || file.name.endsWith(".md")) {
+      return printableChars.substring(0, 30000);
+    }
+
+    // For PDFs and other formats, more aggressive cleanup
     const cleaned = text
       .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F]/g, " ")
       .replace(/\s{3,}/g, "\n\n")
@@ -65,7 +72,7 @@ export function GuruAIWidget() {
     if (cleaned.length < 50) {
       return `[File: ${file.name}] - The file content could not be fully extracted as text. Please describe what you'd like to know about this document.`;
     }
-    return cleaned.substring(0, 30000); // Limit to ~30k chars
+    return cleaned.substring(0, 30000);
   };
 
   const handleFileUpload = async (file: File) => {
