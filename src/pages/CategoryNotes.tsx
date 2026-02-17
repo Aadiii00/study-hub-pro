@@ -118,7 +118,7 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
 };
 
 const categoryInfo: Record<string, { name: string; semesters: number[]; gradient: string }> = {
-  "cse-ise": { name: "CSE / ISE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-indigo-600 to-violet-500" },
+  "cse-ise": { name: "CSE Stream", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-indigo-600 to-violet-500" },
   ece: { name: "ECE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-rose-600 to-orange-500" },
   eee: { name: "EEE", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-amber-600 to-lime-500" },
   civil: { name: "Civil", semesters: [3, 4, 5, 6, 7, 8], gradient: "from-slate-600 to-zinc-500" },

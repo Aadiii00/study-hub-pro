@@ -74,7 +74,7 @@ export function Footer() {
           </p>
           <p className="text-sm text-muted-foreground">Connect With Us for More Updates</p>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm">
-            <a href="https://linkedin.com/in/aditya-b-p" target="_blank" rel="noopener noreferrer" className="font-bold text-foreground underline hover:text-primary transition-colors">Adithya</a>
+            <a href="https://linkedin.com/in/aditya-b-p" target="_blank" rel="noopener noreferrer" className="font-bold text-foreground underline hover:text-primary transition-colors">Aditya</a>
             <span className="text-muted-foreground">•</span>
             <a href="https://linkedin.com/in/c-hemadri" target="_blank" rel="noopener noreferrer" className="font-bold text-foreground underline hover:text-primary transition-colors">Hemadri</a>
             <span className="text-muted-foreground">•</span>
