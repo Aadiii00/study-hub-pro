@@ -1350,6 +1350,23 @@ const subjectNotesData: Record<
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
+  BECPCC402: {
+    name: "Principles of Communication Systems",
+    code: "BECPCC402",
+    semester: 4,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#", modules: [
+        { name: "Module 1", url: "/notes/becpcc402/Module_1_SVIT.pdf" },
+        { name: "Module 2", url: "/notes/becpcc402/Module_2_SVIT.pdf" },
+        { name: "Module 3", url: "/notes/becpcc402/Module_3_SVIT.pdf" },
+        { name: "Module 4", url: "/notes/becpcc402/Module_4_SVIT.pdf" },
+        { name: "Module 5", url: "/notes/becpcc402/Module_5_SVIT.pdf" },
+      ] },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
   // CSE/ISE Semester 7 Subjects
   BCS701: {
     name: "Internet of Things",
