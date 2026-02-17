@@ -365,6 +365,7 @@ interface Semester {
 
 function CGPACalculator() {
   const DEFAULT_CREDITS = 20;
+  const [studentName, setStudentName] = useState("");
   const [semesters, setSemesters] = useState<Semester[]>([
     { id: "1", sgpa: 9.0 },
     { id: "2", sgpa: 8.5 },
@@ -406,6 +407,11 @@ function CGPACalculator() {
 
   return (
     <div className="space-y-6">
+      <div>
+        <label className="text-sm text-muted-foreground mb-2 block">Enter your Name</label>
+        <Input placeholder="Your Name" value={studentName} onChange={(e) => setStudentName(e.target.value)} className="bg-background" />
+      </div>
+
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 text-primary font-semibold">
           <div className="w-1 h-5 bg-primary rounded-full" />
@@ -486,6 +492,7 @@ function CGPACalculator() {
         <Button
           onClick={() =>
             generateCGPACardPDF({
+              studentName,
               semesters: semesters.map((s) => ({ sgpa: s.sgpa, credits: DEFAULT_CREDITS })),
               cgpa: calculateCGPA(),
               percentage,
