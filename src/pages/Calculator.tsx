@@ -308,10 +308,10 @@ function SGPACalculator() {
             </div>
             <div>
               <p className="text-sm text-muted-foreground mb-1">Your SGPA</p>
-              <p className={`text-4xl font-bold bg-clip-text text-transparent transition-all duration-500 ${
+              <p className={`text-4xl font-bold transition-all duration-500 ${
                 hasFailed
-                  ? "bg-gradient-to-r from-destructive to-destructive/70"
-                  : "bg-gradient-to-r from-cyan-400 to-blue-500"
+                  ? "text-destructive"
+                  : "text-white"
               }`}>
                 {result.sgpa.toFixed(2)}
               </p>
