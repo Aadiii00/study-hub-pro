@@ -1,5 +1,6 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { GuruAIWidget } from "@/components/guru-ai/GuruAIWidget";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ export function Layout({ children, showFooter = true }: LayoutProps) {
       <Header />
       <main className="flex-1">{children}</main>
       {showFooter && <Footer />}
+      <GuruAIWidget />
     </div>
   );
 }
