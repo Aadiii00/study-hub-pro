@@ -27,21 +27,24 @@ export function generateMarksCardPDF(data: MarksCardData) {
   const doc = new jsPDF();
   const pageWidth = doc.internal.pageSize.getWidth();
 
-  // Header
-  doc.setFillColor(15, 23, 42); // dark navy
-  doc.rect(0, 0, pageWidth, 45, "F");
+  // Header - white to cyan-blue gradient effect
+  doc.setFillColor(0, 188, 212); // cyan
+  doc.rect(0, 0, pageWidth, 8, "F");
+  doc.setFillColor(255, 255, 255);
+  doc.rect(0, 8, pageWidth, 40, "F");
 
-  doc.setTextColor(255, 255, 255);
+  doc.setTextColor(0, 131, 176); // dark cyan
   doc.setFontSize(22);
   doc.setFont("helvetica", "bold");
-  doc.text("StudyHub - Marks Card", pageWidth / 2, 20, { align: "center" });
+  doc.text("StudyHub - Marks Card", pageWidth / 2, 24, { align: "center" });
 
   doc.setFontSize(11);
   doc.setFont("helvetica", "normal");
-  doc.text(`VTU ${data.scheme} Scheme`, pageWidth / 2, 30, { align: "center" });
+  doc.setTextColor(80, 80, 80);
+  doc.text(`VTU ${data.scheme} Scheme`, pageWidth / 2, 33, { align: "center" });
 
   doc.setFontSize(9);
-  doc.text(`Generated on ${new Date().toLocaleDateString("en-IN", { day: "2-digit", month: "long", year: "numeric" })}`, pageWidth / 2, 38, { align: "center" });
+  doc.text(`Generated on ${new Date().toLocaleDateString("en-IN", { day: "2-digit", month: "long", year: "numeric" })}`, pageWidth / 2, 41, { align: "center" });
 
   // Student Details
   let y = 55;
@@ -92,7 +95,7 @@ export function generateMarksCardPDF(data: MarksCardData) {
     body: tableBody,
     theme: "grid",
     headStyles: {
-      fillColor: [15, 23, 42],
+      fillColor: [0, 188, 212],
       textColor: [255, 255, 255],
       fontStyle: "bold",
       fontSize: 9,
@@ -119,7 +122,7 @@ export function generateMarksCardPDF(data: MarksCardData) {
   // Result Summary
   const finalY = (doc as any).lastAutoTable.finalY + 12;
 
-  doc.setFillColor(240, 245, 255);
+  doc.setFillColor(224, 247, 250); // light cyan background
   doc.roundedRect(14, finalY, pageWidth - 28, 35, 3, 3, "F");
 
   doc.setFontSize(11);
@@ -167,10 +170,12 @@ export function generateMarksCardPDF(data: MarksCardData) {
 
   // Footer
   const pageHeight = doc.internal.pageSize.getHeight();
-  doc.setTextColor(150, 150, 150);
-  doc.setFontSize(8);
-  doc.setFont("helvetica", "normal");
-  doc.text("With \u2764\uFE0F By Team Code-blooded", pageWidth / 2, pageHeight - 10, { align: "center" });
+  doc.setFillColor(0, 188, 212);
+  doc.rect(0, pageHeight - 14, pageWidth, 14, "F");
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(9);
+  doc.setFont("helvetica", "bold");
+  doc.text("By Team Code-Blooded", pageWidth / 2, pageHeight - 5, { align: "center" });
 
   // Save
   const safeName = (data.studentName || "Student").replace(/\s+/g, "");
@@ -188,15 +193,18 @@ export function generateCGPACardPDF(data: CGPACardData) {
   const pageWidth = doc.internal.pageSize.getWidth();
 
   // Header
-  doc.setFillColor(15, 23, 42);
-  doc.rect(0, 0, pageWidth, 45, "F");
-  doc.setTextColor(255, 255, 255);
+  doc.setFillColor(0, 188, 212);
+  doc.rect(0, 0, pageWidth, 8, "F");
+  doc.setFillColor(255, 255, 255);
+  doc.rect(0, 8, pageWidth, 40, "F");
+  doc.setTextColor(0, 131, 176);
   doc.setFontSize(22);
   doc.setFont("helvetica", "bold");
-  doc.text("StudyHub - CGPA Report", pageWidth / 2, 20, { align: "center" });
+  doc.text("StudyHub - CGPA Report", pageWidth / 2, 24, { align: "center" });
   doc.setFontSize(11);
   doc.setFont("helvetica", "normal");
-  doc.text(`Generated on ${new Date().toLocaleDateString("en-IN", { day: "2-digit", month: "long", year: "numeric" })}`, pageWidth / 2, 32, { align: "center" });
+  doc.setTextColor(80, 80, 80);
+  doc.text(`Generated on ${new Date().toLocaleDateString("en-IN", { day: "2-digit", month: "long", year: "numeric" })}`, pageWidth / 2, 33, { align: "center" });
 
   // Table
   const tableBody = data.semesters.map((s, i) => [
@@ -211,7 +219,7 @@ export function generateCGPACardPDF(data: CGPACardData) {
     head: [["Semester", "SGPA", "Credits", "Weighted Points"]],
     body: tableBody,
     theme: "grid",
-    headStyles: { fillColor: [15, 23, 42], textColor: [255, 255, 255], fontStyle: "bold" },
+    headStyles: { fillColor: [0, 188, 212], textColor: [255, 255, 255], fontStyle: "bold" },
     bodyStyles: { fontSize: 10, halign: "center" },
     alternateRowStyles: { fillColor: [245, 247, 250] },
     margin: { left: 30, right: 30 },
@@ -219,7 +227,7 @@ export function generateCGPACardPDF(data: CGPACardData) {
 
   const finalY = (doc as any).lastAutoTable.finalY + 15;
 
-  doc.setFillColor(240, 245, 255);
+  doc.setFillColor(224, 247, 250);
   doc.roundedRect(30, finalY, pageWidth - 60, 30, 3, 3, "F");
 
   const colW = (pageWidth - 60) / 2;
@@ -242,10 +250,12 @@ export function generateCGPACardPDF(data: CGPACardData) {
 
   // Footer
   const pageHeight = doc.internal.pageSize.getHeight();
-  doc.setTextColor(150, 150, 150);
-  doc.setFontSize(8);
-  doc.setFont("helvetica", "normal");
-  doc.text("With \u2764\uFE0F By Team Code-blooded", pageWidth / 2, pageHeight - 10, { align: "center" });
+  doc.setFillColor(0, 188, 212);
+  doc.rect(0, pageHeight - 14, pageWidth, 14, "F");
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(9);
+  doc.setFont("helvetica", "bold");
+  doc.text("By Team Code-Blooded", pageWidth / 2, pageHeight - 5, { align: "center" });
 
   doc.save("CGPA_Report.pdf");
 }
