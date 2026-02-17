@@ -1439,6 +1439,106 @@ const subjectNotesData: Record<
       },
     ],
   },
+  // ECE Semester 5 Subjects
+  BECPCC501: {
+    name: "Digital Communication",
+    code: "BECPCC501",
+    semester: 5,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECPCC502: {
+    name: "Digital Signal Processing",
+    code: "BECPCC502",
+    semester: 5,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECMAE503: {
+    name: "Technological Innovation and Management Entrepreneurship",
+    code: "BECMAE503",
+    semester: 5,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECPEC504X: {
+    name: "Professional Elective Course (PEC)",
+    code: "BECPEC504X",
+    semester: 5,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BHSRMI505: {
+    name: "Research Methodology and IPR",
+    code: "BHSRMI505",
+    semester: 5,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECPRJ506: {
+    name: "Mini Project Work",
+    code: "BECPRJ506",
+    semester: 5,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECPCL507: {
+    name: "Digital Communication Lab",
+    code: "BECPCL507",
+    semester: 5,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECAEC508X: {
+    name: "Ability / Skill Enhancement Course (AEC)",
+    code: "BECAEC508X",
+    semester: 5,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BMNAPT509: {
+    name: "General Aptitude for Competitive Examinations",
+    code: "BMNAPT509",
+    semester: 5,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
   // CSE/ISE Semester 7 Subjects
   BCS701: {
     name: "Internet of Things",
