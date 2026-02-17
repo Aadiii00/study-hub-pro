@@ -1391,6 +1391,53 @@ const subjectNotesData: Record<
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
+  BBTBIO405: {
+    name: "Biology for Engineers",
+    code: "BBTBIO405",
+    semester: 4,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem4/BIO/Module_1_Notes1.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem4/BIO/Module_2_Notes1.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem4/BIO/Module_3_Notes1.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem4/BIO/Module_4_Notes1.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem4/BIO/Module_5_Notes1.pdf" },
+        ],
+      },
+      {
+        title: "Notes 2",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem4/BIO/Module_1_Notes2.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem4/BIO/Module_2_Notes2.pdf" },
+          { name: "Module 3", url: "/notes/CSE/Sem4/BIO/Module_3_Notes2.pdf" },
+          { name: "Module 4", url: "/notes/CSE/Sem4/BIO/Module_4_Notes2.pdf" },
+          { name: "Module 5", url: "/notes/CSE/Sem4/BIO/Module_5_Notes2.pdf" },
+        ],
+      },
+      {
+        title: "Model QP with Solution",
+        source: "VTU Model Papers",
+        type: "qp",
+        url: "#",
+        modules: [
+          { name: "Important Questions", url: "/notes/CSE/Sem4/BIO/Important_Questions.pdf" },
+          { name: "Question Bank", url: "/notes/CSE/Sem4/BIO/Question_Bank.pdf" },
+          { name: "Module Wise QB", url: "/notes/CSE/Sem4/BIO/Module_Wise_QB.pdf" },
+          { name: "Solved Questions", url: "/notes/CSE/Sem4/BIO/Solved_Questions.pdf" },
+          { name: "VTU Model QP 1", url: "/notes/CSE/Sem4/BIO/VTU_Model_QP_1.pdf" },
+          { name: "VTU Model QP 2", url: "/notes/CSE/Sem4/BIO/VTU_Model_QP_2.pdf" },
+        ],
+      },
+    ],
+  },
   // CSE/ISE Semester 7 Subjects
   BCS701: {
     name: "Internet of Things",
