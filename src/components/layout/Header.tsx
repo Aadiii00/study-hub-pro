@@ -25,7 +25,6 @@ export function Header() {
     { to: "/notes/first-year", label: "First Year" },
     { to: "/notes/cse-ise", label: "CSE/ISE" },
     { to: "/calculator", label: "Calculator" },
-    { to: "#guru-ai", label: "GURU AI" },
   ];
 
   return (
@@ -53,35 +52,21 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              link.to === "#guru-ai" ? (
-                <button
-                  key={link.to}
-                  onClick={() => {
-                    const btn = document.querySelector('[data-guru-ai-toggle]') as HTMLButtonElement;
-                    if (btn) btn.click();
-                  }}
-                  className="relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group text-muted-foreground hover:text-foreground"
-                >
-                  <span className="relative z-10 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">{link.label}</span>
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-600 group-hover:w-3/4 transition-all duration-300 rounded-full" />
-                </button>
-              ) : (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
-                    isActive(link.to)
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  <span className="relative z-10">{link.label}</span>
-                  {isActive(link.to) && (
-                    <span className="absolute inset-0 bg-primary/10 rounded-lg" />
-                  )}
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-600 group-hover:w-3/4 transition-all duration-300 rounded-full" />
-                </Link>
-              )
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
+                  isActive(link.to)
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <span className="relative z-10">{link.label}</span>
+                {isActive(link.to) && (
+                  <span className="absolute inset-0 bg-primary/10 rounded-lg" />
+                )}
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-600 group-hover:w-3/4 transition-all duration-300 rounded-full" />
+              </Link>
             ))}
           </nav>
 
@@ -121,32 +106,18 @@ export function Header() {
           <nav className="md:hidden py-4 border-t border-border/30 animate-fade-in">
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
-                link.to === "#guru-ai" ? (
-                  <button
-                    key={link.to}
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      const btn = document.querySelector('[data-guru-ai-toggle]') as HTMLButtonElement;
-                      if (btn) btn.click();
-                    }}
-                    className="text-sm font-semibold transition-all duration-200 px-4 py-3 rounded-lg text-left bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent hover:bg-muted/50"
-                  >
-                    {link.label}
-                  </button>
-                ) : (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className={`text-sm font-medium transition-all duration-200 px-4 py-3 rounded-lg ${
-                      isActive(link.to)
-                        ? "text-primary bg-primary/10"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                )
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`text-sm font-medium transition-all duration-200 px-4 py-3 rounded-lg ${
+                    isActive(link.to)
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
               ))}
             </div>
           </nav>
