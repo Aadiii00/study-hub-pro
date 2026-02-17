@@ -114,6 +114,7 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
       { code: "BECAEC607X", name: "Ability / Skill Enhancement Course (AEC)", shortName: "AEC" },
       { code: "BHSIKS608", name: "Indian Knowledge System", shortName: "IKS" },
       { code: "BMNCLB609X", name: "Club Activities", shortName: "Club" },
+      { code: "BEC613A", name: "Multimedia Communication", shortName: "MMC" },
     ],
     7: [],
     8: [],
