@@ -183,6 +183,7 @@ export function generateMarksCardPDF(data: MarksCardData) {
 }
 
 interface CGPACardData {
+  studentName?: string;
   semesters: { sgpa: number; credits: number }[];
   cgpa: string;
   percentage: string;
@@ -257,5 +258,6 @@ export function generateCGPACardPDF(data: CGPACardData) {
   doc.setFont("helvetica", "bold");
   doc.text("By Team Code-Blooded", pageWidth / 2, pageHeight - 5, { align: "center" });
 
-  doc.save("CGPA_Report.pdf");
+  const safeName = (data.studentName || "Student").replace(/\s+/g, "");
+  doc.save(`${safeName}smarkscard.pdf`);
 }
