@@ -41,7 +41,7 @@ export function Header() {
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold bg-gradient-to-r from-foreground via-foreground to-foreground/80 bg-clip-text group-hover:from-cyan-500 group-hover:to-blue-600 transition-all duration-300">
-                Campus Notes
+                StudyHub
               </span>
               <span className="text-[10px] text-muted-foreground font-medium tracking-wider uppercase">
                 VTU Resources
