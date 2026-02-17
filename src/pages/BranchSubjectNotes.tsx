@@ -1206,7 +1206,12 @@ const subjectNotesData: Record<
     code: "BEC304",
     semester: 3,
     notes: [
-      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#" },
+      { title: "Notes 1 — SVIT", source: "SVIT College", type: "notes", url: "#", modules: [
+        { name: "Module 1", url: "/notes/bec304/BEC304_NA_MODULE-1_NOTES.pdf" },
+        { name: "Module 2", url: "/notes/bec304/BEC304_NA_MODULE-2_NOTES.pdf" },
+        { name: "Module 3", url: "/notes/bec304/BEC304_NA_MODULE-3_NOTES.pdf" },
+        { name: "Module 5", url: "/notes/bec304/BEC304_NA_MODULE-5_NOTES.pdf" },
+      ] },
       { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
       { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
