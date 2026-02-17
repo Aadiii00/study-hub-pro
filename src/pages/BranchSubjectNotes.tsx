@@ -1368,6 +1368,7 @@ const subjectNotesData: Record<
         { name: "Module 3", url: "/notes/becpcc402/Module_3_FM.pdf" },
         { name: "Module 4", url: "/notes/becpcc402/Module_4_Digital.pdf" },
       ] },
+      { title: "Lab Manual", source: "College Lab Manuals", type: "notes", url: "/notes/becpcc402/PCS_Lab_Manual_KLE.pdf" },
       { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
