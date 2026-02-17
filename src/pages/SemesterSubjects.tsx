@@ -116,7 +116,14 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
       { code: "BMNCLB609X", name: "Club Activities", shortName: "Club" },
       { code: "BEC613A", name: "Multimedia Communication", shortName: "MMC" },
     ],
-    7: [],
+    7: [
+      { code: "BECPCC701", name: "Microwave Engineering and Antenna Theory", shortName: "MEAT" },
+      { code: "BECPCC702", name: "Wireless Communication Systems", shortName: "WCS" },
+      { code: "BECPCC703", name: "Computer Networks and Protocols", shortName: "CNP" },
+      { code: "BECPEC704X", name: "Professional Elective Course (PEC)", shortName: "PEC" },
+      { code: "BECOEC705X", name: "Open Elective Course (OEC)", shortName: "OEC" },
+      { code: "BECPRJ706", name: "Capstone Project Work – Phase II", shortName: "Capstone II" },
+    ],
     8: [],
   },
   eee: {

@@ -1695,6 +1695,73 @@ const subjectNotesData: Record<
       { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
     ],
   },
+  // ECE Semester 7 Subjects
+  BECPCC701: {
+    name: "Microwave Engineering and Antenna Theory",
+    code: "BECPCC701",
+    semester: 7,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECPCC702: {
+    name: "Wireless Communication Systems",
+    code: "BECPCC702",
+    semester: 7,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECPCC703: {
+    name: "Computer Networks and Protocols",
+    code: "BECPCC703",
+    semester: 7,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECPEC704X: {
+    name: "Professional Elective Course (PEC)",
+    code: "BECPEC704X",
+    semester: 7,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECOEC705X: {
+    name: "Open Elective Course (OEC)",
+    code: "BECOEC705X",
+    semester: 7,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
+  BECPRJ706: {
+    name: "Capstone Project Work – Phase II",
+    code: "BECPRJ706",
+    semester: 7,
+    notes: [
+      { title: "Notes 1", source: "College Notes", type: "notes", url: "#" },
+      { title: "Notes 2", source: "College Notes", type: "notes", url: "#" },
+      { title: "Question Bank", source: "VTU Question Bank", type: "qp", url: "#" },
+      { title: "Model QP", source: "VTU Model Papers", type: "qp", url: "#" },
+    ],
+  },
   // CSE/ISE Semester 7 Subjects
   BCS701: {
     name: "Internet of Things",
