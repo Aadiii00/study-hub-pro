@@ -179,23 +179,22 @@ export default function Index() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 backdrop-blur-md mb-10 animate-fade-in border border-primary/30 shadow-glow">
               <Sparkles className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium text-white">Free access to 1000+ premium notes</span>
+              <span className="text-sm font-medium text-white">Your Premium Study Companion</span>
               <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
             </div>
             
             {/* Main heading */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 animate-slide-up font-display tracking-tight">
-              <span className="text-white">Your Gateway to</span>
+              <span className="text-white">Welcome to</span>
               <span className="block mt-3 bg-gradient-to-r from-primary via-cyan to-accent bg-clip-text text-transparent animate-shimmer" style={{ backgroundSize: '200% auto' }}>
-                Academic Excellence
+                StudyHub
               </span>
               <span className="inline-block w-2.5 h-2.5 bg-primary rounded-full ml-1 animate-pulse" />
             </h1>
             
             {/* Subtitle */}
             <p className="text-lg md:text-xl lg:text-2xl text-white/70 mb-12 max-w-2xl mx-auto animate-slide-up stagger-1 leading-relaxed">
-              Access quality VTU notes organized by branch and semester. 
-              Download individual files or get everything in one click.
+              Premium VTU notes, solved papers & AI-powered study assistant — all in one place. Built by students, for students.
             </p>
             
             {/* CTA buttons */}
@@ -273,7 +272,7 @@ export default function Index() {
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 font-display">
-              Why Choose <span className="gradient-text">Campus Notes</span>?
+              Why Choose <span className="gradient-text">StudyHub</span>?
             </h2>
             <p className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto">
               Everything you need to succeed in your exams
