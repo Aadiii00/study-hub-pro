@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { ArrowRight, BookOpen, Download, Users, Shield, Sparkles, GraduationCap, Star, ChevronRight, Calculator, Quote, Zap, Trophy, Clock } from "lucide-react";
+import { ArrowRight, BookOpen, Download, Users, Shield, Sparkles, GraduationCap, Star, ChevronRight, Calculator, Quote, Zap, Trophy, Clock, Send, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { useToast } from "@/hooks/use-toast";
 
 const categories = [
   {
@@ -208,6 +209,187 @@ function TestimonialCard({ t, index }: { t: typeof testimonials[0]; index: numbe
         </div>
       </div>
     </motion.div>
+  );
+}
+
+const FEEDBACK_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-feedback`;
+
+function FeedbackSection() {
+  const [name, setName] = useState("");
+  const [branch, setBranch] = useState("");
+  const [rating, setRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0);
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim() || !message.trim() || rating === 0) {
+      toast({ title: "Please fill all required fields", description: "Name, rating, and message are required.", variant: "destructive" });
+      return;
+    }
+    setIsSubmitting(true);
+    try {
+      const resp = await fetch(FEEDBACK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY },
+        body: JSON.stringify({ name: name.trim(), branch: branch.trim() || null, rating, message: message.trim() }),
+      });
+      if (!resp.ok) {
+        const err = await resp.json().catch(() => ({ error: "Failed" }));
+        throw new Error(err.error || "Failed to submit");
+      }
+      setSubmitted(true);
+      toast({ title: "Thank you! 🎉", description: "Your feedback has been submitted successfully." });
+    } catch (err: any) {
+      toast({ title: "Submission failed", description: err.message, variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  if (submitted) {
+    return (
+      <section className="py-20 bg-secondary/30 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="max-w-lg mx-auto text-center p-10 rounded-3xl bg-card border border-border/50"
+          >
+            <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-5">
+              <Star className="w-8 h-8 text-primary fill-primary" />
+            </div>
+            <h3 className="text-2xl font-bold font-display mb-3 text-foreground">Thank You!</h3>
+            <p className="text-muted-foreground">Your feedback means a lot to us. We'll use it to make StudyHub even better! 🚀</p>
+          </motion.div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="py-24 bg-secondary/30 relative overflow-hidden">
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px]" />
+      <div className="container mx-auto px-4 relative">
+        <div className="text-center mb-14">
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-5 border border-primary/20"
+          >
+            <MessageSquare className="w-4 h-4 mr-2" />
+            Share Your Experience
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 font-display"
+          >
+            Your <span className="gradient-text">Feedback</span> Matters
+          </motion.h2>
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            Help us improve StudyHub by sharing your thoughts and suggestions
+          </p>
+        </div>
+
+        <motion.form
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          onSubmit={handleSubmit}
+          className="max-w-2xl mx-auto p-8 md:p-10 rounded-3xl bg-card border border-border/50 shadow-premium"
+        >
+          <div className="grid md:grid-cols-2 gap-5 mb-5">
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-2">Name *</label>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                maxLength={100}
+                placeholder="Your name"
+                className="w-full input-premium"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-2">Branch & Semester</label>
+              <input
+                type="text"
+                value={branch}
+                onChange={(e) => setBranch(e.target.value)}
+                maxLength={100}
+                placeholder="e.g. CSE, 4th Sem"
+                className="w-full input-premium"
+              />
+            </div>
+          </div>
+
+          {/* Star Rating */}
+          <div className="mb-5">
+            <label className="block text-sm font-medium text-foreground mb-2">Rating *</label>
+            <div className="flex gap-1">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <button
+                  key={star}
+                  type="button"
+                  onClick={() => setRating(star)}
+                  onMouseEnter={() => setHoverRating(star)}
+                  onMouseLeave={() => setHoverRating(0)}
+                  className="p-1 transition-transform hover:scale-110"
+                >
+                  <Star
+                    className={`w-7 h-7 transition-colors ${
+                      star <= (hoverRating || rating)
+                        ? "text-amber-400 fill-amber-400"
+                        : "text-border"
+                    }`}
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-foreground mb-2">Your Feedback *</label>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              maxLength={1000}
+              rows={4}
+              placeholder="Tell us what you love about StudyHub or how we can improve..."
+              className="w-full input-premium resize-none"
+              required
+            />
+            <p className="text-xs text-muted-foreground mt-1">{message.length}/1000</p>
+          </div>
+
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full btn-gradient rounded-xl py-6 text-base font-semibold shadow-glow hover:shadow-glow-lg transition-all duration-500 hover:scale-[1.02]"
+          >
+            {isSubmitting ? (
+              <span className="flex items-center gap-2">
+                <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                Submitting...
+              </span>
+            ) : (
+              <span className="flex items-center gap-2">
+                <Send className="w-4 h-4" />
+                Submit Feedback
+              </span>
+            )}
+          </Button>
+        </motion.form>
+      </div>
+    </section>
   );
 }
 
@@ -476,6 +658,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Feedback Form */}
+      <FeedbackSection />
 
       {/* CTA */}
       <section className="py-28 bg-background relative overflow-hidden">
