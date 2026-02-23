@@ -624,40 +624,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-28 bg-background relative overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px]" />
-        <div className="container mx-auto px-4 relative">
-          <div className="text-center mb-16">
-            <motion.span
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-5 border border-primary/20"
-            >
-              <Star className="w-4 h-4 mr-2 fill-primary" />
-              Student Reviews
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 font-display"
-            >
-              Loved by <span className="gradient-text">Students</span>
-            </motion.h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-              Hear what VTU students have to say about StudyHub
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <TestimonialCard key={i} t={t} index={i} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Feedback Form */}
       <FeedbackSection />
