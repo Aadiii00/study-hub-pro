@@ -101,6 +101,42 @@ export type Database = {
         }
         Relationships: []
       }
+      notes_requests: {
+        Row: {
+          branch: string
+          created_at: string
+          description: string | null
+          id: string
+          module: string | null
+          semester: number
+          status: string
+          student_name: string
+          subject: string
+        }
+        Insert: {
+          branch: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          module?: string | null
+          semester: number
+          status?: string
+          student_name: string
+          subject: string
+        }
+        Update: {
+          branch?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          module?: string | null
+          semester?: number
+          status?: string
+          student_name?: string
+          subject?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string

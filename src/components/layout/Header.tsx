@@ -25,6 +25,8 @@ export function Header() {
     { to: "/notes/first-year", label: "First Year" },
     { to: "/notes/cse-ise", label: "CSE Stream" },
     { to: "/calculator", label: "Calculator" },
+    { to: "/ai-quiz", label: "AI Quiz" },
+    { to: "/request-notes", label: "Request Notes" },
   ];
 
   return (

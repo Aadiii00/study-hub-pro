@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { ArrowRight, BookOpen, Download, Users, Shield, Sparkles, GraduationCap, Star, ChevronRight, Calculator, Quote, Zap, Trophy, Clock, Send, MessageSquare } from "lucide-react";
+import { ArrowRight, BookOpen, Download, Users, Shield, Sparkles, GraduationCap, Star, ChevronRight, Calculator, Quote, Zap, Trophy, Clock, Send, MessageSquare, Brain, FileQuestion } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
@@ -38,6 +38,28 @@ const categories = [
     iconGradient: "from-violet-400 to-fuchsia-300",
     stats: "Quick Calculate",
     icon: Calculator,
+    isLink: true,
+  },
+  {
+    id: "ai-quiz",
+    name: "AI Quiz",
+    subtitle: "Quiz & Flashcards",
+    tag: "AI Powered",
+    gradient: "from-pink-600 via-rose-500 to-red-400",
+    iconGradient: "from-pink-400 to-red-300",
+    stats: "Instant Generate",
+    icon: Brain,
+    isLink: true,
+  },
+  {
+    id: "request-notes",
+    name: "Request Notes",
+    subtitle: "Community Driven",
+    tag: "New Feature",
+    gradient: "from-sky-600 via-blue-500 to-indigo-400",
+    iconGradient: "from-sky-400 to-indigo-300",
+    stats: "Submit Requests",
+    icon: FileQuestion,
     isLink: true,
   },
   {
@@ -137,7 +159,8 @@ function AnimatedCounter({ target, label }: { target: string; label: string }) {
 
 function CategoryCard({ category, index }: { category: typeof categories[0]; index: number }) {
   const Icon = category.icon;
-  const linkPath = category.id === "calculator" ? "/calculator" : `/notes/${category.id}`;
+  const specialRoutes: Record<string, string> = { calculator: "/calculator", "ai-quiz": "/ai-quiz", "request-notes": "/request-notes" };
+  const linkPath = specialRoutes[category.id] || `/notes/${category.id}`;
   
   return (
     <motion.div
