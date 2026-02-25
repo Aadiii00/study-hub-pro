@@ -1,50 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://notes-haven-03.lovable.app/</loc>
+    <loc>https://www.studyhubpro.in/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://notes-haven-03.lovable.app/first-year</loc>
+    <loc>https://www.studyhubpro.in/first-year</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://notes-haven-03.lovable.app/notes/CSE</loc>
+    <loc>https://www.studyhubpro.in/notes/CSE</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://notes-haven-03.lovable.app/notes/CSE/3</loc>
+    <loc>https://www.studyhubpro.in/notes/CSE/3</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://notes-haven-03.lovable.app/notes/CSE/4</loc>
+    <loc>https://www.studyhubpro.in/notes/CSE/4</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://notes-haven-03.lovable.app/notes/CSE/5</loc>
+    <loc>https://www.studyhubpro.in/notes/CSE/5</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://notes-haven-03.lovable.app/notes/CSE/6</loc>
+    <loc>https://www.studyhubpro.in/notes/CSE/6</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://notes-haven-03.lovable.app/calculator</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://www.studyhubpro.in/ai-quiz</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.studyhubpro.in/study-planner</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.studyhubpro.in/request-notes</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.studyhubpro.in/calculator</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
