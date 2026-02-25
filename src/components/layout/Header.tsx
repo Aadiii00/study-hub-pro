@@ -26,6 +26,7 @@ export function Header() {
     { to: "/notes/cse-ise", label: "CSE Stream" },
     { to: "/calculator", label: "Calculator" },
     { to: "/ai-quiz", label: "AI Quiz" },
+    { to: "/study-planner", label: "Study Planner" },
     { to: "/request-notes", label: "Request Notes" },
   ];
 
