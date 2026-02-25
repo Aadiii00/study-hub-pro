@@ -14,6 +14,7 @@ import BranchSubjectNotes from "./pages/BranchSubjectNotes";
 import Calculator from "./pages/Calculator";
 import AIQuiz from "./pages/AIQuiz";
 import RequestNotes from "./pages/RequestNotes";
+import StudyPlanner from "./pages/StudyPlanner";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/calculator" element={<Calculator />} />
           <Route path="/ai-quiz" element={<AIQuiz />} />
           <Route path="/request-notes" element={<RequestNotes />} />
+          <Route path="/study-planner" element={<StudyPlanner />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

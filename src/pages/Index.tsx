@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { ArrowRight, BookOpen, Download, Users, Shield, Sparkles, GraduationCap, Star, ChevronRight, Calculator, Quote, Zap, Trophy, Clock, Send, MessageSquare, Brain, FileQuestion } from "lucide-react";
+import { ArrowRight, BookOpen, Download, Users, Shield, Sparkles, GraduationCap, Star, ChevronRight, Calculator, Quote, Zap, Trophy, Clock, Send, MessageSquare, Brain, FileQuestion, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
@@ -49,6 +49,17 @@ const categories = [
     iconGradient: "from-pink-400 to-red-300",
     stats: "Instant Generate",
     icon: Brain,
+    isLink: true,
+  },
+  {
+    id: "study-planner",
+    name: "Study Planner",
+    subtitle: "AI Schedule Generator",
+    tag: "AI Powered",
+    gradient: "from-emerald-600 via-teal-500 to-cyan-400",
+    iconGradient: "from-emerald-400 to-cyan-300",
+    stats: "Smart Planning",
+    icon: Calendar,
     isLink: true,
   },
   {
@@ -159,7 +170,7 @@ function AnimatedCounter({ target, label }: { target: string; label: string }) {
 
 function CategoryCard({ category, index }: { category: typeof categories[0]; index: number }) {
   const Icon = category.icon;
-  const specialRoutes: Record<string, string> = { calculator: "/calculator", "ai-quiz": "/ai-quiz", "request-notes": "/request-notes" };
+  const specialRoutes: Record<string, string> = { calculator: "/calculator", "ai-quiz": "/ai-quiz", "request-notes": "/request-notes", "study-planner": "/study-planner" };
   const linkPath = specialRoutes[category.id] || `/notes/${category.id}`;
   
   return (
