@@ -500,14 +500,21 @@ function CGPACalculator() {
       {/* Download Button */}
       <div className="flex justify-center">
         <Button
-          onClick={() =>
+          onClick={() => {
+            // Log CGPA calculation
+            supabase.from("cgpa_logs").insert({
+              student_name: studentName || null,
+              cgpa: parseFloat(calculateCGPA()),
+              percentage: parseFloat(percentage),
+              calculation_type: "cgpa",
+            }).then(() => {});
             generateCGPACardPDF({
               studentName,
               semesters: semesters.map((s) => ({ sgpa: s.sgpa, credits: DEFAULT_CREDITS })),
               cgpa: calculateCGPA(),
               percentage,
-            })
-          }
+            });
+          }}
           className="bg-gradient-to-r from-violet-500 to-purple-500 hover:from-violet-600 hover:to-purple-600 text-white px-8"
         >
           <Download className="w-4 h-4 mr-2" />
