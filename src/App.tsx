@@ -15,6 +15,8 @@ import Calculator from "./pages/Calculator";
 import AIQuiz from "./pages/AIQuiz";
 import RequestNotes from "./pages/RequestNotes";
 import StudyPlanner from "./pages/StudyPlanner";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
