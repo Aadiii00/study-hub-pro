@@ -312,7 +312,7 @@ function SGPACalculator() {
               <p className={`text-4xl font-bold transition-all duration-500 ${
                 hasFailed
                   ? "text-destructive"
-                  : "text-white"
+                  : "text-foreground"
               }`}>
                 {result.sgpa.toFixed(2)}
               </p>
