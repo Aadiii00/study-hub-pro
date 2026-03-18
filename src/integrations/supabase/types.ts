@@ -14,6 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      cgpa_logs: {
+        Row: {
+          branch: string | null
+          calculation_type: string
+          cgpa: number | null
+          created_at: string
+          id: string
+          percentage: number | null
+          semester: string | null
+          sgpa: number | null
+          student_name: string | null
+        }
+        Insert: {
+          branch?: string | null
+          calculation_type?: string
+          cgpa?: number | null
+          created_at?: string
+          id?: string
+          percentage?: number | null
+          semester?: string | null
+          sgpa?: number | null
+          student_name?: string | null
+        }
+        Update: {
+          branch?: string | null
+          calculation_type?: string
+          cgpa?: number | null
+          created_at?: string
+          id?: string
+          percentage?: number | null
+          semester?: string | null
+          sgpa?: number | null
+          student_name?: string | null
+        }
+        Relationships: []
+      }
       feedback: {
         Row: {
           branch: string | null
