@@ -40,6 +40,8 @@ const App = () => (
           <Route path="/ai-quiz" element={<AIQuiz />} />
           <Route path="/request-notes" element={<RequestNotes />} />
           <Route path="/study-planner" element={<StudyPlanner />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
