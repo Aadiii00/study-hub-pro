@@ -1,4 +1,5 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import { Layout } from "@/components/layout/Layout";
 import { ArrowLeft, Calculator as CalcIcon, Plus, Trash2, RotateCcw, Info, AlertTriangle, Download } from "lucide-react";
 import { generateMarksCardPDF, generateCGPACardPDF } from "@/utils/generate-marks-card";
@@ -329,7 +330,16 @@ function SGPACalculator() {
       {subjectMarks.length > 0 && subjectMarks.some((s) => s.marks > 0) && (
         <div className="flex justify-center animate-fade-in">
           <Button
-            onClick={() =>
+            onClick={() => {
+              // Log SGPA calculation
+              supabase.from("cgpa_logs").insert({
+                student_name: studentName || null,
+                branch: branch || null,
+                semester: semester || null,
+                sgpa: result.sgpa,
+                percentage: result.percentage,
+                calculation_type: "sgpa",
+              }).then(() => {});
               generateMarksCardPDF({
                 studentName,
                 usn,
@@ -345,8 +355,8 @@ function SGPACalculator() {
                 percentage: result.percentage,
                 totalCredits: result.totalCredits,
                 hasFailed,
-              })
-            }
+              });
+            }}
             className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8"
           >
             <Download className="w-4 h-4 mr-2" />
@@ -490,14 +500,21 @@ function CGPACalculator() {
       {/* Download Button */}
       <div className="flex justify-center">
         <Button
-          onClick={() =>
+          onClick={() => {
+            // Log CGPA calculation
+            supabase.from("cgpa_logs").insert({
+              student_name: studentName || null,
+              cgpa: parseFloat(calculateCGPA()),
+              percentage: parseFloat(percentage),
+              calculation_type: "cgpa",
+            }).then(() => {});
             generateCGPACardPDF({
               studentName,
               semesters: semesters.map((s) => ({ sgpa: s.sgpa, credits: DEFAULT_CREDITS })),
               cgpa: calculateCGPA(),
               percentage,
-            })
-          }
+            });
+          }}
           className="bg-gradient-to-r from-violet-500 to-purple-500 hover:from-violet-600 hover:to-purple-600 text-white px-8"
         >
           <Download className="w-4 h-4 mr-2" />
