@@ -330,7 +330,16 @@ function SGPACalculator() {
       {subjectMarks.length > 0 && subjectMarks.some((s) => s.marks > 0) && (
         <div className="flex justify-center animate-fade-in">
           <Button
-            onClick={() =>
+            onClick={() => {
+              // Log SGPA calculation
+              supabase.from("cgpa_logs").insert({
+                student_name: studentName || null,
+                branch: branch || null,
+                semester: semester || null,
+                sgpa: result.sgpa,
+                percentage: result.percentage,
+                calculation_type: "sgpa",
+              }).then(() => {});
               generateMarksCardPDF({
                 studentName,
                 usn,
@@ -346,8 +355,8 @@ function SGPACalculator() {
                 percentage: result.percentage,
                 totalCredits: result.totalCredits,
                 hasFailed,
-              })
-            }
+              });
+            }}
             className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8"
           >
             <Download className="w-4 h-4 mr-2" />
