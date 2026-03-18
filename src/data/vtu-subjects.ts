@@ -37,7 +37,7 @@ export const vtuSubjects: VTUSubjectDatabase = {
         { subjectCode: "BSFHK258", subjectName: "Scientific Foundation of Health", credits: 3, subjectType: "theory" },
       ],
       "3": [
-        { subjectCode: "BCS301", subjectName: "Mathematics for Computer Science", credits: 4, subjectType: "theory" },
+        { subjectCode: "BCS301", subjectName: "Mathematics for Computer Science", credits: 3, subjectType: "theory" },
         { subjectCode: "BCS302", subjectName: "Data Structures and Applications", credits: 4, subjectType: "theory" },
         { subjectCode: "BCS303", subjectName: "Digital Design and Computer Organization", credits: 4, subjectType: "theory" },
         { subjectCode: "BCS304", subjectName: "Operating Systems", credits: 3, subjectType: "theory" },
