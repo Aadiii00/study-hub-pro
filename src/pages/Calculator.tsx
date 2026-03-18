@@ -1,4 +1,5 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import { Layout } from "@/components/layout/Layout";
 import { ArrowLeft, Calculator as CalcIcon, Plus, Trash2, RotateCcw, Info, AlertTriangle, Download } from "lucide-react";
 import { generateMarksCardPDF, generateCGPACardPDF } from "@/utils/generate-marks-card";
