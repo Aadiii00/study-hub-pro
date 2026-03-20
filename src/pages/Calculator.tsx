@@ -328,7 +328,10 @@ function SGPACalculator() {
 
       {/* Download Button */}
       {subjectMarks.length > 0 && subjectMarks.some((s) => s.marks > 0) && (
-        <div className="flex justify-center animate-fade-in">
+        <div className="flex flex-col items-center gap-2 animate-fade-in">
+          {!studentName.trim() && (
+            <p className="text-sm text-destructive font-medium">Please enter your name to download the marks card</p>
+          )}
           <Button
             disabled={!studentName.trim()}
             onClick={() => {
