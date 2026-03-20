@@ -28,6 +28,7 @@ export function Header() {
     { to: "/ai-quiz", label: "AI Quiz" },
     { to: "/study-planner", label: "Study Planner" },
     { to: "/request-notes", label: "Request Notes" },
+    { to: "/admin-login", label: "Admin" },
   ];
 
   return (
