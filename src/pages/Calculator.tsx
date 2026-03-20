@@ -330,6 +330,7 @@ function SGPACalculator() {
       {subjectMarks.length > 0 && subjectMarks.some((s) => s.marks > 0) && (
         <div className="flex justify-center animate-fade-in">
           <Button
+            disabled={!studentName.trim()}
             onClick={() => {
               // Log SGPA calculation
               supabase.from("cgpa_logs").insert({
