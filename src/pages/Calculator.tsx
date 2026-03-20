@@ -177,8 +177,8 @@ function SGPACalculator() {
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <label className="text-sm text-muted-foreground mb-2 block">Enter your Name</label>
-              <Input placeholder="Your Name" value={studentName} onChange={(e) => setStudentName(e.target.value)} className="bg-background" />
+              <label className="text-sm text-muted-foreground mb-2 block">Enter your Name <span className="text-destructive">*</span></label>
+              <Input placeholder="Your Name (Required)" value={studentName} onChange={(e) => setStudentName(e.target.value)} className="bg-background" required />
             </div>
             <div>
               <label className="text-sm text-muted-foreground mb-2 block">Enter your USN</label>
@@ -328,8 +328,12 @@ function SGPACalculator() {
 
       {/* Download Button */}
       {subjectMarks.length > 0 && subjectMarks.some((s) => s.marks > 0) && (
-        <div className="flex justify-center animate-fade-in">
+        <div className="flex flex-col items-center gap-2 animate-fade-in">
+          {!studentName.trim() && (
+            <p className="text-sm text-destructive font-medium">Please enter your name to download the marks card</p>
+          )}
           <Button
+            disabled={!studentName.trim()}
             onClick={() => {
               // Log SGPA calculation
               supabase.from("cgpa_logs").insert({
