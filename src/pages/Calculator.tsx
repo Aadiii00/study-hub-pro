@@ -177,8 +177,8 @@ function SGPACalculator() {
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <label className="text-sm text-muted-foreground mb-2 block">Enter your Name</label>
-              <Input placeholder="Your Name" value={studentName} onChange={(e) => setStudentName(e.target.value)} className="bg-background" />
+              <label className="text-sm text-muted-foreground mb-2 block">Enter your Name <span className="text-destructive">*</span></label>
+              <Input placeholder="Your Name (Required)" value={studentName} onChange={(e) => setStudentName(e.target.value)} className="bg-background" required />
             </div>
             <div>
               <label className="text-sm text-muted-foreground mb-2 block">Enter your USN</label>
