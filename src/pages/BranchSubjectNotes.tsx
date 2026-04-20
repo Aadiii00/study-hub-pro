@@ -545,6 +545,23 @@ const subjectNotesData: Record<
       },
     ],
   },
+  ESC404B: {
+    name: "Linear Algebra",
+    code: "ESC404B",
+    semester: 4,
+    notes: [
+      {
+        title: "Notes 1",
+        source: "College Notes",
+        type: "notes",
+        url: "#",
+        modules: [
+          { name: "Module 1", url: "/notes/CSE/Sem4/ESC404B/Module_1_Notes1.pdf" },
+          { name: "Module 2", url: "/notes/CSE/Sem4/ESC404B/Module_2_Notes1.pdf" },
+        ],
+      },
+    ],
+  },
   // 5th Semester CSE Subjects
   BCS501: {
     name: "Software Engineering & Project Management",
