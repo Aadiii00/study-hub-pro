@@ -8,7 +8,6 @@ import { useToast } from "@/hooks/use-toast";
 
 interface NotesRequest {
   id: string;
-  student_name: string;
   branch: string;
   semester: number;
   subject: string;
