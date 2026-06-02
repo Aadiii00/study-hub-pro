@@ -206,6 +206,11 @@ export default function CategoryNotes() {
 
   return (
     <Layout>
+      <SEO
+        title={`VTU ${info.name} Notes — Semester-wise Resources`}
+        description={`Free VTU ${info.name} engineering notes, question banks and lab manuals organised by semester. Curated study material for every subject.`}
+        path={`/notes/${category}`}
+      />
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8">
