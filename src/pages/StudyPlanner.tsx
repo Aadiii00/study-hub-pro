@@ -156,7 +156,7 @@ export default function StudyPlanner() {
                         className="flex-1 input-premium"
                       />
                       {subjects.length > 1 && (
-                        <Button variant="ghost" size="icon" onClick={() => removeSubject(i)} className="h-10 w-10 text-muted-foreground hover:text-destructive">
+                        <Button variant="ghost" size="icon" onClick={() => removeSubject(i)} aria-label={`Remove subject ${i + 1}`} className="h-10 w-10 text-muted-foreground hover:text-destructive">
                           <X className="w-4 h-4" />
                         </Button>
                       )}
