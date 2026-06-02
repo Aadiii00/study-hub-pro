@@ -99,6 +99,7 @@ function SGPACalculator() {
 
   return (
     <div className="space-y-6">
+      <h2 className="sr-only">SGPA Calculator</h2>
       {/* Selection Section */}
       <div className="p-6 rounded-2xl bg-card border border-border/50 space-y-5">
         <div className="flex items-center gap-2 text-primary font-semibold">
