@@ -533,6 +533,11 @@ function CGPACalculator() {
 export default function Calculator() {
   return (
     <Layout>
+      <SEO
+        title="VTU SGPA & CGPA Calculator — Download Marks Card"
+        description="Free VTU SGPA & CGPA calculator using the official grading scale. Calculate per-semester SGPA, overall CGPA, percentage, and download a printable marks card."
+        path="/calculator"
+      />
       <div className="min-h-[calc(100vh-12rem)] py-12 px-4">
         <div className="container mx-auto max-w-2xl">
           {/* Back Button */}
