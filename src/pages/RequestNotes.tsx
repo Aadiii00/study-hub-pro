@@ -39,11 +39,7 @@ export default function RequestNotes() {
   }, []);
 
   const fetchRequests = async () => {
-    const { data } = await supabase
-      .from("notes_requests" as any)
-      .select("*")
-      .order("created_at", { ascending: false })
-      .limit(20);
+    const { data } = await (supabase as any).rpc("get_public_notes_requests");
     if (data) setRequests(data as unknown as NotesRequest[]);
   };
 
