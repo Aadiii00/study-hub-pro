@@ -238,7 +238,7 @@ export default function RequestNotes() {
                           </div>
                           {req.module && <p className="text-xs text-muted-foreground">Module: {req.module}</p>}
                           {req.description && <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{req.description}</p>}
-                          <p className="text-xs text-muted-foreground mt-1.5">by {req.student_name} • {new Date(req.created_at).toLocaleDateString()}</p>
+                          <p className="text-xs text-muted-foreground mt-1.5">{new Date(req.created_at).toLocaleDateString()}</p>
                         </div>
                         <div className="flex items-center gap-1.5 flex-shrink-0">
                           {statusIcon(req.status)}
