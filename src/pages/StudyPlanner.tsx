@@ -113,6 +113,11 @@ export default function StudyPlanner() {
 
   return (
     <Layout>
+      <SEO
+        title="AI Study Planner — Personalized VTU Exam Schedules"
+        description="Get a day-by-day, AI-generated study schedule for your VTU exams. Tailored to your subjects, hours and weak areas — built with GURU AI."
+        path="/study-planner"
+      />
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 hero-gradient">
           <div className="absolute inset-0 hero-glow" />
