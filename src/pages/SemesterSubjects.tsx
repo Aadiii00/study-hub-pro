@@ -275,6 +275,11 @@ export default function SemesterSubjects() {
 
   return (
     <Layout>
+      <SEO
+        title={`VTU ${info.name} Semester ${semesterNum} Subjects & Notes`}
+        description={`All ${info.name} subjects for VTU semester ${semesterNum}. Access notes, question banks, and lab manuals for each subject — free to download.`}
+        path={`/notes/${category}/${semesterNum}`}
+      />
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8">
