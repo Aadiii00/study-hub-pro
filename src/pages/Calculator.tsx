@@ -421,6 +421,7 @@ function CGPACalculator() {
 
   return (
     <div className="space-y-6">
+      <h2 className="sr-only">CGPA Calculator</h2>
       <div>
         <label className="text-sm text-muted-foreground mb-2 block">Enter your Name</label>
         <Input placeholder="Your Name" value={studentName} onChange={(e) => setStudentName(e.target.value)} className="bg-background" />
