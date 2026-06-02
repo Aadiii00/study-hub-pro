@@ -126,6 +126,11 @@ Make them concise and exam-focused.`;
 
   return (
     <Layout>
+      <SEO
+        title="AI Quiz & Flashcards Generator — VTU Engineering"
+        description="Generate AI-powered quizzes and flashcards on any engineering topic using GURU AI. Practice for VTU exams with instant questions and answers."
+        path="/ai-quiz"
+      />
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 hero-gradient">
           <div className="absolute inset-0 hero-glow" />
