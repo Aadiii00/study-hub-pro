@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { ArrowRight, BookOpen, Download, Users, Shield, Sparkles, GraduationCap, Star, ChevronRight, Calculator, Quote, Zap, Trophy, Clock, Send, MessageSquare, Brain, FileQuestion, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
