@@ -241,7 +241,7 @@ export default function StudyPlanner() {
                   )}
                 </Button>
                 {showResults && (
-                  <Button onClick={reset} variant="outline" className="rounded-xl py-6 px-5">
+                  <Button onClick={reset} variant="outline" aria-label="Reset study plan" className="rounded-xl py-6 px-5">
                     <RotateCcw className="w-4 h-4" />
                   </Button>
                 )}
