@@ -337,7 +337,6 @@ function SGPACalculator() {
             onClick={() => {
               // Log SGPA calculation
               supabase.from("cgpa_logs").insert({
-                student_name: studentName || null,
                 branch: branch || null,
                 semester: semester || null,
                 sgpa: result.sgpa,
