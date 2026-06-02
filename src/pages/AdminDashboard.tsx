@@ -168,7 +168,7 @@ export default function AdminDashboard() {
                   <TableHeader>
                     <TableRow>
                       <TableHead>Type</TableHead>
-                      <TableHead>Student</TableHead>
+                      <TableHead>Branch</TableHead>
                       <TableHead>Branch</TableHead>
                       <TableHead>Semester</TableHead>
                       <TableHead>SGPA</TableHead>
