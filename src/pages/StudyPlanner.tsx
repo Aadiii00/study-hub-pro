@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, BookOpen, Sparkles, RotateCcw, Plus, X, AlertTriangle } from "lucide-react";
