@@ -1,6 +1,7 @@
 import { useState, useMemo, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { ArrowLeft, Calculator as CalcIcon, Plus, Trash2, RotateCcw, Info, AlertTriangle, Download } from "lucide-react";
 import { generateMarksCardPDF, generateCGPACardPDF } from "@/utils/generate-marks-card";
 import { Button } from "@/components/ui/button";
@@ -99,6 +100,7 @@ function SGPACalculator() {
 
   return (
     <div className="space-y-6">
+      <h2 className="sr-only">SGPA Calculator</h2>
       {/* Selection Section */}
       <div className="p-6 rounded-2xl bg-card border border-border/50 space-y-5">
         <div className="flex items-center gap-2 text-primary font-semibold">
@@ -420,6 +422,7 @@ function CGPACalculator() {
 
   return (
     <div className="space-y-6">
+      <h2 className="sr-only">CGPA Calculator</h2>
       <div>
         <label className="text-sm text-muted-foreground mb-2 block">Enter your Name</label>
         <Input placeholder="Your Name" value={studentName} onChange={(e) => setStudentName(e.target.value)} className="bg-background" />
@@ -530,6 +533,11 @@ function CGPACalculator() {
 export default function Calculator() {
   return (
     <Layout>
+      <SEO
+        title="VTU SGPA & CGPA Calculator — Download Marks Card"
+        description="Free VTU SGPA & CGPA calculator using the official grading scale. Calculate per-semester SGPA, overall CGPA, percentage, and download a printable marks card."
+        path="/calculator"
+      />
       <div className="min-h-[calc(100vh-12rem)] py-12 px-4">
         <div className="container mx-auto max-w-2xl">
           {/* Back Button */}

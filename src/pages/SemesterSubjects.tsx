@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { FileX, ArrowLeft, BookOpen, Download, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -274,6 +275,11 @@ export default function SemesterSubjects() {
 
   return (
     <Layout>
+      <SEO
+        title={`VTU ${info.name} Semester ${semesterNum} Subjects & Notes`}
+        description={`All ${info.name} subjects for VTU semester ${semesterNum}. Access notes, question banks, and lab manuals for each subject — free to download.`}
+        path={`/notes/${category}/${semesterNum}`}
+      />
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8">

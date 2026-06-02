@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Brain, Lightbulb, RotateCcw, Sparkles, ChevronRight, BookOpen } from "lucide-react";
@@ -125,6 +126,11 @@ Make them concise and exam-focused.`;
 
   return (
     <Layout>
+      <SEO
+        title="AI Quiz & Flashcards Generator — VTU Engineering"
+        description="Generate AI-powered quizzes and flashcards on any engineering topic using GURU AI. Practice for VTU exams with instant questions and answers."
+        path="/ai-quiz"
+      />
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 hero-gradient">
           <div className="absolute inset-0 hero-glow" />
@@ -243,7 +249,7 @@ Make them concise and exam-focused.`;
                   )}
                 </Button>
                 {showResults && (
-                  <Button onClick={reset} variant="outline" className="rounded-xl py-6 px-5">
+                  <Button onClick={reset} variant="outline" aria-label="Reset quiz" className="rounded-xl py-6 px-5">
                     <RotateCcw className="w-4 h-4" />
                   </Button>
                 )}

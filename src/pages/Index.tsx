@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { ArrowRight, BookOpen, Download, Users, Shield, Sparkles, GraduationCap, Star, ChevronRight, Calculator, Quote, Zap, Trophy, Clock, Send, MessageSquare, Brain, FileQuestion, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
@@ -373,6 +374,7 @@ function FeedbackSection() {
                 <button
                   key={star}
                   type="button"
+                  aria-label={`Rate ${star} star${star > 1 ? "s" : ""}`}
                   onClick={() => setRating(star)}
                   onMouseEnter={() => setHoverRating(star)}
                   onMouseLeave={() => setHoverRating(0)}
@@ -450,6 +452,11 @@ export default function Index() {
 
   return (
     <Layout>
+      <SEO
+        title="StudyHub — VTU Engineering Notes, QBs & Lab Manuals"
+        description="Free VTU engineering notes, question banks, lab manuals, SGPA/CGPA calculator and AI study tools. Curated for CSE, ECE, EEE, Civil and Mechanical branches."
+        path="/"
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-[90vh] flex items-center">
         <div className="absolute inset-0 hero-gradient">

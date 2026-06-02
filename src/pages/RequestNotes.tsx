@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Send, FileQuestion, Clock, CheckCircle2, AlertCircle } from "lucide-react";
@@ -106,6 +107,11 @@ export default function RequestNotes() {
 
   return (
     <Layout>
+      <SEO
+        title="Request VTU Notes — Community Driven Resource Hub"
+        description="Can't find the VTU notes you need? Submit a request and the StudyHub community will help source them for your branch and semester."
+        path="/request-notes"
+      />
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 hero-gradient">
           <div className="absolute inset-0 hero-glow" />

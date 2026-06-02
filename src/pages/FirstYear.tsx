@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { ArrowLeft, BookOpen, FlaskConical } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function FirstYear() {
   return (
     <Layout>
+      <SEO
+        title="VTU First Year Notes — Physics & Chemistry Cycle"
+        description="VTU first-year engineering notes for Physics and Chemistry cycles. Module-wise notes, question banks and lab manuals — free to download."
+        path="/notes/first-year"
+      />
       <div className="min-h-[calc(100vh-12rem)] flex flex-col items-center justify-center px-4 py-12">
         {/* Back Button */}
         <div className="w-full max-w-xl mb-8">

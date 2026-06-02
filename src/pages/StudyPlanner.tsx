@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, BookOpen, Sparkles, RotateCcw, Plus, X, AlertTriangle } from "lucide-react";
@@ -112,6 +113,11 @@ export default function StudyPlanner() {
 
   return (
     <Layout>
+      <SEO
+        title="AI Study Planner — Personalized VTU Exam Schedules"
+        description="Get a day-by-day, AI-generated study schedule for your VTU exams. Tailored to your subjects, hours and weak areas — built with GURU AI."
+        path="/study-planner"
+      />
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 hero-gradient">
           <div className="absolute inset-0 hero-glow" />
@@ -156,7 +162,7 @@ export default function StudyPlanner() {
                         className="flex-1 input-premium"
                       />
                       {subjects.length > 1 && (
-                        <Button variant="ghost" size="icon" onClick={() => removeSubject(i)} className="h-10 w-10 text-muted-foreground hover:text-destructive">
+                        <Button variant="ghost" size="icon" onClick={() => removeSubject(i)} aria-label={`Remove subject ${i + 1}`} className="h-10 w-10 text-muted-foreground hover:text-destructive">
                           <X className="w-4 h-4" />
                         </Button>
                       )}
@@ -241,7 +247,7 @@ export default function StudyPlanner() {
                   )}
                 </Button>
                 {showResults && (
-                  <Button onClick={reset} variant="outline" className="rounded-xl py-6 px-5">
+                  <Button onClick={reset} variant="outline" aria-label="Reset study plan" className="rounded-xl py-6 px-5">
                     <RotateCcw className="w-4 h-4" />
                   </Button>
                 )}

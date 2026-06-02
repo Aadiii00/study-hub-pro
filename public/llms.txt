@@ -1,0 +1,21 @@
+# StudyHub
+
+> Premium VTU engineering notes, question banks, lab manuals and study materials for all branches and semesters. Free access for students.
+
+## Pages
+
+- [Home](/): Overview of StudyHub — notes, calculators, AI study tools.
+- [First Year Notes](/notes/first-year): Notes for first-year VTU engineering (Physics, Chemistry cycles).
+- [CSE / ISE Notes](/notes/cse-ise): Computer Science & Information Science semester-wise notes.
+- [ECE Notes](/notes/ece): Electronics & Communication semester-wise notes.
+- [EEE Notes](/notes/eee): Electrical & Electronics semester-wise notes.
+- [Mechanical Notes](/notes/mech): Mechanical Engineering semester-wise notes.
+- [Civil Notes](/notes/civil): Civil Engineering semester-wise notes.
+- [SGPA & CGPA Calculator](/calculator): VTU grading-scale SGPA/CGPA calculator with downloadable marks card.
+- [AI Quiz & Flashcards](/ai-quiz): Generate quizzes and flashcards from any topic using GURU AI.
+- [Study Planner](/study-planner): AI-generated exam-prep study schedules.
+- [Request Notes](/request-notes): Submit a request for notes that aren't yet on the site.
+
+## Optional
+
+- [Admin Login](/admin-login): Internal — not for end users.
