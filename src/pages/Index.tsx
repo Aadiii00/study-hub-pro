@@ -452,6 +452,11 @@ export default function Index() {
 
   return (
     <Layout>
+      <SEO
+        title="StudyHub — VTU Engineering Notes, QBs & Lab Manuals"
+        description="Free VTU engineering notes, question banks, lab manuals, SGPA/CGPA calculator and AI study tools. Curated for CSE, ECE, EEE, Civil and Mechanical branches."
+        path="/"
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-[90vh] flex items-center">
         <div className="absolute inset-0 hero-gradient">
