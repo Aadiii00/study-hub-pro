@@ -8,7 +8,6 @@ import { useToast } from "@/hooks/use-toast";
 
 interface NotesRequest {
   id: string;
-  student_name: string;
   branch: string;
   semester: number;
   subject: string;
@@ -40,11 +39,7 @@ export default function RequestNotes() {
   }, []);
 
   const fetchRequests = async () => {
-    const { data } = await supabase
-      .from("notes_requests" as any)
-      .select("*")
-      .order("created_at", { ascending: false })
-      .limit(20);
+    const { data } = await (supabase as any).rpc("get_public_notes_requests");
     if (data) setRequests(data as unknown as NotesRequest[]);
   };
 
@@ -243,7 +238,7 @@ export default function RequestNotes() {
                           </div>
                           {req.module && <p className="text-xs text-muted-foreground">Module: {req.module}</p>}
                           {req.description && <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{req.description}</p>}
-                          <p className="text-xs text-muted-foreground mt-1.5">by {req.student_name} • {new Date(req.created_at).toLocaleDateString()}</p>
+                          <p className="text-xs text-muted-foreground mt-1.5">{new Date(req.created_at).toLocaleDateString()}</p>
                         </div>
                         <div className="flex items-center gap-1.5 flex-shrink-0">
                           {statusIcon(req.status)}

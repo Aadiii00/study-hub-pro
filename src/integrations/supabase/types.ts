@@ -24,7 +24,6 @@ export type Database = {
           percentage: number | null
           semester: string | null
           sgpa: number | null
-          student_name: string | null
         }
         Insert: {
           branch?: string | null
@@ -35,7 +34,6 @@ export type Database = {
           percentage?: number | null
           semester?: string | null
           sgpa?: number | null
-          student_name?: string | null
         }
         Update: {
           branch?: string | null
@@ -46,7 +44,6 @@ export type Database = {
           percentage?: number | null
           semester?: string | null
           sgpa?: number | null
-          student_name?: string | null
         }
         Relationships: []
       }
@@ -223,6 +220,19 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_public_notes_requests: {
+        Args: never
+        Returns: {
+          branch: string
+          created_at: string
+          description: string
+          id: string
+          module: string
+          semester: number
+          status: string
+          subject: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

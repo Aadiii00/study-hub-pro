@@ -168,7 +168,6 @@ export default function AdminDashboard() {
                   <TableHeader>
                     <TableRow>
                       <TableHead>Type</TableHead>
-                      <TableHead>Student</TableHead>
                       <TableHead>Branch</TableHead>
                       <TableHead>Semester</TableHead>
                       <TableHead>SGPA</TableHead>
@@ -189,7 +188,6 @@ export default function AdminDashboard() {
                             {log.calculation_type?.toUpperCase()}
                           </span>
                         </TableCell>
-                        <TableCell>{log.student_name || "—"}</TableCell>
                         <TableCell>{log.branch || "—"}</TableCell>
                         <TableCell>{log.semester || "—"}</TableCell>
                         <TableCell>{log.sgpa ?? "—"}</TableCell>
