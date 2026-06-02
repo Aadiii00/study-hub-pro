@@ -506,7 +506,6 @@ function CGPACalculator() {
           onClick={() => {
             // Log CGPA calculation
             supabase.from("cgpa_logs").insert({
-              student_name: studentName || null,
               cgpa: parseFloat(calculateCGPA()),
               percentage: parseFloat(percentage),
               calculation_type: "cgpa",
