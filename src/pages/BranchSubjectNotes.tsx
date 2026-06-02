@@ -2061,6 +2061,12 @@ export default function BranchSubjectNotes() {
 
   return (
     <Layout>
+      <SEO
+        title={`${subject.name} (${subject.code}) — VTU Notes, QB & Lab`}
+        description={`Module-wise notes, question banks and lab manuals for ${subject.name} (${subject.code}), VTU semester ${semester}. Free download for engineering students.`}
+        path={`/notes/${category}/${semester}/${subject.code}`}
+        type="article"
+      />
       <div className="min-h-[calc(100vh-12rem)] py-12 px-4">
         <div className="container mx-auto max-w-2xl">
           {/* Back Button */}
