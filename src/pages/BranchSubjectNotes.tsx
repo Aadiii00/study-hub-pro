@@ -603,6 +603,21 @@ const subjectNotesData: Record<
       },
     ],
   },
+  BCS408: {
+    name: "Advanced Java",
+    code: "BCS408",
+    semester: 4,
+    notes: [
+      {
+        title: "BIET QB and Notes",
+        source: "BIET College",
+        type: "qp",
+        url: "#",
+        modules: [],
+      },
+    ],
+  },
+  },
   ESC404B: {
     name: "Linear Algebra",
     code: "ESC404B",
