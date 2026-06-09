@@ -400,7 +400,12 @@ const subjectNotesData: Record<
         source: "BIET College",
         type: "qp",
         url: "#",
-        modules: [],
+        modules: [
+          { name: "Module 3 — Space and Time Trade-Offs", url: "/notes/CSE/Sem4/DAA/BIET/ADA_M3_Space_Time_TradeOffs.pdf" },
+          { name: "Module 4 — Greedy & Dynamic", url: "/notes/CSE/Sem4/DAA/BIET/ADA_M4_GD.pdf" },
+          { name: "Module 5 — Limitations of Algorithmic Power", url: "/notes/CSE/Sem4/DAA/BIET/ADA_M5_Limitations.pdf" },
+          { name: "Question Bank 2", url: "/notes/CSE/Sem4/DAA/BIET/Question_Bank_2.docx" },
+        ],
       },
     ],
   },
