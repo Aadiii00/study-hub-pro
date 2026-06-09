@@ -342,6 +342,13 @@ const subjectNotesData: Record<
           { name: "Lab Manual - East Point", url: "/notes/CSE/Sem4/MC/Lab_Manual_EastPoint.pdf" },
         ],
       },
+      {
+        title: "BIET QB and Notes",
+        source: "BIET College",
+        type: "qp",
+        url: "#",
+        modules: [],
+      },
     ],
   },
   BCS402: {
