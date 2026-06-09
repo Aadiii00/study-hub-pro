@@ -395,6 +395,13 @@ const subjectNotesData: Record<
           { name: "Module 1 Extra", url: "/notes/CSE/Sem4/DAA/Module_1_QB.pdf" },
         ],
       },
+      {
+        title: "BIET QB and Notes",
+        source: "BIET College",
+        type: "qp",
+        url: "#",
+        modules: [],
+      },
     ],
   },
   BCS403: {
