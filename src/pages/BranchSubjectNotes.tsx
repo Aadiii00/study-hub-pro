@@ -617,7 +617,6 @@ const subjectNotesData: Record<
       },
     ],
   },
-  },
   ESC404B: {
     name: "Linear Algebra",
     code: "ESC404B",
