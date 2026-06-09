@@ -591,7 +591,10 @@ const subjectNotesData: Record<
         source: "BIET College",
         type: "qp",
         url: "#",
-        modules: [],
+        modules: [
+          { name: "All Modules (1–5)", url: "/notes/CSE/Sem4/BCS407/BIET/All_Modules.pdf" },
+          { name: "Model QP 2", url: "/notes/CSE/Sem4/BCS407/BIET/Model_QP_2.pdf" },
+        ],
       },
     ],
   },
