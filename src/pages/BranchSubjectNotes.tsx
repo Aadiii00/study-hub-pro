@@ -446,6 +446,13 @@ const subjectNotesData: Record<
           { name: "Lab Manual - SVIT", url: "/notes/CSE/Sem4/DBMS/Lab_Manual_SVIT.pdf" },
         ],
       },
+      {
+        title: "BIET QB and Notes",
+        source: "BIET College",
+        type: "qp",
+        url: "#",
+        modules: [],
+      },
     ],
   },
   BCS404: {
@@ -493,6 +500,13 @@ const subjectNotesData: Record<
           { name: "VTU Model QP 2", url: "/notes/CSE/Sem4/BIO/VTU_Model_QP_2.pdf" },
         ],
       },
+      {
+        title: "BIET QB and Notes",
+        source: "BIET College",
+        type: "qp",
+        url: "#",
+        modules: [],
+      },
     ],
   },
   BCS405: {
@@ -512,6 +526,13 @@ const subjectNotesData: Record<
           { name: "Final Lab Manual", url: "/notes/CSE/Sem4/BCS405/Final_Lab_Manual.pdf" },
         ],
       },
+      {
+        title: "BIET QB and Notes",
+        source: "BIET College",
+        type: "qp",
+        url: "#",
+        modules: [],
+      },
     ],
   },
   BCSL406: {
@@ -530,6 +551,13 @@ const subjectNotesData: Record<
         source: "Lab Viva Q&A",
         type: "qp",
         url: "#",
+      },
+      {
+        title: "BIET QB and Notes",
+        source: "BIET College",
+        type: "qp",
+        url: "#",
+        modules: [],
       },
     ],
   },
@@ -558,6 +586,13 @@ const subjectNotesData: Record<
         type: "qp",
         url: "/notes/CSE/Sem4/BCS407/Question_Bank.pdf",
       },
+      {
+        title: "BIET QB and Notes",
+        source: "BIET College",
+        type: "qp",
+        url: "#",
+        modules: [],
+      },
     ],
   },
   ESC404B: {
@@ -574,6 +609,13 @@ const subjectNotesData: Record<
           { name: "Module 1", url: "/notes/CSE/Sem4/ESC404B/Module_1_Notes1.pdf" },
           { name: "Module 2", url: "/notes/CSE/Sem4/ESC404B/Module_2_Notes1.pdf" },
         ],
+      },
+      {
+        title: "BIET QB and Notes",
+        source: "BIET College",
+        type: "qp",
+        url: "#",
+        modules: [],
       },
     ],
   },
