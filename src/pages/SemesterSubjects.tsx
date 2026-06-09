@@ -24,6 +24,7 @@ const subjectData: Record<string, Record<number, { code: string; name: string; s
       { code: "BCS404", name: "Biology for computer engineers", shortName: "COA" },
       { code: "BCS405", name: "ADA Lab manual", shortName: "SE" },
       { code: "BCS407", name: "discrete mathematical structures", shortName: "CIPE" },
+      { code: "BCS408", name: "Advanced Java", shortName: "Adv Java" },
       { code: "ESC404B", name: "Linear Algebra", shortName: "LA" },
       { code: "PCC402", name: "Artificial Intelligence", shortName: "AI" },
     ],
