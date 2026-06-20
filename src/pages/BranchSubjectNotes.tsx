@@ -456,7 +456,9 @@ const subjectNotesData: Record<
         source: "BIET College",
         type: "qp",
         url: "#",
-        modules: [],
+        modules: [
+          { name: "Question Bank", url: "/notes/CSE/Sem4/DBMS/BIET/Question_Bank.pdf" },
+        ],
       },
     ],
   },
