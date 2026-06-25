@@ -460,7 +460,7 @@ const subjectNotesData: Record<
           { name: "Question Bank", url: "/notes/CSE/Sem4/DBMS/BIET/Question_Bank.pdf" },
           { name: "Notes", url: "/notes/CSE/Sem4/DBMS/BIET/Notes.pdf" },
           { name: "Model Question Paper", url: "/notes/CSE/Sem4/DBMS/BIET/Model_QP.pdf" },
-          { name: "Model QP with Solutions", url: "/notes/CSE/Sem4/DBMS/BIET/Previous_Year_VTU_QP.pdf" },
+          { name: "Previous Year VTU Question Papers", url: "/notes/CSE/Sem4/DBMS/BIET/Previous_Year_VTU_QP.pdf" },
           { name: "CIE 2 QP & Scheme", url: "/notes/CSE/Sem4/DBMS/BIET/CIE_2_QP_Scheme.pdf" },
         ],
       },
