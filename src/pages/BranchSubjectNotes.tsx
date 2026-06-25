@@ -458,6 +458,9 @@ const subjectNotesData: Record<
         url: "#",
         modules: [
           { name: "Question Bank", url: "/notes/CSE/Sem4/DBMS/BIET/Question_Bank.pdf" },
+          { name: "Notes", url: "/notes/CSE/Sem4/DBMS/BIET/Notes.pdf" },
+          { name: "Model Question Paper", url: "/notes/CSE/Sem4/DBMS/BIET/Model_QP.pdf" },
+          { name: "CIE 2 QP & Scheme", url: "/notes/CSE/Sem4/DBMS/BIET/CIE_2_QP_Scheme.pdf" },
         ],
       },
     ],
