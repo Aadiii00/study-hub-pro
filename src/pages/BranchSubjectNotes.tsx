@@ -408,6 +408,8 @@ const subjectNotesData: Record<
           { name: "Module 5 — Limitations of Algorithmic Power", url: "/notes/CSE/Sem4/DAA/BIET/ADA_M5_Limitations.pdf" },
           { name: "Model Question Paper", url: "/notes/CSE/Sem4/DAA/BIET/ADA_MQP.pdf" },
           { name: "Question Bank 2", url: "/notes/CSE/Sem4/DAA/BIET/Question_Bank_2.docx" },
+          { name: "QB-ADA-M1 (3)", url: "/notes/CSE/Sem4/DAA/BIET/QB-ADA-M1 (3).pdf" },
+          { name: "QB-ADA-M2 (2)", url: "/notes/CSE/Sem4/DAA/BIET/QB-ADA-M2 (2).pdf" },
         ],
       },
     ],
