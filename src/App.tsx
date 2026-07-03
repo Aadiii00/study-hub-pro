@@ -42,7 +42,7 @@ const App = () => (
           <Route path="/request-notes" element={<RequestNotes />} />
           <Route path="/study-planner" element={<StudyPlanner />} />
           <Route path="/admin-login" element={<AdminLogin />} />
-          <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/admin-dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
