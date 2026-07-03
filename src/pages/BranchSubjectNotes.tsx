@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { ArrowLeft, Rocket, Download, FileText, BookOpen, ClipboardList, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import dbmsOriAsset from "@/assets/DBMS_ori.pdf.asset.json";
 
 interface Module {
   name: string;
@@ -467,6 +468,8 @@ const subjectNotesData: Record<
           { name: "Model Question Paper", url: "/notes/CSE/Sem4/DBMS/BIET/Model_QP.pdf" },
           { name: "Previous Year VTU Question Papers", url: "/notes/CSE/Sem4/DBMS/BIET/Previous_Year_VTU_QP.pdf" },
           { name: "CIE 2 QP & Scheme", url: "/notes/CSE/Sem4/DBMS/BIET/CIE_2_QP_Scheme.pdf" },
+          { name: "DBMS_PROBLEMS", url: "/notes/CSE/Sem4/DBMS/BIET/DBMS_PROBLEMS.pdf" },
+          { name: "DBMS_ori", url: dbmsOriAsset.url },
         ],
       },
       {
