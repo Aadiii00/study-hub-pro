@@ -469,7 +469,23 @@ const subjectNotesData: Record<
           { name: "CIE 2 QP & Scheme", url: "/notes/CSE/Sem4/DBMS/BIET/CIE_2_QP_Scheme.pdf" },
         ],
       },
+      {
+        title: "Drive Links",
+        source: "Google Drive",
+        type: "notes",
+        url: "#",
+        modules: [
+          { name: "DBMS Master PDF", url: "https://drive.google.com/file/d/1-dBOLmxI4CRgfSiH2rkOl5-jYkaKDO3e/view?usp=drivesdk" },
+          { name: "DBMS PYQ", url: "https://drive.google.com/file/d/1pXTlp6V4epHgzz1c-NpW7PeGpl2UGrvg/view?usp=drivesdk" },
+          { name: "DBMS Module 01 Notes", url: "https://drive.google.com/file/d/1zNDH8zEPpJsqpNAhZDfmbm_G-mJrqPJi/view" },
+          { name: "DBMS Module 02 Notes", url: "https://drive.google.com/file/d/1gY9DwJRjK-1mxhLyo3zKSrdRHjac6tJW/view" },
+          { name: "DBMS Module 03 Notes", url: "https://drive.google.com/file/d/1kOlvcEQi5eVacM5Mvuk03Km-NLhR7uxk/view?usp=drivesdk" },
+          { name: "DBMS Module 04 Notes", url: "https://drive.google.com/file/d/1zr4PnQiDHSCe6_D1JYWaE_SKxzLmuU_b/view" },
+          { name: "DBMS Module 05 Notes", url: "https://drive.google.com/file/d/1KOKfmvZEoai4ZeEKyQhU2MgE2X0XlGJu/view?usp=drivesdk" },
+        ],
+      },
     ],
+
   },
   BCS404: {
     name: "Biology for Computer enginners",
